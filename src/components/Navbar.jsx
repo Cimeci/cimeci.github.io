@@ -7,6 +7,7 @@ import ThemeOption from './ThemeOption';
 import LanguageSwitcher from './LanguageSwitcher';
 
 import "./Navbar.css"
+import { Menu } from 'lucide-react';
 
 export const Navbar = () => {
 	const { t } = useTranslation()
@@ -35,9 +36,7 @@ export const Navbar = () => {
 					setMenuOpen(!menuOpen)
 				}}
 			>
-				<span></span>
-				<span></span>
-				<span></span>
+				<Menu size/>
 			</div>
 			<ul className={menuOpen ? "open" : ""}>
 				<li>

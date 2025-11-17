@@ -120,7 +120,7 @@ nav ul li.theme-option-item {
 	border-left: 1px solid var(--primary-text-color);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
 	nav .menu {
 		display: flex;
 	}
