@@ -1,0 +1,54 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.split-text-container {
+    display: flex;
+    font-size: 4rem;
+    position: absolute;
+    top: 7.5rem;
+    left: 1.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+}
+
+.text-part {
+    display: inline-block;
+    position: relative;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.text-part.left {
+    transform: translateX(-200%);
+    animation-name: slide-in-left;
+}
+
+.text-part.right {
+    transform: translateX(200%);
+    animation-name: slide-in-right;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

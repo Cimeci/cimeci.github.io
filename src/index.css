@@ -1,0 +1,46 @@
+
+:root {
+	--primary-background-color: #fff;
+	--secondary-background-color: #f7f7f7;
+
+	--primary-background-hover-color: #5893aa;
+
+	--primary-text-color: #000;
+	--secondary-text-color: #4b4c53;
+
+	--primary-border-color: #4b4c53;
+
+	--button-solid-background-color: #000; 
+	--button-solid-text-color: #fff;
+
+	--button-outlined-background-color: transparent;
+	--button-outlined-text-color: #000;
+}
+
+[data-theme="dark"]{
+	--primary-background-color: #1f2028;
+	--secondary-background-color: #2e3039;
+
+	--primary-background-hover-color: #172554;
+
+	--primary-text-color: rgba(255, 255, 255, 0.87);
+	--secondary-text-color: #4b4c53;
+
+	--primary-border-color: #4b4c53;
+
+	--button-solid-background-color: #fff; 
+	--button-solid-text-color: #000;
+
+	--button-outlined-background-color: transparent;
+	--button-outlined-text-color: #fff;
+}
+
+.theme-options{
+	background-color: var(--primary-background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4px;
+	border-radius: 1rem;
+	gap: 10px;
+}
