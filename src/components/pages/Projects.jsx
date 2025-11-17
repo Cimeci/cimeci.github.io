@@ -1,8 +1,10 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const Projects = () => {
+	const { t } = useTranslation()
 	return (
-		<div>Projects
+		<div>{t('projects.title')}
 		<a>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam quaerat doloribus beatae dolore, itaque iusto. Nihil architecto nesciunt, culpa numquam nostrum molestias atque itaque repellendus non sit illo delectus reprehenderit quidem iste incidunt dolorum ad quaerat debitis veritatis vel. Optio quibusdam molestiae neque esse asperiores cupiditate praesentium quam perspiciatis nemo voluptas incidunt deserunt accusamus dolor quis consectetur pariatur, voluptatibus ipsa suscipit maxime aut officia consequuntur nobis. Recusandae praesentium sed incidunt!
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, aut ipsam animi nemo sint quo, architecto excepturi delectus voluptatem minus est eum, accusantium ut eaque reprehenderit odio natus iure repellendus.

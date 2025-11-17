@@ -1,7 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const Stacks = () => {
+	const { t } = useTranslation()
 	return (
-		<div>Stacks</div>
+		<div>{t('stack.title')}</div>
 	)
 }

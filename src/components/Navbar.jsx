@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 
 import {NavLink, Link} from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import ThemeOption from './ThemeOption';
+import LanguageSwitcher from './LanguageSwitcher';
 
 import "./Navbar.css"
 
 export const Navbar = () => {
+	const { t } = useTranslation()
 	const [menuOpen, setMenuOpen] = useState(false)
 	const [currentTheme, setCurrentTheme] = useState('light')
 
@@ -24,7 +27,7 @@ export const Navbar = () => {
 	return (
 		<nav>
 			<Link to="/" className="title">
-				Home
+				{t('nav.home')}
 			</Link>
 			<div
 				className="menu"
@@ -38,16 +41,19 @@ export const Navbar = () => {
 			</div>
 			<ul className={menuOpen ? "open" : ""}>
 				<li>
-					<NavLink to="/about">About</NavLink>
+					<NavLink to="/about">{t('nav.about')}</NavLink>
 				</li>
 				<li>
-					<NavLink to="/stack">Stack</NavLink>
+					<NavLink to="/stack">{t('nav.stack')}</NavLink>
 				</li>
 				<li>
-					<NavLink to="/projects">Projects</NavLink>
+					<NavLink to="/projects">{t('nav.projects')}</NavLink>
 				</li>
 				<li>
-					<NavLink to="/contact">Contact</NavLink>
+					<NavLink to="/contact">{t('nav.contact')}</NavLink>
+				</li>
+				<li className="theme-option-item">
+					<LanguageSwitcher />
 				</li>
 				<li className="theme-option-item">
 					<ThemeOption currentTheme={currentTheme} onToggle={toggleTheme}/>
