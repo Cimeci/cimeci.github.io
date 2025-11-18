@@ -10,7 +10,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
+	/* position: absolute; */
+	top: 1.5rem;
+	gap: 2rem;
 	position: relative;
 	height: 200px;
 	margin-bottom: 3rem;
@@ -19,9 +21,6 @@
 .split-text-container {
 	display: flex;
 	font-size: 4rem;
-	position: absolute;
-	top: 7.5rem;
-	left: 1.5rem;
 	font-weight: bold;
 	overflow: hidden;
 	text-align: center;
@@ -321,7 +320,7 @@ section h2 {
 
 .btn-primary:hover {
 	background-color: #0e76a8;
-	color: var(--button-solid-text-color);
+	color: var(--primary-text-color);
 	transform: translateY(-3px);
 	box-shadow: 0 4px 10px #0e76a8;
 }

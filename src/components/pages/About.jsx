@@ -12,7 +12,7 @@ export const About = () => {
 				<h1 className="split-text-container">
 					<span className="text-part left">{t('about.title')}</span>
 				</h1>
-				<h1 className="split-text-container text-blue-300 md:ml-55">
+				<h1 className="split-text-container text-blue-300">
 					<span className="text-part right">{t('about.subtitle')}</span>
 				</h1>
 			</div>
