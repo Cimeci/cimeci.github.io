@@ -1,6 +1,6 @@
 .active {
 	transition: all 0.5s ease;
-	background-color: #1d4ed8;
+	background-color: var(--primary-background-active-color);
 	transform: scale(1.05);
 	box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }

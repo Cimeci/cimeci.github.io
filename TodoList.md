@@ -1,4 +1,12 @@
 #TODO LIST
 
-[]: responsive navbar
+## PAGE
 
+[]: About
+[]: Projects
+[]: Stacks
+[]: Home
+
+## FIX
+
+[]: Navbar Bar space

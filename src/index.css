@@ -3,6 +3,8 @@
 	--primary-background-color: #fff;
 	--secondary-background-color: #f7f7f7;
 
+	--primary-background-active-color: #1d9ad8;
+
 	--primary-background-hover-color: #5893aa;
 
 	--primary-text-color: #000;
@@ -22,6 +24,8 @@
 [data-theme="dark"]{
 	--primary-background-color: #1f2028;
 	--secondary-background-color: #2e3039;
+
+	--primary-background-active-color: #1d4ed8;
 
 	--primary-background-hover-color: #172554;
 
