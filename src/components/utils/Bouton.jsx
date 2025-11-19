@@ -3,7 +3,7 @@ export const ButtonCustom = ({children, color, onClick, size}) => {
 		<button
 			style={{
 				color: color,
-				font-size: size
+				// font-size: size
 			}}
 			onClick={onClick}
 		>
