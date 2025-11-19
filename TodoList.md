@@ -7,6 +7,11 @@
 []: Stacks
 []: Home
 
+## FEAT
+
+[]: Email Form Send
+[]: Toast Email Send
+
 ## FIX
 
-[]: Navbar Bar space
+[X]: Navbar Bar space

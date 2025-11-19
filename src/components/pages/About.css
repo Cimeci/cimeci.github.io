@@ -10,9 +10,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* position: absolute; */
 	top: 1.5rem;
-	gap: 2rem;
+	gap: 1rem;
 	position: relative;
 	height: 200px;
 	margin-bottom: 3rem;
