@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 import ThemeOption from './ThemeOption';
 import LanguageSwitcher from './LanguageSwitcher';
+import { PageTransition } from '../utils/PageTransition';
 
 import "./Navbar.css"
 import { Menu } from 'lucide-react';
@@ -26,38 +27,40 @@ export const Navbar = () => {
 	}
 
 	return (
-		<nav>
-			<Link to="/" className="title">
-				{t('nav.home')}
-			</Link>
-			<div
-				className="menu"
-				onClick={() => {
-					setMenuOpen(!menuOpen)
-				}}
-			>
-				<Menu size/>
-			</div>
-			<ul className={menuOpen ? "open" : ""}>
-				<li>
-					<NavLink to="/about">{t('nav.about')}</NavLink>
-				</li>
-				<li>
-					<NavLink to="/stack">{t('nav.stack')}</NavLink>
-				</li>
-				<li>
-					<NavLink to="/projects">{t('nav.projects')}</NavLink>
-				</li>
-				<li>
-					<NavLink to="/contact">{t('nav.contact')}</NavLink>
-				</li>
-				<li className="theme-option-item">
-					<LanguageSwitcher />
-				</li>
-				<li className="theme-option-item">
-					<ThemeOption currentTheme={currentTheme} onToggle={toggleTheme}/>
-				</li>
-			</ul>
-		</nav>
+		<PageTransition>
+			<nav>
+				<Link to="/" className="title">
+					{t('nav.home')}
+				</Link>
+				<div
+					className="menu"
+					onClick={() => {
+						setMenuOpen(!menuOpen)
+					}}
+				>
+					<Menu size/>
+				</div>
+				<ul className={menuOpen ? "open" : ""}>
+					<li>
+						<NavLink onClick={() => setMenuOpen(false)} to="/about">{t('nav.about')}</NavLink>
+					</li>
+					<li>
+						<NavLink onClick={() => setMenuOpen(false)} to="/stack">{t('nav.stack')}</NavLink>
+					</li>
+					<li>
+						<NavLink onClick={() => setMenuOpen(false)} to="/projects">{t('nav.projects')}</NavLink>
+					</li>
+					<li>
+						<NavLink onClick={() => setMenuOpen(false)} to="/contact">{t('nav.contact')}</NavLink>
+					</li>
+					<li className="theme-option-item">
+						<LanguageSwitcher onClick={() => setMenuOpen(false)}/>
+					</li>
+					<li className="theme-option-item">
+						<ThemeOption currentTheme={currentTheme} onToggle={toggleTheme} onClick={() => setMenuOpen(false)}/>
+					</li>
+				</ul>
+			</nav>
+		</PageTransition>
 	);
 }

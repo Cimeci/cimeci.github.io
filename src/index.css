@@ -1,6 +1,8 @@
 :root {
-	--primary-background-color: #fff;
+	--primary-background-color:   #ffffff;
 	--secondary-background-color: #f7f7f7;
+	--tertiary-background-color:  #eeeeee;
+
 
 	--primary-background-active-color: #1d9ad8;
 
@@ -21,8 +23,9 @@
 }
 
 [data-theme="dark"]{
-	--primary-background-color: #1f2028;
+	--primary-background-color:   #1f2028;
 	--secondary-background-color: #2e3039;
+	--tertiary-background-color:  #3a3c46;
 
 	--primary-background-active-color: #1d4ed8;
 

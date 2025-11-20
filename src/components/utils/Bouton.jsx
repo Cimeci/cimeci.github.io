@@ -3,8 +3,9 @@ export const ButtonCustom = ({children, color, onClick, size}) => {
 		<button
 			style={{
 				color: color,
-				// font-size: size
+				fontSize: size
 			}}
+			className="hover:scale-120 duration-400 transition-all"
 			onClick={onClick}
 		>
 			{children}				

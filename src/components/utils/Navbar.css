@@ -139,6 +139,8 @@ nav ul li.theme-option-item {
 	}
 
 	nav ul.open {
+		transition: all;
+		transition-duration: 400ms;
 		display: flex;
 	}
 
