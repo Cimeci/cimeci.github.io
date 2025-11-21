@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Carousel } from "flowbite-react";
 
 import { PageTransition } from '../utils/PageTransition';
+import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
 
 function Description_Component({children}) {
 	return (
@@ -46,8 +47,9 @@ function Carrousel_Projects() {
 		<Carousel
 			pauseOnHover
 			slideInterval={5000}
-			leftControl="<" rightControl=">"
-			theme={{item: {base: 'relative'}}} /*PATCH LIB @rgodet*/
+			leftControl={<ArrowBigLeft className="hover:scale-120 transition-all duration-400" color="var(--primary-text-color)"/>} 
+			rightControl={<ArrowBigRight className="hover:scale-120 transition-all duration-400" color="var(--primary-text-color)"/>}
+			theme={{item: {base: 'relative overflow-y-scroll scrollbar-hide'}, scrollContainer: {base: 'overflow-hidden'}}} /*PATCH LIB @rgodet*/
 		>
 			<Projects_Component>
 				<Description_Component>
@@ -121,6 +123,7 @@ function Carrousel_Projects() {
 
 export const Projects = () => {
 	const { t } = useTranslation()
+
 	return (
 		<PageTransition>
 			<div className="flex justify-center items-center gap-10 w-full h-full">

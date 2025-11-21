@@ -1,27 +1,20 @@
 .language-switcher {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .lang-btn {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--primary-color, #3b82f6);
-  background: transparent;
-  color: var(--text-color);
-  border-radius: 0.375rem;
-  cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+	margin-left: 0.4rem;
+	width: 2.5rem;
+	height: 1.7rem;
+	object-fit: cover;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	transition: all;
+	transition-duration: 300ms;
 }
 
 .lang-btn:hover {
-  background: var(--primary-color, #3b82f6);
-  color: white;
-}
-
-.lang-btn.active {
-  background: var(--primary-color, #3b82f6);
-  color: white;
+	scale: 1.1;
 }

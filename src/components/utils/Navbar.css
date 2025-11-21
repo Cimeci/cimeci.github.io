@@ -24,7 +24,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--secondary-background-color);
+	/* background-color: var(--primary-background-color); */
 	position: sticky;
 	top: 0;
 }
@@ -44,6 +44,7 @@ nav .title:hover {
 }
 
 nav ul {
+	margin-right: 0.8rem;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
@@ -110,14 +111,6 @@ nav .menu span {
 	width: 100%;
 	background-color: var(--primary-background-color);
 	border-radius: 0.2rem; 
-}
-
-nav ul li.theme-option-item {
-	display: flex;
-	align-items: center;
-	margin-left: 0.5rem;
-	padding-left: 0.5rem;
-	border-left: 1px solid var(--primary-text-color);
 }
 
 @media (max-width: 900px) {

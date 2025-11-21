@@ -1,49 +1,59 @@
 :root {
-	--primary-background-color:   #ffffff;
-	--secondary-background-color: #f7f7f7;
-	--tertiary-background-color:  #eeeeee;
+	/* Backgrounds */
+	--primary-background-color: oklch(98% 0.01 255);
+	--secondary-background-color: oklch(96% 0.015 255);
+	--tertiary-background-color: oklch(93% 0.02 255);
 
+	/* Accent color */
+	--primary-background-active-color: oklch(60% 0.12 255);
+	--primary-background-hover-color: oklch(70% 0.08 255);
 
-	--primary-background-active-color: #1d9ad8;
+	/* Text */
+	--primary-text-color: oklch(20% 0.03 255);
+	--secondary-text-color: oklch(40% 0.015 255);
 
-	--primary-background-hover-color: #5893aa;
+	/* Titles */
+	--primary-title-color: oklch(45% 0.1 255);
 
-	--primary-text-color: #000;
-	--secondary-text-color: #4b4c53;
+	/* Borders */
+	--primary-border-color: oklch(75% 0.02 255);
 
-	--primary-title-color: oklch(80.9% 0.105 251.813);
-
-	--primary-border-color: #4b4c53;
-
-	--button-solid-background-color: #000; 
-	--button-solid-text-color: #fff;
-
-	--button-outlined-background-color: transparent;
-	--button-outlined-text-color: #000;
-}
-
-[data-theme="dark"]{
-	--primary-background-color:   #1f2028;
-	--secondary-background-color: #2e3039;
-	--tertiary-background-color:  #3a3c46;
-
-	--primary-background-active-color: #1d4ed8;
-
-	--primary-background-hover-color: #172554;
-
-	--primary-text-color: rgba(255, 255, 255, 0.87);
-	--secondary-text-color: #4b4c53;
-
-	--primary-title-color: oklch(80.9% 0.105 251.813);
-
-	--primary-border-color: #4b4c53;
-
-	--button-solid-background-color: #fff; 
-	--button-solid-text-color: #000;
+	/* Buttons */
+	--button-solid-background-color: oklch(18% 0.02 255);
+	--button-solid-text-color: white;
 
 	--button-outlined-background-color: transparent;
-	--button-outlined-text-color: #fff;
+	--button-outlined-text-color: oklch(18% 0.01 255);
 }
+
+[data-theme="dark"] {
+	/* Backgrounds */
+	--primary-background-color: oklch(20% 0.03 255);
+	--secondary-background-color: oklch(24% 0.03 255);
+	--tertiary-background-color: oklch(30% 0.03 255);
+
+	/* Accent */
+	--primary-background-active-color: oklch(65% 0.12 255);
+	--primary-background-hover-color: oklch(50% 0.1 255);
+
+	/* Text */
+	--primary-text-color: oklch(98% 0.01 255);
+	--secondary-text-color: oklch(70% 0.015 255);
+
+	/* Titles */
+	--primary-title-color: oklch(85% 0.12 255);
+
+	/* Borders */
+	--primary-border-color: oklch(35% 0.015 255);
+
+	/* Buttons */
+	--button-solid-background-color: oklch(90% 0.01 255);
+	--button-solid-text-color: oklch(10% 0.01 255);
+
+	--button-outlined-background-color: transparent;
+	--button-outlined-text-color: oklch(92% 0.01 255);
+}
+
 
 .theme-options{
 	background-color: var(--primary-background-color);
@@ -55,10 +65,24 @@
 	gap: 10px;
 }
 
+.hide-scrollbar {
+  	-ms-overflow-style: none !important;  /* IE et Edge */
+  	scrollbar-width: none !important;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  	display: none !important;             /* Chrome, Safari, Opera */
+}
+
 body {
-	background-color: var(--primary-background-color);
+	background: linear-gradient(
+		120deg,
+		var(--primary-background-color) 0%,
+		var(--secondary-background-color) 40%,
+		var(--primary-border-color) 100%
+	);
 	color: var(--primary-text-color);
 	font-family: "Momo Trust Display", sans-serif;
-	height: 100%;
-	width: 100%;
+	min-height: 100vh;
+	margin: 0;
 }

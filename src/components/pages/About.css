@@ -121,7 +121,7 @@ section h2 {
 /* ==================== INTRO SECTION ==================== */
 
 .about-intro {
-	background: var(--secondary-background-color);
+	background: var(--tertiary-background-color);
 	padding: 2rem;
 	border-radius: 12px;
 	border-left: 4px solid var(--primary-title-color);
@@ -154,7 +154,7 @@ section h2 {
 
 .value-card {
 	padding: 1.75rem;
-	background: var(--secondary-background-color);
+	background: var(--tertiary-background-color);
 	border-left: 4px solid var(--primary-title-color);
 	border-radius: 10px;
 	transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -211,7 +211,7 @@ section h2 {
 	font-size: 1.05rem;
 	padding: 1rem 1.5rem;
 	margin-bottom: 0.75rem;
-	background: var(--secondary-background-color);
+	background: var(--tertiary-background-color);
 	border-left: 3px solid var(--primary-title-color);
 	border-radius: 6px;
 	color: var(--primary-text-color);
@@ -241,7 +241,7 @@ section h2 {
 /* ==================== HOBBIES SECTION ==================== */
 
 .about-hobbies {
-	background: var(--secondary-background-color);
+	background: var(--tertiary-background-color);
 	padding: 2rem;
 	border-radius: 12px;
 	border-left: 4px solid var(--primary-title-color);
@@ -262,7 +262,7 @@ section h2 {
 /* ==================== CTA SECTION ==================== */
 
 .about-cta {
-	background: var(--secondary-background-color);
+	background: var(--tertiary-background-color);
 	padding: 2.5rem;
 	border-radius: 12px;
     border-left: 4px solid var(--primary-title-color);
