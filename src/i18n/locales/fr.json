@@ -12,7 +12,7 @@
 		"intro": {
 			"greeting": "Salut ! Je suis {{name}}, développeur en formation à l'école 42.",
 			"name": "Ilan Nowak-Glandier",
-			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré les spécialisations Web, Data et IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
+			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré pleins de domaine differents. Aujourd'hui je me specialise dans le domaine du web, de la data et l'IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
 			"highlight1": "défis techniques concrets"
 		},
 		"values": {
@@ -55,7 +55,7 @@
 		},
 		"hobbies": {
 			"title": "Au-delà du code",
-			"climbing": "Escalade (ma passion absolue)",
+			"climbing": "Escalade",
 			"travel": "Explorer le monde (10 pays visités)",
 			"music": "Musique",
 			"games": "Jeux vidéo"

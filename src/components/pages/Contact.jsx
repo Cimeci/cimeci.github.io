@@ -9,7 +9,7 @@ import { Github, Linkedin, Send, SendHorizonal } from 'lucide-react';
 
 export function SocialCard() {
   return (
-    <Card className="max-w-sm w-full">
+    <Card className="w-9/10">
       <h5 className="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
         Mes réseaux sociaux
       </h5>
@@ -63,7 +63,7 @@ export const Contact = () => {
 
 	return (
 		<PageTransition>
-			<div className="mt-5 flex flex-row gap-10 h-[90vh] items-center justify-center w-full">
+			<div className="flex flex-col gap-20 h-[90vh] items-center justify-center w-full">
 
 				<div className="flex flex-col items-center justify-center gap-10">
 					<h1 className="text-5xl">{t('Contact Me')}</h1>
@@ -116,7 +116,7 @@ export const Contact = () => {
 					</form>
 				</div>
 
-				<SocialCard/>
+				{/* <SocialCard/> */}
 
 			</div>
 		</PageTransition>

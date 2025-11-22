@@ -12,7 +12,7 @@
 		"intro": {
 			"greeting": "Hey! I'm {{name}}, a developer in training at 42 School.",
 			"name": "Ilan Nowak-Glandier",
-			"description": "After one year at 42 School, I've completed the common core and explored the Web, Data, and AI specializations. I'm a motivated, curious, and rigorous developer, driven by the desire to tackle {{highlight1}} and transform ideas into robust solutions.",
+			"description": "After a year at 42, I completed the core curriculum and explored many different fields. Today, I specialize in web development, data science, and AI. I am a motivated, curious, and rigorous developer, driven by the desire to take on {{highlight1}} and transform ideas into robust solutions.",
 			"highlight1": "concrete technical challenges"
 		},
 		"values": {
@@ -55,7 +55,7 @@
 		},
 		"hobbies": {
 			"title": "Beyond Code",
-			"climbing": "Rock climbing (my absolute passion)",
+			"climbing": "Rock climbing",
 			"travel": "Exploring the world (10 countries visited)",
 			"music": "Music",
 			"games": "Video games"
