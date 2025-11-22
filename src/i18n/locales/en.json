@@ -1,82 +1,85 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "stack": "Stack",
-    "projects": "Projects",
-    "contact": "Contact"
-  },
-  "about": {
-    "title": "About",
-    "subtitle": "Me",
-    "intro": {
-      "greeting": "Hey! I'm {{name}}, a developer in training at 42 School.",
-      "name": "Ilan Nowak-Glandier",
-      "description": "After one year at 42 School, I've completed the common core and explored the Web, Data, and AI specializations. I'm a motivated, curious, and rigorous developer, driven by the desire to tackle {{highlight1}} and transform ideas into robust solutions.",
-      "highlight1": "concrete technical challenges"
-    },
-    "values": {
-      "title": "My Values",
-      "autonomy": {
-        "title": "Autonomy & Rigor",
-        "description": "I structure my work methodically while maintaining the freedom to innovate."
-      },
-      "pragmatism": {
-        "title": "Pragmatism",
-        "description": "I seek balance between quality and performance, anticipating risks without getting stuck."
-      },
-      "curiosity": {
-        "title": "Curiosity",
-        "description": "I love exploring new domains, technologies, and tackling fresh challenges."
-      },
-      "collaboration": {
-        "title": "Collaboration",
-        "description": "I believe in the power of teamwork and the importance of effective communication."
-      }
-    },
-    "skills": {
-      "title": "What I Love Doing",
-      "web": {
-        "title": "Web Development",
-        "description": "Building interactive and performant applications."
-      },
-      "web3": {
-        "title": "Web3 & Blockchain",
-        "description": "Exploring emerging technologies."
-      },
-      "data": {
-        "title": "Data & AI",
-        "description": "Analyzing and extracting insights from data."
-      },
-      "design": {
-        "title": "Design & UX",
-        "description": "Thinking user-first and creating intuitive interfaces."
-      }
-    },
-    "hobbies": {
-      "title": "Beyond Code",
-      "climbing": "Rock climbing (my absolute passion)",
-      "travel": "Exploring the world (10 countries visited)",
-      "music": "Music",
-      "games": "Video games"
-    },
-    "cta": {
-      "title": "What I'm Looking For",
-      "description": "An internship or opportunity where I can tackle {{highlight1}}, contribute to {{highlight2}}, and grow both technically and personally.",
-      "highlight1": "concrete challenges",
-      "highlight2": "meaningful projects"
-    }
-  },
-  "home": {
-    "title": "Home"
-  },
-  "projects": {
-    "title": "Projects"
-  },
-  "stack": {
-    "title": "Stacks"
-  },
-  "contact": {
-    "title": "Contact"
-  }
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"stack": "Stack",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"about": {
+		"title": "About",
+		"subtitle": "Me",
+		"intro": {
+			"greeting": "Hey! I'm {{name}}, a developer in training at 42 School.",
+			"name": "Ilan Nowak-Glandier",
+			"description": "After one year at 42 School, I've completed the common core and explored the Web, Data, and AI specializations. I'm a motivated, curious, and rigorous developer, driven by the desire to tackle {{highlight1}} and transform ideas into robust solutions.",
+			"highlight1": "concrete technical challenges"
+		},
+		"values": {
+			"title": "My Values",
+			"autonomy": {
+				"title": "Autonomy & Rigor",
+				"description": "I structure my work methodically while maintaining the freedom to innovate."
+			},
+			"pragmatism": {
+				"title": "Pragmatism",
+				"description": "I seek balance between quality and performance, anticipating risks without getting stuck."
+			},
+			"curiosity": {
+				"title": "Curiosity",
+				"description": "I love exploring new domains, technologies, and tackling fresh challenges."
+			},
+			"collaboration": {
+				"title": "Collaboration",
+				"description": "I believe in the power of teamwork and the importance of effective communication."
+			}
+		},
+		"skills": {
+			"title": "What I Love Doing",
+			"web": {
+				"title": "Web Development",
+				"description": "Building interactive and performant applications."
+			},
+			"web3": {
+				"title": "Web3 & Blockchain",
+				"description": "Exploring emerging technologies."
+			},
+			"data": {
+				"title": "Data & AI",
+				"description": "Analyzing and extracting insights from data."
+			},
+			"design": {
+				"title": "Design & UX",
+				"description": "Thinking user-first and creating intuitive interfaces."
+			}
+		},
+		"hobbies": {
+			"title": "Beyond Code",
+			"climbing": "Rock climbing (my absolute passion)",
+			"travel": "Exploring the world (10 countries visited)",
+			"music": "Music",
+			"games": "Video games"
+		},
+		"cta": {
+			"title": "What I'm Looking For",
+			"description": "An internship or opportunity where I can tackle {{highlight1}}, contribute to {{highlight2}}, and grow both technically and personally.",
+			"highlight1": "concrete challenges",
+			"highlight2": "meaningful projects"
+		}
+	},
+	"home": {
+		"title": "Home"
+	},
+	"projects": {
+		"title": "Projects"
+	},
+	"stack": {
+		"title": "Stacks"
+	},
+	"contact": {
+		"title": "Contact",
+		"mail": {
+			"reponse": "Hello ,\n\nThank you for taking the time to contact me.\nI have received your message and will get back to you as soon as possible with a complete response.\n\nIf you have any other questions in the meantime, feel free to send them my way.\n\nHave a great day,\n\nIlan Nowak--Glandier"
+		}
+	}
 }
