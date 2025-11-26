@@ -1,55 +1,26 @@
 import React, {useState} from 'react';
 import { useTranslation } from 'react-i18next'
 
-import { PageTransition } from '../utils/PageTransition';
-import { Textarea } from 'flowbite-react';
+import "../utils/Animation.css"
 
-import { Card } from "flowbite-react";
-import { Github, Linkedin, Send, SendHorizonal } from 'lucide-react';
+import { PageTransition } from '../utils/Transition';
+import { Textarea, FooterCopyright, FooterIcon } from 'flowbite-react';
+
+import { SiDiscord, SiGit, SiGithub, SiGtk, SiLinkedin, SiX } from 'react-icons/si';
+import { SendHorizonal } from 'lucide-react';
 
 export function SocialCard() {
-  return (
-    <Card className="w-9/10">
-      <h5 className="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
-        Mes réseaux sociaux
-      </h5>
-      <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
-        Connecte-toi avec moi via l’une de ces plateformes.
-      </p>
-
-      <ul className="my-4 space-y-3">
-
-        {/* GITHUB */}
-        <li>
-          <a
-            href="https://github.com/tonGitHub"
-            target="_blank"
-            className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold 
-                       text-gray-900 hover:bg-gray-100 hover:shadow 
-                       dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
-          >
-			<Github/>
-            <span className="ml-3 flex-1 whitespace-nowrap">GitHub</span>
-          </a>
-        </li>
-
-        {/* LINKEDIN */}
-        <li>
-          <a
-            href="https://www.linkedin.com/in/tonLinkedIn"
-            target="_blank"
-            className="group flex items-center rounded-lg bg-gray-50 p-3 text-base font-bold 
-                       text-gray-900 hover:bg-gray-100 hover:shadow 
-                       dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500"
-          >
-			<Linkedin/>
-            <span className="ml-3 flex-1 whitespace-nowrap">LinkedIn</span>
-          </a>
-        </li>
-
-      </ul>
-    </Card>
-  );
+  	return (
+  		<div className="w-full absolute bottom-0 p-5 sm:flex sm:items-center sm:justify-between">
+          	<FooterCopyright href="#" by="Ilan Nowak--Glandier" year={2025} />
+          	<div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          	  	<a href="https://discord.com/Cimeci"><SiDiscord size="1.5rem" className="animate-contact-pulse"/></a>
+          	  	<a href="https://x.com/Cimeci_23"><SiX size="1.5rem" className="animate-contact-pulse"/></a>
+          	  	<a href="https://github.com/Cimeci"><SiGithub size="1.5rem" className="animate-contact-pulse"/></a>
+          	  	<a href="https://linkedin.com/in/ilan-nowak-glandier"><SiLinkedin size="1.5rem" className="animate-contact-pulse"/></a>
+          	</div>
+        </div>
+  	);
 }
 
 
@@ -63,10 +34,10 @@ export const Contact = () => {
 
 	return (
 		<PageTransition>
-			<div className="flex flex-col gap-20 h-[90vh] items-center justify-center w-full">
+			<div className="flex flex-col h-full p-10 items-center justify-center w-full">
 
 				<div className="flex flex-col items-center justify-center gap-10">
-					<h1 className="text-5xl">{t('Contact Me')}</h1>
+					<h1 className="text-5xl animate-title-reveal">{t('Contact Me')}</h1>
 
 					<form action="https://formsubmit.co/ilannowakglandierpro@gmail.com" method="POST" className="flex flex-col gap-5 w-7/10 md:w-[40rem] text-md">
 
@@ -103,7 +74,7 @@ export const Contact = () => {
 							{loading ? (
 								<span className="w-5 h-5 border-4 border-[var(--primary-border-color)] border-t-transparent rounded-full animate-spin"></span>
 							) : (
-								<div className="flex items-center gap-2 justify-center">
+								<div className="flex items-center gap-2 justify-center hover:animate-pulse">
 									<span>{t('Send')}</span>
 									<SendHorizonal size="1rem"/>
 								</div>
@@ -116,7 +87,7 @@ export const Contact = () => {
 					</form>
 				</div>
 
-				{/* <SocialCard/> */}
+				<SocialCard/>
 
 			</div>
 		</PageTransition>

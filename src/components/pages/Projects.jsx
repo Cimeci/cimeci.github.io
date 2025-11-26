@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Carousel } from "flowbite-react";
 
-import { PageTransition } from '../utils/PageTransition';
+import { PageTransition } from '../utils/Transition';
 import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
 
 function Description_Component({children, subject}) {

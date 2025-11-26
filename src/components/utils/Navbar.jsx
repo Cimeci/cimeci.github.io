@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 import ThemeOption from './ThemeOption';
 import LanguageSwitcher from './LanguageSwitcher';
-import { PageTransition } from '../utils/PageTransition';
+import { PageTransition } from '../utils/Transition';
 
 import "./Navbar.css"
 import { Menu } from 'lucide-react';

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { PageTransition } from '../utils/PageTransition';
+import "../utils/Animation.css"
+
+import { PageTransition } from '../utils/Transition';
 
 export const Stacks = () => {
 	const { t } = useTranslation()
@@ -44,10 +46,10 @@ export const Stacks = () => {
 	return (
 		<PageTransition>
 			<div className="flex flex-col justify-center items-center w-full min-h-[92.3vh] p-8 gap-20">
-				<p className="text-2xl sm:text-4xl">LANGUAGES STACKS</p> {/*//!i18n*/}
+				<h1 className="text-2xl sm:text-4xl animate-title-reveal">LANGUAGES STACKS</h1> {/*//!i18n*/}
 
 				<div id="web-stacks" className="flex flex-col justify-center items-center gap-10">
-					<p className="text-xl">WEB</p> {/*//!i18n*/}
+					<p className="text-xl animate-title-reveal">WEB</p> {/*//!i18n*/}
 					<div id="languages-web" className="flex flex-wrap items-center gap-6 justify-center">
 						{languages_web.map((lang, index) => (
 							<LanguageCard
@@ -60,7 +62,7 @@ export const Stacks = () => {
 					</div>
 				</div>
 				<div id="stacks" className="flex flex-col justify-center items-center gap-10">
-					<p className="text-xl">ALGORITHM</p> {/*//!i18n*/}
+					<p className="text-xl animate-title-reveal">ALGORITHM</p> {/*//!i18n*/}
 
 					<div id="languages_algorithm" className="flex flex-wrap gap-6 justify-center items-center">
 						{languages_algorithm.map((lang, index) => (
@@ -75,7 +77,7 @@ export const Stacks = () => {
 				</div>
 
 				<div id="stacks" className="flex flex-col justify-center items-center gap-10">
-					<p className="text-xl">DATA</p> {/*//!i18n*/}
+					<p className="text-xl animate-title-reveal">DATA</p> {/*//!i18n*/}
 
 					<div id="languages_data" className="flex flex-wrap gap-6 justify-center items-center">
 						{languages_data.map((lang, index) => (

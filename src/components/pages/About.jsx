@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Github, Linkedin } from 'lucide-react'
 
-import { PageTransition } from '../utils/PageTransition';
+import { PageTransition } from '../utils/Transition';
 import './About.css'
 
 export const About = () => {

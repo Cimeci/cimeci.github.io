@@ -3,7 +3,7 @@
 	--primary-background-color: oklch(98% 0.01 255);
 	--secondary-background-color: oklch(96% 0.015 255);
 	--tertiary-background-color: oklch(93% 0.02 255);
-
+	
 	/* Accent color */
 	--primary-background-active-color: oklch(60% 0.12 255);
 	--primary-background-hover-color: oklch(70% 0.08 255);
@@ -17,6 +17,8 @@
 
 	/* Borders */
 	--primary-border-color: oklch(75% 0.02 255);
+	--primary-border-hover-color: oklch(65% 0.02 255);
+
 
 	/* Buttons */
 	--button-solid-background-color: oklch(18% 0.02 255);
@@ -32,6 +34,7 @@
 	--secondary-background-color: oklch(24% 0.03 255);
 	--tertiary-background-color: oklch(30% 0.03 255);
 
+	
 	/* Accent */
 	--primary-background-active-color: oklch(65% 0.12 255);
 	--primary-background-hover-color: oklch(50% 0.1 255);
@@ -45,6 +48,7 @@
 
 	/* Borders */
 	--primary-border-color: oklch(43.033% 0.01891 248.33);
+	--primary-border-hover-color: oklch(53.033% 0.01891 248.33);
 
 	/* Buttons */
 	--button-solid-background-color: oklch(90% 0.01 255);

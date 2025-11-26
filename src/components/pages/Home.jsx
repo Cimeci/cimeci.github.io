@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
 import { ButtonCustom } from '../utils/Bouton';
-import { PageTransition } from '../utils/PageTransition';
+import { PageTransition } from '../utils/Transition';
 
 export const Home = () => {
 	const { t } = useTranslation()
