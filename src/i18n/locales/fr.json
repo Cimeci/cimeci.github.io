@@ -10,7 +10,7 @@
 		"title": "À propos",
 		"subtitle": "de moi",
 		"intro": {
-			"greeting": "Salut ! Je suis {{name}}, développeur en formation à l'école 42.",
+			"greeting": "Salut ! Je suis {{name}}, 19 ans, développeur en formation à l'école 42.",
 			"name": "Ilan Nowak-Glandier",
 			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré pleins de domaine differents. Aujourd'hui je me specialise dans le domaine du web, de la data et l'IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
 			"highlight1": "défis techniques concrets"
@@ -35,7 +35,7 @@
 			}
 		},
 		"skills": {
-			"title": "Ce que j'aime faire",
+			"title": "Mes Domaines",
 			"web": {
 				"title": "Développement Web",
 				"description": "Construire des applications interactives et performantes."
@@ -45,18 +45,22 @@
 				"description": "Explorer les technologies émergentes."
 			},
 			"data": {
-				"title": "Data & IA",
+				"title": "Data",
 				"description": "Analyser et extraire des insights à partir de données."
 			},
 			"design": {
 				"title": "Design & UX",
 				"description": "Penser utilisateur et créer des interfaces intuitives."
+			},
+			"ia": {
+				"title": "IA",
+				"description": "Créer, modeler et améliorer des modèles IA."
 			}
 		},
 		"hobbies": {
 			"title": "Au-delà du code",
-			"climbing": "Escalade",
-			"travel": "Explorer le monde (10 pays visités)",
+			"climbing": "Sport",
+			"travel": "Voyager",
 			"music": "Musique",
 			"games": "Jeux vidéo"
 		},
@@ -68,18 +72,58 @@
 		}
 	},
 	"home": {
-		"title": "Accueil"
+		"title": "Accueil",
+		"welcome": "Bienvenue sur mon site web",
+		"role": "Développeur Web / Data / IA",
+		"internship": "Actuellement en recherche d'un stage de 4-6 mois"
 	},
 	"projects": {
-		"title": "Projets"
+		"title": "Projets",
+		"minishell": {
+			"title": "Minishell",
+			"description": "Implémentation d'un shell minimal en C, recréant les fonctionnalités de base de bash incluant les pipes, redirections et commandes intégrées."
+		},
+		"transcendence": {
+			"title": "Ft_Transcendence",
+			"description": "Application web full-stack avec jeu Pong multijoueur en temps réel, authentification utilisateur, système de chat et matchmaking."
+		},
+		"tokenizer": {
+			"title": "Tokenizer",
+			"description": "Outil de traitement du langage naturel pour la tokenisation et l'analyse de texte."
+		},
+		"tokenizer_art": {
+			"title": "Tokenizer_Art",
+			"description": "Visualisation créative des processus de tokenisation utilisant des représentations artistiques."
+		},
+		"music_room": {
+			"title": "Music_Room",
+			"description": "Plateforme d'écoute musicale collaborative avec synchronisation en temps réel et partage de playlists."
+		},
+		"linear_regression": {
+			"title": "Ft_Linear_Regression",
+			"description": "Projet de machine learning implémentant la régression linéaire from scratch pour la prédiction de prix."
+		},
+		"multiplayer_perception": {
+			"title": "Multiplayer_Perception",
+			"description": "Projet IA explorant la perception et les systèmes de prise de décision multi-agents."
+		}
 	},
 	"stack": {
-		"title": "Stack"
+		"title": "Stack",
+		"languages_stacks": "LANGAGES STACKS",
+		"web": "WEB",
+		"algorithm": "ALGORITHME",
+		"data": "DATA"
 	},
 	"contact": {
 		"title": "Contact",
+		"contact_me": "Me Contacter",
+		"email_address": "Votre Adresse Email",
+		"subject": "Sujet",
+		"text": "Texte",
+		"send": "Envoyer",
 		"mail": {
-			"reponse": "Bonjour,\n\nMerci d’avoir pris le temps de me contacter.\nJ’ai bien reçu votre message et je reviendrai vers vous dès que possible avec une réponse complète.\n\nSi vous avez d’autres questions entre-temps, n’hésitez pas à me les transmettre.\n\nBonne journée,\n\nIlan Nowak--Glandier"
+			"reponse": "Bonjour,\n\nMerci d'avoir pris le temps de me contacter.\nJ'ai bien reçu votre message et je reviendrai vers vous dès que possible avec une réponse complète.\n\nSi vous avez d'autres questions entre-temps, n'hésitez pas à me les transmettre.\n\nBonne journée,\n\nIlan Nowak--Glandier"
 		}
 	}
 }

@@ -45,18 +45,22 @@
 				"description": "Exploring emerging technologies."
 			},
 			"data": {
-				"title": "Data & AI",
+				"title": "Data",
 				"description": "Analyzing and extracting insights from data."
 			},
 			"design": {
 				"title": "Design & UX",
 				"description": "Thinking user-first and creating intuitive interfaces."
+			},
+			"ia": {
+				"title": "AI",
+				"description": "Creating, modeling and improving AI models."
 			}
 		},
 		"hobbies": {
 			"title": "Beyond Code",
-			"climbing": "Rock climbing",
-			"travel": "Exploring the world (10 countries visited)",
+			"climbing": "Sport",
+			"travel": "Travel",
 			"music": "Music",
 			"games": "Video games"
 		},
@@ -68,16 +72,56 @@
 		}
 	},
 	"home": {
-		"title": "Home"
+		"title": "Home",
+		"welcome": "Welcome To My Website",
+		"role": "Web / Data / IA Developer",
+		"internship": "Currently looking for a 4-6 month internship"
 	},
 	"projects": {
-		"title": "Projects"
+		"title": "Projects",
+		"minishell": {
+			"title": "Minishell",
+			"description": "A minimal shell implementation in C, recreating basic bash functionalities including pipes, redirections, and built-in commands."
+		},
+		"transcendence": {
+			"title": "Ft_Transcendence",
+			"description": "Full-stack web application featuring real-time multiplayer Pong game with user authentication, chat system, and matchmaking."
+		},
+		"tokenizer": {
+			"title": "Tokenizer",
+			"description": "Natural language processing tool for text tokenization and analysis."
+		},
+		"tokenizer_art": {
+			"title": "Tokenizer_Art",
+			"description": "Creative visualization of tokenization processes using artistic representations."
+		},
+		"music_room": {
+			"title": "Music_Room",
+			"description": "Collaborative music listening platform with real-time synchronization and playlist sharing."
+		},
+		"linear_regression": {
+			"title": "Ft_Linear_Regression",
+			"description": "Machine learning project implementing linear regression from scratch for price prediction."
+		},
+		"multiplayer_perception": {
+			"title": "Multiplayer_Perception",
+			"description": "AI project exploring multi-agent perception and decision-making systems."
+		}
 	},
 	"stack": {
-		"title": "Stacks"
+		"title": "Stacks",
+		"languages_stacks": "LANGUAGES STACKS",
+		"web": "WEB",
+		"algorithm": "ALGORITHM",
+		"data": "DATA"
 	},
 	"contact": {
 		"title": "Contact",
+		"contact_me": "Contact Me",
+		"email_address": "Your Email Address",
+		"subject": "Subject",
+		"text": "Text",
+		"send": "Send",
 		"mail": {
 			"reponse": "Hello ,\n\nThank you for taking the time to contact me.\nI have received your message and will get back to you as soon as possible with a complete response.\n\nIf you have any other questions in the meantime, feel free to send them my way.\n\nHave a great day,\n\nIlan Nowak--Glandier"
 		}
