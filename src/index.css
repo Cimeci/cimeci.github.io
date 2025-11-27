@@ -70,6 +70,7 @@
 }
 
 body {
+	touch-action: none;
 	background: linear-gradient(
 		120deg,
 		var(--primary-background-color) 0%,

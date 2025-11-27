@@ -4,17 +4,23 @@ import { useTranslation } from 'react-i18next'
 import "../utils/Animation.css"
 
 import { PageTransition } from '../utils/Transition';
+import { SocialCard } from './Contact';
 
 export const Stacks = () => {
 	const { t } = useTranslation()
 
 	const LanguageCard = ({ language, icon, color = 'bg-gradient-to-br from-gray-700 to-gray-800' }) => {
 		return (
-			<div className={` flex flex-col justify-center items-center p-7 w-32 h-32 rounded-lg gap-2 ${color} hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl`}>
+			<div className={
+				`flex flex-col justify-center items-center p-6 w-32 h-32 rounded-2xl gap-3
+				backdrop-blur-md bg-white/10 border border-white/20
+				hover:scale-110 transition-transform duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.25)]
+				hover:shadow-[0_6px_25px_rgba(0,0,0,0.35)]`
+			}>
 				<div className="w-16 h-16 flex items-center justify-center">
 					<img className="w-full h-full object-contain" src={icon} alt={language}/>
 				</div>
-				<span className="text-white font-semibold text-sm text-center">{language}</span>
+				<span className="font-semibold text-sm text-center">{language}</span>
 			</div>
 		)
 	}
@@ -95,6 +101,7 @@ export const Stacks = () => {
 
 				</div>
 			</div>
+			<SocialCard/>
 		</PageTransition>
 	)
 }

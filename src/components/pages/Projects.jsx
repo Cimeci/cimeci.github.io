@@ -4,6 +4,7 @@ import { Carousel } from "flowbite-react";
 
 import { PageTransition } from '../utils/Transition';
 import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
+import { SocialCard } from './Contact';
 
 function Description_Component({children, subject}) {
 	return (
@@ -71,57 +72,57 @@ function Carrousel_Projects() {
 		>
 			<Create_Projects_Component
 				img_src="/projects_visuals/minishell_visual.svg"
-				subject="Minishell"
+				subject={t('projects.minishell.title')}
 			>
-				Minishell...
+				{t('projects.minishell.description')}
 			</Create_Projects_Component>
 
 
 			<Create_Projects_Component
 				img_src=""
-				subject="Ft_Transcendence"
+				subject={t('projects.transcendence.title')}
 			>
-				Ft_Transcendence...
-			</Create_Projects_Component>
-			
-
-			<Create_Projects_Component
-				img_src=""
-				subject="Tokenizer"
-			>
-				Tokenizer...
+				{t('projects.transcendence.description')}
 			</Create_Projects_Component>
 
 
 			<Create_Projects_Component
 				img_src=""
-				subject="Tokenizer_Art"
+				subject={t('projects.tokenizer.title')}
 			>
-				Tokenizer_Art...
+				{t('projects.tokenizer.description')}
 			</Create_Projects_Component>
 
 
 			<Create_Projects_Component
 				img_src=""
-				subject="Music_Room"
+				subject={t('projects.tokenizer_art.title')}
 			>
-				Music_Room...
+				{t('projects.tokenizer_art.description')}
 			</Create_Projects_Component>
 
 
 			<Create_Projects_Component
 				img_src=""
-				subject="Ft_Linear_Regression"
+				subject={t('projects.music_room.title')}
 			>
-				Ft_Linear_Regression...
+				{t('projects.music_room.description')}
 			</Create_Projects_Component>
 
 
 			<Create_Projects_Component
 				img_src=""
-				subject="Multiplayer_Perception"
+				subject={t('projects.linear_regression.title')}
 			>
-				Multiplayer_Perception...
+				{t('projects.linear_regression.description')}
+			</Create_Projects_Component>
+
+
+			<Create_Projects_Component
+				img_src=""
+				subject={t('projects.multiplayer_perception.title')}
+			>
+				{t('projects.multiplayer_perception.description')}
 			</Create_Projects_Component>
     	</Carousel>
 	</div>
@@ -137,6 +138,7 @@ export const Projects = () => {
 			<div className="flex justify-center items-center gap-10 w-full h-full">
 				<Carrousel_Projects/>
 			</div>
+			<SocialCard/>
 		</PageTransition>
 	)
 }

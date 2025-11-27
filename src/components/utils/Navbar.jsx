@@ -47,9 +47,9 @@ export const Navbar = () => {
 					<li>
 						<NavLink onClick={() => setMenuOpen(false)} to="/stack">{t('nav.stack')}</NavLink>
 					</li>
-					<li>
+					{/* <li>
 						<NavLink onClick={() => setMenuOpen(false)} to="/projects">{t('nav.projects')}</NavLink>
-					</li>
+					</li> */}
 					<li>
 						<NavLink onClick={() => setMenuOpen(false)} to="/contact">{t('nav.contact')}</NavLink>
 					</li>

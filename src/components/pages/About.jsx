@@ -4,6 +4,7 @@ import { Github, Linkedin } from 'lucide-react'
 
 import { PageTransition } from '../utils/Transition';
 import './About.css'
+import { SocialCard } from './Contact';
 
 export const About = () => {
 	const { t } = useTranslation()
@@ -77,18 +78,45 @@ export const About = () => {
 							<li><span className="emoji">💻</span> <span className="bold">{t('about.skills.web.title')}</span> — {t('about.skills.web.description')}</li>
 							<li><span className="emoji">🔗</span> <span className="bold">{t('about.skills.web3.title')}</span> — {t('about.skills.web3.description')}</li>
 							<li><span className="emoji">📊</span> <span className="bold">{t('about.skills.data.title')}</span> — {t('about.skills.data.description')}</li>
+							<li><span className="emoji">🤖​</span> <span className="bold">{t('about.skills.ia.title')}</span> — {t('about.skills.ia.description')}</li>
 							<li><span className="emoji">🎨</span> <span className="bold">{t('about.skills.design.title')}</span> — {t('about.skills.design.description')}</li>
 						</ul>
 					</section>
 
-					<section className="about-hobbies">
+					<section>
 						<h2>{t('about.hobbies.title')}</h2>
-						<p>
-							<span className="emoji">🧗</span> {t('about.hobbies.climbing')} •
-							<span className="emoji">✈️</span> {t('about.hobbies.travel')} •
-							<span className="emoji">🎵</span> {t('about.hobbies.music')} •
-							<span className="emoji">🎮</span> {t('about.hobbies.games')}
-						</p>
+						<br/>
+						<div className="hobbies-grid">
+
+							<div className="hobbies-card">
+								<h3>{t('about.hobbies.climbing')}</h3>
+								<div className="flex justify-center items-center w-full">
+									<img className="w-full rounded-lg" src="/hobbies/climbing.jpeg"/>
+								</div>
+							</div>
+
+							<div className="hobbies-card">
+								<h3>{t('about.hobbies.music')}</h3>
+								<div className="flex justify-center items-center w-full">
+									<img className="w-full rounded-lg" src="/hobbies/Music.svg"/>
+								</div>
+							</div>
+
+							<div className="hobbies-card">
+								<h3>{t('about.hobbies.travel')}</h3>
+								<div className="flex justify-center items-center w-full h-8/10">
+									<img className="w-full rounded-lg" src="/hobbies/Travel.svg"/>
+								</div>
+							</div>
+
+							<div className="hobbies-card">
+								<h3>{t('about.hobbies.games')}</h3>
+								<div className="flex justify-center items-center w-full">
+									<img className="w-full rounded-lg" src="/hobbies/VideoGames.svg"/>
+								</div>
+							</div>
+
+						</div>
 					</section>
 
 					<section className="about-cta">
@@ -115,19 +143,10 @@ export const About = () => {
 								))
 							})}
 						</p>
-						<div className="cta-buttons">
-							<a href="https://linkedin.com/in/ilan-nowak-glandier" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-								<Linkedin/>
-								{/* LinkedIn */}
-							</a>
-							<a href="https://github.com/Cimeci" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-								<Github/>
-								{/* GitHub */}
-							</a>
-						</div>
 					</section>
 				</div>
 			</div>
+			<SocialCard/>
 		</PageTransition>
 	)
 }
