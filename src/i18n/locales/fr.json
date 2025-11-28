@@ -113,7 +113,8 @@
 		"languages_stacks": "LANGAGES STACKS",
 		"web": "WEB",
 		"algorithm": "ALGORITHME",
-		"data": "DATA"
+		"data": "DATA",
+		"dev_environment": "ENVIRONNEMENT DE DÉVELOPPEMENT"
 	},
 	"contact": {
 		"title": "Contact",
