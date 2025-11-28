@@ -91,7 +91,7 @@ export const About = () => {
 							<div className="hobbies-card">
 								<h3>{t('about.hobbies.climbing')}</h3>
 								<div className="flex justify-center items-center w-full">
-									<img className="w-full rounded-lg" src="/hobbies/climbing.jpeg"/>
+									<img className="w-full rounded-lg" src="/hobbies/Sport.svg"/>
 								</div>
 							</div>
 
