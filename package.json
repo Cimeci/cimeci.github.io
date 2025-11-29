@@ -1,7 +1,7 @@
 {
   "name": "portfolio-react",
   "version": "0.1.0",
-  "homepage": "https://cimeci.me",
+  "homepage": "https://github.cimeci.io",
   "private": true,
   "type": "module",
   "dependencies": {

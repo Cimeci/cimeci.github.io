@@ -82,7 +82,7 @@ export const Contact = () => {
 						</button>
 
 						{/*ADDON FORM SUBMIT*/}
-						<input type="hidden" name="_next" value="http://cimeci.me/contact"/>
+						<input type="hidden" name="_next" value="http://github.cimeci.io/contact"/>
 						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')}/>
 					</form>
 				</div>
