@@ -32,6 +32,7 @@ export const Stacks = () => {
 		{ name: 'CSS', icon: `${base}6/62/CSS3_logo.svg`},
 		{ name: 'JavaScript', icon: `${base}9/99/Unofficial_JavaScript_logo_2.svg`},
 		{ name: 'TypeScript', icon: `${base}4/4c/Typescript_logo_2020.svg`},
+		{ name: 'NodeJs', icon: `${base}7/7e/Node.js_logo_2015.svg`},
 		{ name: 'React React_Native', icon: `${base}a/a7/React-icon.svg`},
 		{ name: 'TailwindCSS', icon: `${base}d/d5/Tailwind_CSS_Logo.svg`},
 		{ name: 'Solidity', icon: `${base}9/98/Solidity_logo.svg`},
