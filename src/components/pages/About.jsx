@@ -75,11 +75,11 @@ export const About = () => {
 						<h2>{t('about.skills.title')}</h2>
 						<br/>
 						<ul>
-							<li><span className="emoji">💻</span> <span className="bold">{t('about.skills.web.title')}</span> — {t('about.skills.web.description')}</li>
-							<li><span className="emoji">🔗</span> <span className="bold">{t('about.skills.web3.title')}</span> — {t('about.skills.web3.description')}</li>
-							<li><span className="emoji">📊</span> <span className="bold">{t('about.skills.data.title')}</span> — {t('about.skills.data.description')}</li>
-							<li><span className="emoji">🤖​</span> <span className="bold">{t('about.skills.ia.title')}</span> — {t('about.skills.ia.description')}</li>
-							<li><span className="emoji">🎨</span> <span className="bold">{t('about.skills.design.title')}</span> — {t('about.skills.design.description')}</li>
+							<li><span className="bold">{t('about.skills.web.title')}</span> — {t('about.skills.web.description')}</li>
+							<li><span className="bold">{t('about.skills.mobile.title')}</span> — {t('about.skills.mobile.description')}</li>
+							<li><span className="bold">{t('about.skills.data.title')}</span> — {t('about.skills.data.description')}</li>
+							<li><span className="bold">{t('about.skills.ia.title')}</span> — {t('about.skills.ia.description')}</li>
+							<li><span className="bold">{t('about.skills.design.title')}</span> — {t('about.skills.design.description')}</li>
 						</ul>
 					</section>
 
@@ -119,7 +119,7 @@ export const About = () => {
 						</div>
 					</section>
 
-					<section className="about-cta">
+					{/* <section className="about-cta">
 						<h2>{t('about.cta.title')}</h2>
 						<p>
 							{t('about.cta.description', {
@@ -143,10 +143,9 @@ export const About = () => {
 								))
 							})}
 						</p>
-					</section>
+					</section> */}
 				</div>
 			</div>
-			<SocialCard/>
 		</PageTransition>
 	)
 }

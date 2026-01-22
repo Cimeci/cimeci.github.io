@@ -40,9 +40,9 @@
 				"title": "Web Development",
 				"description": "Building interactive and performant applications."
 			},
-			"web3": {
-				"title": "Web3 & Blockchain",
-				"description": "Exploring emerging technologies."
+			"mobile": {
+				"title": "Mobile Development",
+				"description": "Creating seamless mobile experiences."
 			},
 			"data": {
 				"title": "Data",
@@ -74,33 +74,37 @@
 	"home": {
 		"title": "Home",
 		"welcome": "Welcome To My Website",
-		"role": "Web / Data / IA Developer",
-		"internship": "Currently looking for a 4-6 month internship"
+		"work": "Fullstack Developer Web/Mobile",
+		"studying_domain": "Data Science / Web Development / AI"
 	},
 	"projects": {
 		"title": "Projects",
 		"minishell": {
 			"title": "Minishell",
-			"description": "A minimal shell implementation in C, recreating basic bash functionalities including pipes, redirections, and built-in commands."
+			"description": "minishell is a minimalist Unix command interpreter implemented in C as part of the 42 Common Core. The goal is to replicate basic shell behavior similar to Bash, handling command execution, input/output redirections, pipes, environment variables, and keyboard signals. The project focuses on process management, file descriptor manipulation, and user input handling while adhering to project constraints and ensuring no memory leaks."
+		},
+		"irc": {
+			"title": "IRC",
+			"description": "ft_irc is a custom implementation of an IRC (Internet Relay Chat) server developed in C++ as part of the 42 Common Core. The project focuses on network protocol fundamentals by building a server that handles multiple clients concurrently, authenticates users, manages channels, and facilitates public and private messaging. The server uses non-blocking TCP sockets and adheres to IRC protocol specifications, enabling real-time communication between clients through standard commands such as NICK, USER, JOIN, PART, and PRIVMSG. This project deepens understanding of network programming, event handling, and communication protocols."
 		},
 		"transcendence": {
-			"title": "Ft_Transcendence",
-			"description": "Full-stack web application featuring real-time multiplayer Pong game with user authentication, chat system, and matchmaking."
+			"title": "Transcendence",
+			"description": "transcendence is an interactive full-stack web application developed as part of the final project of the 42 Common Core. It enables users to authenticate, manage their profiles, and play a real-time online version of Pong against other players. The application also includes social features such as chat, game statistics, and match history. The project uses a modern architecture with a backend API, WebSockets for real-time gameplay, a database for persistence, and a responsive frontend for a smooth and engaging user experience."
+		},
+		"music_room": {
+			"title": "Music_Room",
+			"description": "Music Room is an innovative application that makes it easy for friends and music enthusiasts to discover and share music. Users can create and manage playlists, join music events, vote for their favorite tracks, and customize their profiles based on their preferences. The project is built on a high-performance API using Node.js and Prisma, along with an intuitive React Native mobile app with expo. Music Room encourages social interaction and offers a rich, personalized music experience."
+		},
+		"matcha": {
+			"title": "Matcha",
+			"description": "Matcha is a social dating application. It allows users to create profiles, browse other profiles, send messages, and find matches based on shared interests. The application incorporates features such as geolocation, user preferences, and a real-time notification system. The project implements a full-stack architecture with a backend API, a database for user management, and an interactive frontend for an engaging user experience."
 		},
 		"tokenizer": {
 			"title": "Tokenizer",
 			"description": "Natural language processing tool for text tokenization and analysis."
 		},
-		"tokenizer_art": {
-			"title": "Tokenizer_Art",
-			"description": "Creative visualization of tokenization processes using artistic representations."
-		},
-		"music_room": {
-			"title": "Music_Room",
-			"description": "Collaborative music listening platform with real-time synchronization and playlist sharing."
-		},
 		"linear_regression": {
-			"title": "Ft_Linear_Regression",
+			"title": "Linear_Regression",
 			"description": "Machine learning project implementing linear regression from scratch for price prediction."
 		},
 		"multiplayer_perception": {
@@ -110,10 +114,10 @@
 	},
 	"stack": {
 		"title": "Stacks",
-		"languages_stacks": "LANGUAGES STACKS",
 		"web": "WEB",
 		"algorithm": "ALGORITHM",
-		"data": "DATA",
+		"data": "DATABASE",
+		"mobile": "MOBILE",
 		"dev_environment": "DEV ENVIRONMENT"
 	},
 	"contact": {

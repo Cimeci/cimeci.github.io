@@ -1,144 +1,182 @@
-import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Carousel } from "flowbite-react";
+import { Carousel } from "flowbite-react"
+import { ArrowBigLeft, ArrowBigRight } from 'lucide-react'
+import { PageTransition } from '../utils/Transition'
 
-import { PageTransition } from '../utils/Transition';
-import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
-import { SocialCard } from './Contact';
+/* =======================
+   BASE CARDS
+======================= */
 
-function Description_Component({children, subject}) {
+function Description({ subject, children }) {
 	return (
-		<div className="
-			flex flex-col p-5 gap-5
-			bg-[var(--tertiary-background-color)
-			border-[var(--primary-border-color)] border-1 rounded-xl
-			h-60 sm:h-70 xl:h-85 2xl:h-100
-			w-60 xs:w-100 md:w-200
-		">
-			<h1 className="text-[var(--primary-title-color)] lg:text-2xl md:text-xl text-lg">{subject}</h1>
-			<p className="lg:text-lg md:text-md text-xs">{children}</p>
-		</div>
-	)
-}
-
-function Image_Component({children}) {
-	return (
-		<div className="
-			flex p-5 
-			lg:text-xl md:text-lg text-md
-			bg-[var(--tertiary-background-color)
-			border-[var(--primary-border-color)] border-1 rounded-xl
-			h-60 sm:h-70 xl:h-85 2xl:h-100
-			w-60 xs:w-100 md:w-200
-		">
-			{children}
-		</div>
-	)
-}
-
-function Projects_Component({children}) {
-	return (
-		<div className="flex lg:flex-row flex-col-reverse justify-center items-center gap-10 lg:gap-30 h-[90vh] w-full">
-			{children}
-		</div>
-	)
-}
-
-function Create_Projects_Component({children, subject, img_src}) {
-	return (
-		<Projects_Component>
-			<Description_Component subject={subject}>
-				{children}
-			</Description_Component>
-			<Image_Component>
-				<img
-					className="w-full h-full object-cover rounded-lg"
-					src={img_src}
-				/>
-			</Image_Component>
-		</Projects_Component>
-	)
-}
-
-function Carrousel_Projects() {
-  return (
-	<div className="flex lg:flex-row flex-col-reverse justify-center items-center gap-10 lg:gap-30 h-[90vh] w-full">
-		<Carousel
-			pauseOnHover
-			slideInterval={5000}
-			leftControl={<ArrowBigLeft className="hover:scale-120 transition-all duration-400" color="var(--primary-text-color)"/>} 
-			rightControl={<ArrowBigRight className="hover:scale-120 transition-all duration-400" color="var(--primary-text-color)"/>}
-			theme={{item: {base: 'relative overflow-y-scroll scrollbar-hide'}, scrollContainer: {base: 'overflow-hidden'}}} /*PATCH LIB @rgodet*/
+		<div
+			className="
+				flex flex-col gap-4 p-6
+				backdrop-blur-xl bg-white/10
+				border border-white/20 rounded-2xl
+				shadow-[0_10px_35px_rgba(0,0,0,0.25)]
+				h-full
+			"
 		>
-			<Create_Projects_Component
-				img_src="/projects_visuals/minishell_visual.svg"
-				subject={t('projects.minishell.title')}
-			>
-				{t('projects.minishell.description')}
-			</Create_Projects_Component>
-
-
-			<Create_Projects_Component
-				img_src=""
-				subject={t('projects.transcendence.title')}
-			>
-				{t('projects.transcendence.description')}
-			</Create_Projects_Component>
-
-
-			<Create_Projects_Component
-				img_src=""
-				subject={t('projects.tokenizer.title')}
-			>
-				{t('projects.tokenizer.description')}
-			</Create_Projects_Component>
-
-
-			<Create_Projects_Component
-				img_src=""
-				subject={t('projects.tokenizer_art.title')}
-			>
-				{t('projects.tokenizer_art.description')}
-			</Create_Projects_Component>
-
-
-			<Create_Projects_Component
-				img_src=""
-				subject={t('projects.music_room.title')}
-			>
-				{t('projects.music_room.description')}
-			</Create_Projects_Component>
-
-
-			<Create_Projects_Component
-				img_src=""
-				subject={t('projects.linear_regression.title')}
-			>
-				{t('projects.linear_regression.description')}
-			</Create_Projects_Component>
-
-
-			<Create_Projects_Component
-				img_src=""
-				subject={t('projects.multiplayer_perception.title')}
-			>
-				{t('projects.multiplayer_perception.description')}
-			</Create_Projects_Component>
-    	</Carousel>
-	</div>
-  );
+			<h2 className="text-xl sm:text-2xl font-semibold tracking-wide">
+				{subject}
+			</h2>
+			<p className="text-sm sm:text-base leading-relaxed opacity-90">
+				{children}
+			</p>
+		</div>
+	)
 }
 
+function Image({ src }) {
+	return (
+		<div
+			className="
+				group relative overflow-hidden rounded-2xl
+				backdrop-blur-xl bg-white/10
+				border border-white/20
+				shadow-[0_10px_35px_rgba(0,0,0,0.25)]
+				h-full
+			"
+		>
+			<img
 
-export const Projects = () => {
+				src={src}
+				alt=""
+				className="
+					w-full h-full object-cover
+					transition-transform duration-500
+					group-hover:scale-110
+				"
+			/>
+			<div
+				className="
+					absolute inset-0
+					bg-gradient-to-t from-black/50 to-transparent
+				"
+			/>
+		</div>
+	)
+}
+
+/* =======================
+   PROJECT SLIDE
+======================= */
+
+function ProjectSlide({ title, description, img, link }) {
+	return (
+		<div
+			className="
+				w-full h-[85vh]
+				flex flex-col-reverse lg:flex-row
+				items-center justify-center
+				gap-10 px-6
+			"
+		>
+			<div className="w-full lg:w-1/2 h-[45%] lg:h-[60%]">
+				<Description subject={title}>
+					{description}
+				</Description>
+			</div>
+
+			<div className="w-full lg:w-1/2 h-[45%] lg:h-[60%]">
+				<a href={link}>
+					<Image src={img} />
+				</a>
+			</div>
+		</div>
+	)
+}
+
+/* =======================
+   CAROUSEL
+======================= */
+
+const github_base_link = "https://github.com/Cimeci/";
+
+function ProjectsCarousel() {
 	const { t } = useTranslation()
 
 	return (
+		<Carousel
+			pauseOnHover
+			slideInterval={6000}
+			leftControl={
+				<ArrowBigLeft
+					className="hover:scale-125 transition-transform"
+				/>
+			}
+			rightControl={
+				<ArrowBigRight
+					className="hover:scale-125 transition-transform"
+				/>
+			}
+			theme={{
+				item: {
+					base: 'relative overflow-hidden'
+				}
+			}}
+		>
+			<ProjectSlide
+				img="/projects_visuals/Minishell_visual.svg"
+				title={t('projects.minishell.title')}
+				description={t('projects.minishell.description')}
+				link={`${github_base_link}minishell`}
+			/>
+			<ProjectSlide
+				img="/projects_visuals/Irc_visual.svg"
+				title={t('projects.irc.title')}
+				description={t('projects.irc.description')}
+				link={`${github_base_link}ft_irc`}
+			/>
+			<ProjectSlide
+				img="/projects_visuals/Transcendence_visual.svg"
+				title={t('projects.transcendence.title')}
+				description={t('projects.transcendence.description')}
+				link={`${github_base_link}ft_transcendence`}
+			/>
+
+			<ProjectSlide
+				img="/projects_visuals/Music-room_visual.svg"
+				title={t('projects.music_room.title')}
+				description={t('projects.music_room.description')}
+				link={`${github_base_link}Music_Room`}
+			/>
+
+			{/* <ProjectSlide
+				img="/projects_visuals/In_progress.jpg"
+				title={t('projects.matcha.title')}
+				description={t('projects.matcha.description')}
+				link={`${github_base_link}Matcha`}
+			/>
+
+			<ProjectSlide
+				img="/projects_visuals/In_progress.jpg"
+				title={t('projects.tokenizer.title')}
+				description={t('projects.tokenizer.description')}
+				link={`${github_base_link}Tokenizer`}
+			/>
+
+			<ProjectSlide
+				img="/projects_visuals/In_progress.jpg"
+				title={t('projects.linear_regression.title')}
+				description={t('projects.linear_regression.description')}
+				link={`${github_base_link}Linear_Regression`}
+			/> */}
+		</Carousel>
+	)
+}
+
+/* =======================
+   PAGE
+======================= */
+
+export const Projects = () => {
+	return (
 		<PageTransition>
-			<div className="flex justify-center items-center gap-10 w-full h-full">
-				<Carrousel_Projects/>
+			<div className="w-full min-h-screen flex items-center justify-center">
+				<ProjectsCarousel />
 			</div>
-			<SocialCard/>
 		</PageTransition>
 	)
 }

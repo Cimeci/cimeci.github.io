@@ -22,11 +22,12 @@
 
 nav {
 	z-index: 2000;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	/* background-color: var(--primary-background-color); */
-	position: sticky;
+	position: fixed;
 	top: 0;
 }
 

@@ -10,7 +10,7 @@
 		"title": "À propos",
 		"subtitle": "de moi",
 		"intro": {
-			"greeting": "Salut ! Je suis {{name}}, 19 ans, développeur en formation à l'école 42.",
+			"greeting": "Salut ! Je suis {{name}}, Fullstack développeur en formation à l'école 42.",
 			"name": "Ilan Nowak-Glandier",
 			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré pleins de domaine differents. Aujourd'hui je me specialise dans le domaine du web, de la data et l'IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
 			"highlight1": "défis techniques concrets"
@@ -40,9 +40,9 @@
 				"title": "Développement Web",
 				"description": "Construire des applications interactives et performantes."
 			},
-			"web3": {
-				"title": "Web3 & Blockchain",
-				"description": "Explorer les technologies émergentes."
+			"mobile": {
+				"title": "Développement Mobile",
+				"description": "Créer des expériences mobiles fluides."
 			},
 			"data": {
 				"title": "Data",
@@ -74,30 +74,34 @@
 	"home": {
 		"title": "Accueil",
 		"welcome": "Bienvenue sur mon site web",
-		"role": "Développeur Web / Data / IA",
-		"internship": "Actuellement en recherche d'un stage de 4-6 mois"
+		"work": "Fullstack Developpeur Web/Mobile",
+		"studying_domain": "Data Science / Développement Web / IA"
 	},
 	"projects": {
 		"title": "Projets",
 		"minishell": {
 			"title": "Minishell",
-			"description": "Implémentation d'un shell minimal en C, recréant les fonctionnalités de base de bash incluant les pipes, redirections et commandes intégrées."
+			"description": "minishell est une implémentation minimaliste d’un interpréteur de commandes Unix, développée en C dans le cadre du Tronc Commun du cursus 42. L’objectif est de reproduire le comportement de base d’un shell comme Bash, en gérant l’exécution de commandes, les redirections, les pipes, les variables d’environnement et les signaux clavier. Le projet met l’accent sur la gestion des processus, des descripteurs de fichiers, et le traitement des entrées utilisateur tout en respectant les contraintes de la norme du projet et en évitant les fuites mémoire."
+		},
+		"irc": {
+			"title": "IRC",
+			"description": "ft_irc est une implémentation personnalisée d’un serveur IRC (Internet Relay Chat) développée en C++ dans le cadre du Tronc Commun du cursus 42. Le projet consiste à comprendre et appliquer les protocoles réseau en implémentant un serveur capable de gérer plusieurs clients simultanément, d’authentifier les utilisateurs, de gérer des canaux et d’envoyer des messages publics et privés. Le serveur fonctionne via des sockets TCP non bloquants et respecte les spécifications du protocole IRC, offrant une communication en temps réel entre clients via des commandes standards comme NICK, USER, JOIN, PART et PRIVMSG. Ce projet améliore la maîtrise de la programmation réseau, de la gestion d’événements et des protocoles de communication."
 		},
 		"transcendence": {
 			"title": "Ft_Transcendence",
-			"description": "Application web full-stack avec jeu Pong multijoueur en temps réel, authentification utilisateur, système de chat et matchmaking."
+			"description": "ft_transcendence est une application web full-stack interactive développée dans le cadre du projet final du Tronc Commun à l’école 42. Elle permet aux utilisateurs de s’authentifier, gérer leur profil et jouer à une version en ligne du jeu Pong en temps réel contre d’autres joueurs. L’application inclut également des fonctionnalités sociales comme le chat, les statistiques de jeu et l’historique des parties. Le projet met en œuvre une architecture moderne avec une API backend, des WebSockets pour le jeu en temps réel, une base de données pour la persistance et un frontend réactif pour une expérience fluide et engageante."
+		},
+		"music_room": {
+			"title": "Music_Room",
+			"description": "Music Room est une application innovante qui facilite la découverte et le partage de musique entre amis et passionnés. Les utilisateurs peuvent créer et gérer des playlists, participer à des événements musicaux, voter pour leurs morceaux favoris et personnaliser leur profil selon leurs goûts. Le projet repose sur une API performante développée avec Node.js et Prisma, ainsi qu’une application mobile React Native avec expo. Music Room favorise l’interaction sociale et propose une expérience musicale enrichie et personnalisée."
+		},
+		"matcha": {
+			"title": "Matcha",
+			"description": "Matcha est une application de rencontre sociale. Elle permet aux utilisateurs de créer des profils, de parcourir d’autres profils, d’envoyer des messages et de trouver des correspondances basées sur des intérêts communs. L’application intègre des fonctionnalités telles que la géolocalisation, les préférences utilisateur et un système de notifications en temps réel. Le projet met en œuvre une architecture full-stack avec une API backend, une base de données pour la gestion des utilisateurs et un frontend interactif pour une expérience utilisateur engageante."
 		},
 		"tokenizer": {
 			"title": "Tokenizer",
 			"description": "Outil de traitement du langage naturel pour la tokenisation et l'analyse de texte."
-		},
-		"tokenizer_art": {
-			"title": "Tokenizer_Art",
-			"description": "Visualisation créative des processus de tokenisation utilisant des représentations artistiques."
-		},
-		"music_room": {
-			"title": "Music_Room",
-			"description": "Plateforme d'écoute musicale collaborative avec synchronisation en temps réel et partage de playlists."
 		},
 		"linear_regression": {
 			"title": "Ft_Linear_Regression",
@@ -106,14 +110,15 @@
 		"multiplayer_perception": {
 			"title": "Multiplayer_Perception",
 			"description": "Projet IA explorant la perception et les systèmes de prise de décision multi-agents."
+
 		}
 	},
 	"stack": {
-		"title": "Stack",
-		"languages_stacks": "LANGAGES STACKS",
+		"title": "Stacks",
 		"web": "WEB",
 		"algorithm": "ALGORITHME",
-		"data": "DATA",
+		"data": "BASE DE DONNÉES",
+		"mobile": "MOBILE",
 		"dev_environment": "ENVIRONNEMENT DE DÉVELOPPEMENT"
 	},
 	"contact": {

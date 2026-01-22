@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import "../utils/Animation.css"
 
 import { PageTransition } from '../utils/Transition';
-import { Textarea, FooterCopyright, FooterIcon } from 'flowbite-react';
+import { Textarea, FooterCopyright } from 'flowbite-react';
 
-import { SiDiscord, SiGit, SiGithub, SiGtk, SiLinkedin, SiX } from 'react-icons/si';
+import { SiDiscord, SiGithub, SiLinkedin, SiX } from 'react-icons/si';
 import { SendHorizonal } from 'lucide-react';
 
 export function SocialCard() {
@@ -34,7 +34,7 @@ export const Contact = () => {
 
 	return (
 		<PageTransition>
-			<div className="flex flex-col sm:h-[90vh] p-10 items-center justify-center w-full">
+			<div className="flex flex-col sm:h-[100vh] p-10 items-center justify-center w-full">
 
 				<div className="w-full flex flex-col items-center justify-center gap-10">
 					<h1 className="text-5xl animate-title-reveal">{t('contact.contact_me')}</h1>
@@ -86,8 +86,6 @@ export const Contact = () => {
 						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')}/>
 					</form>
 				</div>
-
-				<SocialCard/>
 
 			</div>
 		</PageTransition>
