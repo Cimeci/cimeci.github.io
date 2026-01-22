@@ -15,7 +15,7 @@ function Description({ subject, children }) {
 				backdrop-blur-xl bg-white/10
 				border border-white/20 rounded-2xl
 				shadow-[0_10px_35px_rgba(0,0,0,0.25)]
-				h-full
+				h-full overflow-auto
 			"
 		>
 			<h2 className="text-xl sm:text-2xl font-semibold tracking-wide">
