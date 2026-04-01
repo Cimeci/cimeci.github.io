@@ -15,14 +15,16 @@ export const LanguageSwitcher = () => {
 			{i18n.language === 'en' ?
 				<button
 					onClick={() => changeLanguage('fr')}
+					aria-label="Switch to French"
 				>
-					<img className="lang-btn" src="https://countryflagsapi.netlify.app/flag/us.svg"></img>
+					<img className="lang-btn" src="https://countryflagsapi.netlify.app/flag/us.svg" alt="English (US)"/>
 				</button>
 				:
 				<button
 					onClick={() => changeLanguage('en')}
+					aria-label="Switch to English"
 				>
-					<img className="lang-btn" src="https://countryflagsapi.netlify.app/flag/fr.svg"></img>
+					<img className="lang-btn" src="https://countryflagsapi.netlify.app/flag/fr.svg" alt="Français"/>
 				</button>
 			}
 		</div>

@@ -1,0 +1,36 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="320" rx="16" fill="#1a1a2e"/>
+  <!-- Film reel -->
+  <circle cx="160" cy="150" r="70" stroke="#e0e0e0" stroke-width="4" fill="none"/>
+  <circle cx="160" cy="150" r="20" fill="#e0e0e0"/>
+  <circle cx="160" cy="150" r="8" fill="#1a1a2e"/>
+  <!-- Reel holes -->
+  <circle cx="160" cy="100" r="8" fill="#e0e0e0"/>
+  <circle cx="160" cy="200" r="8" fill="#e0e0e0"/>
+  <circle cx="110" cy="150" r="8" fill="#e0e0e0"/>
+  <circle cx="210" cy="150" r="8" fill="#e0e0e0"/>
+  <circle cx="125" cy="115" r="8" fill="#e0e0e0"/>
+  <circle cx="195" cy="115" r="8" fill="#e0e0e0"/>
+  <circle cx="125" cy="185" r="8" fill="#e0e0e0"/>
+  <circle cx="195" cy="185" r="8" fill="#e0e0e0"/>
+  <!-- Film strip -->
+  <rect x="240" y="60" width="30" height="200" rx="4" fill="#e0e0e0"/>
+  <rect x="245" y="70" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="70" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="245" y="95" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="95" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="245" y="120" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="120" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="245" y="145" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="145" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="245" y="170" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="170" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="245" y="195" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="195" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="245" y="220" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <rect x="257" y="220" width="8" height="12" rx="2" fill="#1a1a2e"/>
+  <!-- Clapperboard top -->
+  <rect x="50" y="240" width="180" height="40" rx="4" fill="#e0e0e0"/>
+  <rect x="50" y="240" width="180" height="12" fill="#0ea5e9"/>
+  <text x="140" y="272" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="#1a1a2e">CINEMA</text>
+</svg>

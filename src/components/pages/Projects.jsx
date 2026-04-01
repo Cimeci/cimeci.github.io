@@ -1,170 +1,140 @@
-import { useTranslation } from 'react-i18next'
-import { Carousel } from "flowbite-react"
-import { ArrowBigLeft, ArrowBigRight } from 'lucide-react'
-import { PageTransition } from '../utils/Transition'
+import { useTranslation } from 'react-i18next';
+import { ExternalLink } from 'lucide-react';
+import { ScrollReveal } from '../utils/ScrollReveal';
+import './Projects.css';
 
 /* =======================
-   BASE CARDS
+   DATA
 ======================= */
 
-function Description({ subject, children }) {
-	return (
-		<div
-			className="
-				flex flex-col gap-4 p-6
-				backdrop-blur-xl bg-white/10
-				border border-white/20 rounded-2xl
-				shadow-[0_10px_35px_rgba(0,0,0,0.25)]
-				h-full overflow-auto
-			"
-		>
-			<h2 className="text-xl sm:text-2xl font-semibold tracking-wide">
-				{subject}
-			</h2>
-			<p className="text-sm sm:text-base leading-relaxed opacity-90">
-				{children}
-			</p>
-		</div>
-	)
-}
+const GITHUB = 'https://github.com/Cimeci/';
 
-function Image({ src }) {
-	return (
-		<div
-			className="
-				group relative overflow-hidden rounded-2xl
-				backdrop-blur-xl bg-white/10
-				border border-white/20
-				shadow-[0_10px_35px_rgba(0,0,0,0.25)]
-				h-full
-			"
-		>
-			<img
+const PERSONAL_PROJECTS = [
+	{
+		key: 'leairn',
+		link: 'https://le-a-irn-delta.vercel.app/',
+		github: 'leAIrn',
+		logo: '/leairn-logo.png',
+		tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Supabase', 'Groq API', 'Stripe'],
+	},
+	{
+		key: 'nali',
+		link: 'https://nali-frontend.vercel.app',
+		github: 'Nali',
+		logo: '/nali-logo.png',
+		tags: ['Next.js', 'React 19', 'NestJS', 'Supabase', 'Stripe', 'WebRTC'],
+	},
+	{
+		key: 'reflexion',
+		link: `${GITHUB}scraping-polymarket`,
+		github: 'scraping-polymarket',
+		tags: ['Python', 'Ollama', 'LLM', 'FastAPI', 'Discord.py', 'SQLite'],
+	},
+];
 
-				src={src}
-				alt=""
-				className="
-					w-full h-full object-cover
-					transition-transform duration-500
-					group-hover:scale-110
-				"
-			/>
-			<div
-				className="
-					absolute inset-0
-					bg-gradient-to-t from-black/50 to-transparent
-				"
-			/>
-		</div>
-	)
+const SCHOOL_PROJECTS = [
+	{
+		key: 'music_room',
+		img: '/projects_visuals/Music-room_visual.svg',
+		link: 'Music_Room',
+		tags: ['React Native', 'Node.js', 'Prisma', 'Expo'],
+	},
+	{
+		key: 'transcendence',
+		img: '/projects_visuals/Transcendence_visual.svg',
+		link: 'ft_transcendence',
+		tags: ['Full-Stack', 'WebSockets', 'Pong', 'Auth'],
+	},
+	{
+		key: 'irc',
+		img: '/projects_visuals/Irc_visual.svg',
+		link: 'ft_irc',
+		tags: ['C++', 'TCP Sockets', 'IRC Protocol'],
+	},
+	{
+		key: 'minishell',
+		img: '/projects_visuals/minishell_visual.svg',
+		link: 'minishell',
+		tags: ['C', 'Unix', 'Shell', 'Processes'],
+	},
+];
+
+/* =======================
+   PERSONAL PROJECT CARD
+======================= */
+
+function PersonalCard({ project, index }) {
+	const { t } = useTranslation();
+	const status = t(`projects.${project.key}.status`);
+
+	return (
+		<ScrollReveal delay={index * 0.1}>
+			<a
+				href={project.link}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="personal-card"
+			>
+				<div className="personal-card-header">
+					<div className="personal-card-title-row">
+						{project.logo && <img src={project.logo} alt="" className="personal-card-logo" />}
+						<h3 className="personal-card-name">{t(`projects.${project.key}.title`)}</h3>
+					</div>
+					<span className="personal-card-status">{status}</span>
+				</div>
+				<p className="personal-card-desc">{t(`projects.${project.key}.description`)}</p>
+				<div className="personal-card-footer">
+					<div className="project-tags">
+						{project.tags.map((tag) => (
+							<span key={tag} className="project-tag">{tag}</span>
+						))}
+					</div>
+					<ExternalLink size={16} className="personal-card-arrow" />
+				</div>
+			</a>
+		</ScrollReveal>
+	);
 }
 
 /* =======================
-   PROJECT SLIDE
+   SCHOOL PROJECT CARD
 ======================= */
 
-function ProjectSlide({ title, description, img, link }) {
-	return (
-		<div
-			className="
-				w-full h-[85vh]
-				flex flex-col-reverse lg:flex-row
-				items-center justify-center
-				gap-10 px-6
-			"
-		>
-			<div className="w-full lg:w-1/2 h-[45%] lg:h-[60%]">
-				<Description subject={title}>
-					{description}
-				</Description>
-			</div>
-
-			<div className="w-full lg:w-1/2 h-[45%] lg:h-[60%]">
-				<a href={link}>
-					<Image src={img} />
-				</a>
-			</div>
-		</div>
-	)
-}
-
-/* =======================
-   CAROUSEL
-======================= */
-
-const github_base_link = "https://github.com/Cimeci/";
-
-function ProjectsCarousel() {
-	const { t } = useTranslation()
+function SchoolCard({ project, index }) {
+	const { t } = useTranslation();
 
 	return (
-		<Carousel
-			pauseOnHover
-			slideInterval={6000}
-			leftControl={
-				<ArrowBigLeft
-					className="hover:scale-125 transition-transform"
-				/>
-			}
-			rightControl={
-				<ArrowBigRight
-					className="hover:scale-125 transition-transform"
-				/>
-			}
-			theme={{
-				item: {
-					base: 'relative overflow-hidden'
-				}
-			}}
-		>
-			<ProjectSlide
-				img="/projects_visuals/Minishell_visual.svg"
-				title={t('projects.minishell.title')}
-				description={t('projects.minishell.description')}
-				link={`${github_base_link}minishell`}
-			/>
-			<ProjectSlide
-				img="/projects_visuals/Irc_visual.svg"
-				title={t('projects.irc.title')}
-				description={t('projects.irc.description')}
-				link={`${github_base_link}ft_irc`}
-			/>
-			<ProjectSlide
-				img="/projects_visuals/Transcendence_visual.svg"
-				title={t('projects.transcendence.title')}
-				description={t('projects.transcendence.description')}
-				link={`${github_base_link}ft_transcendence`}
-			/>
-
-			<ProjectSlide
-				img="/projects_visuals/Music-room_visual.svg"
-				title={t('projects.music_room.title')}
-				description={t('projects.music_room.description')}
-				link={`${github_base_link}Music_Room`}
-			/>
-
-			{/* <ProjectSlide
-				img="/projects_visuals/In_progress.jpg"
-				title={t('projects.matcha.title')}
-				description={t('projects.matcha.description')}
-				link={`${github_base_link}Matcha`}
-			/>
-
-			<ProjectSlide
-				img="/projects_visuals/In_progress.jpg"
-				title={t('projects.tokenizer.title')}
-				description={t('projects.tokenizer.description')}
-				link={`${github_base_link}Tokenizer`}
-			/>
-
-			<ProjectSlide
-				img="/projects_visuals/In_progress.jpg"
-				title={t('projects.linear_regression.title')}
-				description={t('projects.linear_regression.description')}
-				link={`${github_base_link}Linear_Regression`}
-			/> */}
-		</Carousel>
-	)
+		<ScrollReveal delay={index * 0.1}>
+			<a
+				href={`${GITHUB}${project.link}`}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="project-card"
+			>
+				{project.img && (
+					<div className="project-img-wrap">
+						<img
+							src={project.img}
+							alt={t(`projects.${project.key}.title`)}
+							loading="lazy"
+						/>
+						<div className="project-img-overlay">
+							<ExternalLink size={20} />
+						</div>
+					</div>
+				)}
+				<div className="project-info">
+					<h3 className="project-name">{t(`projects.${project.key}.title`)}</h3>
+					<p className="project-desc">{t(`projects.${project.key}.description`)}</p>
+					<div className="project-tags">
+						{project.tags.map((tag) => (
+							<span key={tag} className="project-tag">{tag}</span>
+						))}
+					</div>
+				</div>
+			</a>
+		</ScrollReveal>
+	);
 }
 
 /* =======================
@@ -172,11 +142,36 @@ function ProjectsCarousel() {
 ======================= */
 
 export const Projects = () => {
+	const { t } = useTranslation();
+
 	return (
-		<PageTransition>
-			<div className="w-full min-h-screen flex items-center justify-center">
-				<ProjectsCarousel />
+		<div className="py-20 sm:py-32">
+			<ScrollReveal>
+				<p className="section-header">// {t('nav.projects')}</p>
+			</ScrollReveal>
+			<ScrollReveal delay={0.1}>
+				<h2 className="section-title">{t('projects.title')}</h2>
+			</ScrollReveal>
+
+			{/* Personal Projects */}
+			<ScrollReveal delay={0.15}>
+				<h3 className="projects-category">{t('projects.personal')}</h3>
+			</ScrollReveal>
+			<div className="personal-grid">
+				{PERSONAL_PROJECTS.map((p, i) => (
+					<PersonalCard key={p.key} project={p} index={i} />
+				))}
 			</div>
-		</PageTransition>
-	)
-}
+
+			{/* 42 School Projects */}
+			<ScrollReveal delay={0.1}>
+				<h3 className="projects-category projects-category-school">{t('projects.school')}</h3>
+			</ScrollReveal>
+			<div className="projects-grid">
+				{SCHOOL_PROJECTS.map((p, i) => (
+					<SchoolCard key={p.key} project={p} index={i} />
+				))}
+			</div>
+		</div>
+	);
+};

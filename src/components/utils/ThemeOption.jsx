@@ -4,13 +4,13 @@ import { Moon, Sun } from 'lucide-react'
 
 const ThemeOption = ({currentTheme, onToggle}) => {
   	return (
-		<div onClick={onToggle} className="theme-toggle">
-			{currentTheme == 'dark' ?
-			<Sun color="#ffc300"/>:
-			<Moon color="#14213d"/>
+		<button onClick={onToggle} className="theme-toggle" aria-label={currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+			{currentTheme === 'dark' ?
+			<Sun size={18}/>:
+			<Moon size={18}/>
 			}
 			
-	</div>
+	</button>
   	)
 }
 

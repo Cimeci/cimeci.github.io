@@ -1,46 +1,67 @@
-import { NavLink } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { useRef, useEffect } from 'react'
-
-import { PageTransition } from '../utils/Transition';
-import "../utils/Animation.css"
+import { useRef, useEffect } from 'react';
+import { ArrowDown } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { TextScramble } from '../utils/Animation';
+import './Home.css';
 
 export const Home = () => {
-	const { t } = useTranslation()
+	const { t } = useTranslation();
 	const titleRef = useRef(null);
 
 	useEffect(() => {
-		const fx = new TextScramble(titleRef.current);
-		const phrases = [
-			t("home.welcome"),
-			t("home.work"),
-		];
+		const el = titleRef.current;
+		if (!el) return;
 
+		const fx = new TextScramble(el);
+		const phrases = [t('home.welcome'), t('home.work')];
 		let counter = 0;
+		let timeoutId = null;
+		let cancelled = false;
 
 		const next = () => {
+			if (cancelled) return;
 			fx.setText(phrases[counter]).then(() => {
-				setTimeout(next, 7000);
+				if (!cancelled) timeoutId = setTimeout(next, 5000);
 			});
 			counter = (counter + 1) % phrases.length;
 		};
-
 		next();
-	}, [t])
+
+		return () => {
+			cancelled = true;
+			if (timeoutId) clearTimeout(timeoutId);
+		};
+	}, [t]);
 
 	return (
-		<PageTransition>
-			<div className="flex flex-col justify-center items-center h-[100vh] w-full p-10 gap-30 md:gap-10">
-				<NavLink to="/about" className="text-center md:text-clip">
-					<h1
-						ref={titleRef}
-						className="font-bold tracking-wide text-[var(--primary-title-color)] select-none text-5xl sm:text-6xl lg:text-7xl
-							hover:scale-110 duration-300 transition-all"
-					/>
-				</NavLink>
-				<h2 className="text-xl sm:text-2xl lg:text-3xl animate-title-reveal animate-contact-pulse">Ilan Nowak--Glandier</h2>
-			</div>
-		</PageTransition>
-	)
-}
+		<div className="hero">
+			<motion.div
+				className="hero-content"
+				initial={{ opacity: 0, y: 40 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+			>
+				<p className="hero-greeting">{t('home.studying_domain')}</p>
+
+				<h1 className="hero-name">
+					Ilan<br />
+					<span className="hero-name-accent">Nowak--Glandier</span>
+				</h1>
+
+				<p ref={titleRef} className="hero-scramble" />
+
+				<motion.button
+					className="hero-cta"
+					onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ delay: 0.6, duration: 0.5 }}
+				>
+					<span>{t('home.cta')}</span>
+					<ArrowDown size={16} />
+				</motion.button>
+			</motion.div>
+		</div>
+	);
+};

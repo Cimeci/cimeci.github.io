@@ -1,0 +1,268 @@
+/* ==================== CATEGORY HEADERS ==================== */
+
+.projects-category {
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--accent);
+	margin-top: 2.5rem;
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.projects-category-school {
+	margin-top: 3.5rem;
+	color: var(--text-muted);
+}
+
+/* ==================== PERSONAL PROJECTS GRID ==================== */
+
+.personal-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1rem;
+	align-items: stretch;
+}
+
+.personal-grid > * {
+	height: 100%;
+}
+
+@media (min-width: 768px) {
+	.personal-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ==================== PERSONAL CARD ==================== */
+
+.personal-card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1.5rem;
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	background: var(--bg-card);
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	position: relative;
+	height: 100%;
+}
+
+.personal-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: var(--accent);
+	border-radius: 16px 16px 0 0;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.personal-card:hover {
+	border-color: var(--accent);
+	transform: translateY(-6px);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.personal-card:hover::before {
+	opacity: 1;
+}
+
+[data-theme="dark"] .personal-card:hover {
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.personal-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.personal-card-title-row {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.personal-card-logo {
+	width: 2rem;
+	height: 2rem;
+	object-fit: contain;
+	border-radius: 6px;
+}
+
+.personal-card-name {
+	font-family: var(--font-serif);
+	font-size: 1.4rem;
+	font-weight: 400;
+	color: var(--text-primary);
+}
+
+.personal-card-status {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--accent);
+	background: var(--accent-light);
+	padding: 0.2rem 0.6rem;
+	border-radius: 100px;
+	white-space: nowrap;
+}
+
+.personal-card-desc {
+	font-size: 0.85rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	flex: 1;
+}
+
+.personal-card-footer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+.personal-card-arrow {
+	color: var(--text-muted);
+	flex-shrink: 0;
+	transition: color 0.2s ease;
+}
+
+.personal-card:hover .personal-card-arrow {
+	color: var(--accent);
+}
+
+/* ==================== SCHOOL PROJECTS GRID ==================== */
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+	.projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ==================== SCHOOL CARD ==================== */
+
+.project-card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	overflow: hidden;
+	background: var(--bg-card);
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+	border-color: var(--border-hover);
+	transform: translateY(-4px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .project-card:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== IMAGE ==================== */
+
+.project-img-wrap {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 16 / 10;
+	background: var(--bg-secondary);
+}
+
+.project-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-img-wrap img {
+	transform: scale(1.05);
+}
+
+.project-img-overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	color: white;
+}
+
+.project-card:hover .project-img-overlay {
+	opacity: 1;
+}
+
+/* ==================== INFO ==================== */
+
+.project-info {
+	padding: 1.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.project-name {
+	font-family: var(--font-serif);
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: var(--text-primary);
+}
+
+.project-desc {
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* ==================== TAGS ==================== */
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.25rem;
+}
+
+.project-tag {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	font-weight: 500;
+	color: var(--accent);
+	background: var(--accent-light);
+	padding: 0.2rem 0.5rem;
+	border-radius: 100px;
+	letter-spacing: 0.02em;
+}

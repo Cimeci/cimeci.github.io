@@ -1,16 +1,67 @@
-@keyframes fadeOut {
-	0% {
-		opacity: 1;
-	}
-	80% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-		pointer-events: none;
-	}
+.hero {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 6rem 0 4rem;
 }
 
-.animate-fadeOut {
-	animation: fadeOut 1s ease-out forwards;
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.hero-greeting {
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+
+.hero-name {
+	font-family: var(--font-serif);
+	font-size: clamp(3rem, 10vw, 6rem);
+	font-weight: 400;
+	line-height: 1.05;
+	color: var(--text-primary);
+	letter-spacing: -0.02em;
+}
+
+.hero-name-accent {
+	font-style: italic;
+	color: var(--text-secondary);
+}
+
+.hero-scramble {
+	font-family: var(--font-mono);
+	font-size: clamp(0.85rem, 2vw, 1.1rem);
+	color: var(--text-muted);
+	min-height: 1.5em;
+	letter-spacing: -0.01em;
+}
+
+.hero-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--accent);
+	background: none;
+	border: 1px solid var(--accent);
+	padding: 0.75rem 1.5rem;
+	border-radius: 100px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	width: fit-content;
+	margin-top: 1rem;
+}
+
+.hero-cta:hover {
+	background: var(--accent);
+	color: white;
+	transform: translateY(-2px);
 }

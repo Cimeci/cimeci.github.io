@@ -1,69 +1,99 @@
-import {useState, useEffect} from 'react';
-import { Home } from 'lucide-react';
-
-import { useTranslation } from 'react-i18next'
-
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Menu, X } from 'lucide-react';
 import ThemeOption from './ThemeOption';
 import LanguageSwitcher from './LanguageSwitcher';
-import { PageTransition } from '../utils/Transition';
+import './Navbar.css';
 
-import "./Navbar.css"
-import { Menu } from 'lucide-react';
-
+const NAV_ITEMS = [
+	{ id: 'about', key: 'about' },
+	{ id: 'projects', key: 'projects' },
+	{ id: 'stacks', key: 'stack' },
+	{ id: 'contact', key: 'contact' },
+];
 
 export const Navbar = () => {
-	const { t } = useTranslation()
-	const [menuOpen, setMenuOpen] = useState(false)
-	const [currentTheme, setCurrentTheme] = useState('light')
-	const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 600)
-
+	const { t } = useTranslation();
+	const [menuOpen, setMenuOpen] = useState(false);
+	const [currentTheme, setCurrentTheme] = useState('light');
+	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
-		const savedTheme = document.querySelector('body').getAttribute('data-theme') || 'light'
-		setCurrentTheme(savedTheme)
+		const savedTheme = localStorage.getItem('theme') || 'light';
+		setCurrentTheme(savedTheme);
+		document.body.setAttribute('data-theme', savedTheme);
 
-		const handleResize = () => {
-			setIsLargeScreen(window.innerWidth > 600)
-		}
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
-	}, [])
+		const handleScroll = () => setScrolled(window.scrollY > 20);
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	const toggleTheme = () => {
-		const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
-		setCurrentTheme(newTheme)
-		document.querySelector('body').setAttribute('data-theme', newTheme)
-	}
+		const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+		setCurrentTheme(newTheme);
+		document.body.setAttribute('data-theme', newTheme);
+		localStorage.setItem('theme', newTheme);
+	};
+
+	const scrollTo = (id) => {
+		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+		setMenuOpen(false);
+	};
 
 	return (
-		<PageTransition>
-			<div className="absolute top-0 left-0 w-full z-[1000] navbar-container">
-				<nav>
-				<h1 className="title home-title-responsive" onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-					{ isLargeScreen ?
-						<span className="home-title-text">{t('nav.home')}</span>
-						:
-						<span className="home-title-icon"><Home size={28} /></span>
-					}
-				</h1>
-					<div
-						className="menu"
-						onClick={() => {
-							setMenuOpen(!menuOpen)
-						}}
+		<nav className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}`}>
+			<div className="nav-inner">
+				{/* Logo */}
+				<button
+					onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+					className="nav-logo"
+					aria-label="Back to top"
+				>
+					IN<span className="nav-logo-accent">.</span>
+				</button>
+
+				{/* Desktop nav */}
+				<div className="nav-links">
+					{NAV_ITEMS.map(({ id, key }) => (
+						<button
+							key={id}
+							onClick={() => scrollTo(id)}
+							className="nav-link"
+						>
+							<span className="nav-link-prefix">//</span> {t(`nav.${key}`)}
+						</button>
+					))}
+				</div>
+
+				{/* Right side */}
+				<div className="nav-actions">
+					<LanguageSwitcher />
+					<ThemeOption currentTheme={currentTheme} onToggle={toggleTheme} />
+					<button
+						className="nav-menu-btn"
+						onClick={() => setMenuOpen(!menuOpen)}
+						aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+						aria-expanded={menuOpen}
 					>
-						<Menu size/>
-					</div>
-					<ul className={menuOpen ? "open" : ""}>
-						<li className="theme-option-item">
-							<LanguageSwitcher onClick={() => setMenuOpen(false)}/>
-						</li>
-						<li className="theme-option-item">
-							<ThemeOption currentTheme={currentTheme} onToggle={toggleTheme} onClick={() => setMenuOpen(false)}/>
-						</li>
-					</ul>
-				</nav>
+						{menuOpen ? <X size={20} /> : <Menu size={20} />}
+					</button>
+				</div>
 			</div>
-		</PageTransition>
+
+			{/* Mobile menu */}
+			{menuOpen && (
+				<div className="nav-mobile">
+					{NAV_ITEMS.map(({ id, key }) => (
+						<button
+							key={id}
+							onClick={() => scrollTo(id)}
+							className="nav-mobile-link"
+						>
+							<span className="nav-link-prefix">//</span> {t(`nav.${key}`)}
+						</button>
+					))}
+				</div>
+			)}
+		</nav>
 	);
-}
+};

@@ -11,9 +11,20 @@
 		"subtitle": "de moi",
 		"intro": {
 			"greeting": "Salut ! Je suis {{name}}, Fullstack développeur en formation à l'école 42.",
-			"name": "Ilan Nowak-Glandier",
-			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré pleins de domaine differents. Aujourd'hui je me specialise dans le domaine du web, de la data et l'IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
-			"highlight1": "défis techniques concrets"
+			"name": "Ilan Nowak--Glandier",
+			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré plein de domaines différents. Aujourd'hui je me spécialise dans le domaine du web, de la data et l'IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
+			"highlight1": "défis techniques concrets",
+			"startup": "Je suis particulièrement attiré par l'{{highlight}} — des environnements rapides où l'on construit, livre et itère avec un impact réel dès le premier jour.",
+			"startup_highlight": "écosystème startup"
+		},
+		"experience": {
+			"title": "Parcours",
+			"moncab": {
+				"role": "Développeur Full-Stack Stagiaire",
+				"company": "Moncab",
+				"date": "Fév. 2026 — Aujourd'hui",
+				"description": "De petits fixes à des features full-stack sur l'ensemble du codebase. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion d'annonces Ubiflow, optimistic updates messagerie, dashboard owner avec stats paiements, et plusieurs passes de sécurité sur les endpoints Stripe. 113+ commits en ~2 mois."
+			}
 		},
 		"values": {
 			"title": "Mes Valeurs",
@@ -62,6 +73,7 @@
 			"climbing": "Sport",
 			"travel": "Voyager",
 			"music": "Musique",
+			"cinema": "Cinéma",
 			"games": "Jeux vidéo"
 		},
 		"cta": {
@@ -74,11 +86,29 @@
 	"home": {
 		"title": "Accueil",
 		"welcome": "Bienvenue sur mon site web",
-		"work": "Fullstack Developpeur Web/Mobile",
-		"studying_domain": "Data Science / Développement Web / IA"
+		"work": "Fullstack Développeur Web/Mobile",
+		"studying_domain": "Data Science / Développement Web / IA",
+		"cta": "Voir mes projets"
 	},
 	"projects": {
 		"title": "Projets",
+		"personal": "Projets Personnels",
+		"school": "Projets 42",
+		"leairn": {
+			"title": "leAIrn",
+			"description": "Plateforme gamifiée d'apprentissage du prompting IA — un Duolingo des prompts. 6 types d'exercices, évaluation IA via Groq, gamification complète (XP, streaks, badges, leaderboard), fonctionnalités sociales et abonnements freemium/pro via Stripe.",
+			"status": "MVP"
+		},
+		"nali": {
+			"title": "Nali",
+			"description": "SaaS moderne alternatif à Jira/Linear, conçu pour les équipes de dev. Gestion multi-organisations, Kanban avec sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
+			"status": "MVP"
+		},
+		"reflexion": {
+			"title": "scraping-polymarket",
+			"description": "Bot autonome de trading prédictif qui scrape des données multi-sources (Polymarket, Google News, Reddit, CoinGecko), analyse les marchés prédictifs via un LLM local (Qwen 2.5 7B) avec une méthodologie superforecaster, et génère des prédictions calibrées en paper trading.",
+			"status": "Paper Trading"
+		},
 		"minishell": {
 			"title": "Minishell",
 			"description": "minishell est une implémentation minimaliste d’un interpréteur de commandes Unix, développée en C dans le cadre du Tronc Commun du cursus 42. L’objectif est de reproduire le comportement de base d’un shell comme Bash, en gérant l’exécution de commandes, les redirections, les pipes, les variables d’environnement et les signaux clavier. Le projet met l’accent sur la gestion des processus, des descripteurs de fichiers, et le traitement des entrées utilisateur tout en respectant les contraintes de la norme du projet et en évitant les fuites mémoire."
@@ -116,9 +146,11 @@
 	"stack": {
 		"title": "Stacks",
 		"web": "WEB",
-		"algorithm": "ALGORITHME",
-		"data": "BASE DE DONNÉES",
+		"backend": "BACKEND",
 		"mobile": "MOBILE",
+		"algorithm": "LANGAGES",
+		"data": "BASE DE DONNÉES & ORM",
+		"ai": "IA & LLM",
 		"dev_environment": "ENVIRONNEMENT DE DÉVELOPPEMENT"
 	},
 	"contact": {

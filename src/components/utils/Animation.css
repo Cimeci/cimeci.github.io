@@ -36,3 +36,13 @@
 .animate-contact-pulse {
   animation: contact-pulse 1.4s ease-in-out infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-title-reveal,
+  .animate-contact-pulse {
+    animation: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+    transform: none !important;
+  }
+}

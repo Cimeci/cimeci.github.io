@@ -1,28 +1,16 @@
-import React, {useState} from 'react';
-import { useTranslation } from 'react-i18next'
-
-import "../utils/Animation.css"
-
-import { PageTransition } from '../utils/Transition';
-import { Textarea, FooterCopyright } from 'flowbite-react';
-
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SiDiscord, SiGithub, SiLinkedin, SiX } from 'react-icons/si';
 import { SendHorizonal } from 'lucide-react';
+import { ScrollReveal } from '../utils/ScrollReveal';
+import './Contact.css';
 
-export function SocialCard() {
-  	return (
-  		<div className="hidden w-full fixed bottom-0 p-5 sm:flex sm:items-center sm:justify-between">
-          	<FooterCopyright href="#" by="Ilan Nowak--Glandier" year={2025} />
-          	<div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-          	  	<a href="https://discord.com/Cimeci" target="_blank"><SiDiscord size="1.5rem" className="animate-contact-pulse"/></a>
-          	  	<a href="https://x.com/Cimeci_23" target="_blank"><SiX size="1.5rem" className="animate-contact-pulse"/></a>
-          	  	<a href="https://github.com/Cimeci" target="_blank"><SiGithub size="1.5rem" className="animate-contact-pulse"/></a>
-          	  	<a href="https://linkedin.com/in/ilan-nowak-glandier" target="_blank"><SiLinkedin size="1.5rem" className="animate-contact-pulse"/></a>
-          	</div>
-        </div>
-  	);
-}
-
+const SOCIALS = [
+	{ icon: SiGithub, href: 'https://github.com/Cimeci', label: 'GitHub' },
+	{ icon: SiLinkedin, href: 'https://linkedin.com/in/ilan-nowak-glandier', label: 'LinkedIn' },
+	{ icon: SiX, href: 'https://x.com/Cimeci_23', label: 'X' },
+	{ icon: SiDiscord, href: 'https://discord.com/users/Cimeci', label: 'Discord' },
+];
 
 export const Contact = () => {
 	const { t } = useTranslation();
@@ -30,64 +18,96 @@ export const Contact = () => {
 
 	const handleSubmit = () => {
 		setLoading(true);
+		setTimeout(() => setLoading(false), 3000);
 	};
 
 	return (
-		<PageTransition>
-			<div className="flex flex-col sm:h-[100vh] p-10 items-center justify-center w-full">
+		<div className="py-20 sm:py-32">
+			<ScrollReveal>
+				<p className="section-header">// {t('nav.contact')}</p>
+			</ScrollReveal>
+			<ScrollReveal delay={0.1}>
+				<h2 className="section-title">{t('contact.contact_me')}</h2>
+			</ScrollReveal>
 
-				<div className="w-full flex flex-col items-center justify-center gap-10">
-					<h1 className="text-5xl animate-title-reveal">{t('contact.contact_me')}</h1>
+			<div className="contact-layout">
+				{/* Left: info + socials */}
+				<ScrollReveal delay={0.2}>
+					<div className="contact-info">
+						<p className="contact-text">
+							{t('about.intro.greeting', { name: '' }).replace('  ', ' ').trim()}
+						</p>
 
-					<form action="https://formsubmit.co/ilannowakglandierpro@gmail.com" method="POST" className="flex flex-col gap-5 w-full md:w-[40rem] text-md">
+						<div className="contact-socials">
+							{SOCIALS.map(({ icon: Icon, href, label }) => (
+								<a
+									key={label}
+									href={href}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={label}
+									className="contact-social-link"
+								>
+									<Icon size={18} />
+									<span>{label}</span>
+								</a>
+							))}
+						</div>
 
+						<p className="contact-copy">
+							&copy; {new Date().getFullYear()} Ilan Nowak--Glandier
+						</p>
+					</div>
+				</ScrollReveal>
+
+				{/* Right: form */}
+				<ScrollReveal delay={0.3}>
+					<form
+						action="https://formsubmit.co/ilannowakglandierpro@gmail.com"
+						method="POST"
+						onSubmit={handleSubmit}
+						className="contact-form"
+					>
 						<input
-							className="w-full px-3 h-[3rem] border-2 border-[var(--primary-border-color)] rounded custom-placeholder"
+							className="contact-input"
 							type="email"
 							name="email"
 							required
 							placeholder={t('contact.email_address')}
 						/>
-						
 						<input
-							className="w-full px-3 h-[3rem] mt-5 border-2 border-[var(--primary-border-color)] rounded custom-placeholder"
+							className="contact-input"
 							type="text"
 							name="_subject"
-							color="transparent"
 							required
 							placeholder={t('contact.subject')}
 						/>
-
-						<Textarea
-							className="w-full px-2  h-[20rem] border-2 border-[var(--primary-border-color)] rounded] rounded custom-placeholder text-md"
-							type="text"
+						<textarea
+							className="contact-input contact-textarea"
 							name="message"
-							color="transparent"
-							require
+							required
 							placeholder={t('contact.text')}
 						/>
-
 						<button
-							className="w-full mt-5 px-2 py-2 border-2 border-[var(--primary-border-color)] rounded transition-all duration-300 hover:scale-110 focus:animate-pulse"
+							className="contact-submit"
 							type="submit"
+							disabled={loading}
 						>
 							{loading ? (
-								<span className="w-5 h-5 border-4 border-[var(--primary-border-color)] border-t-transparent rounded-full animate-spin"></span>
+								<span className="contact-spinner" />
 							) : (
-								<div className="flex items-center gap-2 justify-center hover:animate-pulse">
+								<>
 									<span>{t('contact.send')}</span>
-									<SendHorizonal size="1rem"/>
-								</div>
+									<SendHorizonal size={16} />
+								</>
 							)}
 						</button>
 
-						{/*ADDON FORM SUBMIT*/}
-						<input type="hidden" name="_next" value="http://cimeci.github.io/contact"/>
-						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')}/>
+						<input type="hidden" name="_next" value="https://cimeci.github.io" />
+						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')} />
 					</form>
-				</div>
-
+				</ScrollReveal>
 			</div>
-		</PageTransition>
-	)
-}
+		</div>
+	);
+};

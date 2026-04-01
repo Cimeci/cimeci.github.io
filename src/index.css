@@ -1,83 +1,90 @@
+/* ==================== DESIGN TOKENS ==================== */
+
 :root {
 	/* Backgrounds */
-	--primary-background-color: oklch(98% 0.01 255);
-	--secondary-background-color: oklch(96% 0.015 255);
-	--tertiary-background-color: oklch(93% 0.02 255);
-	
-	/* Accent color */
-	--primary-background-active-color: oklch(60% 0.12 255);
-	--primary-background-hover-color: oklch(70% 0.08 255);
+	--bg-primary: #fafafa;
+	--bg-secondary: #f3f3f3;
+	--bg-card: #ffffff;
+
+	/* Accent - cyan */
+	--accent: #0ea5e9;
+	--accent-light: #e0f2fe;
+	--accent-hover: #0284c7;
 
 	/* Text */
-	--primary-text-color: oklch(20% 0.03 255);
-	--secondary-text-color: oklch(40% 0.015 255);
-
-	/* Titles */
-	--primary-title-color: oklch(45% 0.1 255);
+	--text-primary: #1a1a1a;
+	--text-secondary: #666666;
+	--text-muted: #999999;
 
 	/* Borders */
-	--primary-border-color: oklch(75% 0.02 255);
-	--primary-border-hover-color: oklch(65% 0.02 255);
+	--border: #e5e5e5;
+	--border-hover: #d0d0d0;
 
-
-	/* Buttons */
-	--button-solid-background-color: oklch(18% 0.02 255);
-	--button-solid-text-color: white;
-
-	--button-outlined-background-color: transparent;
-	--button-outlined-text-color: oklch(18% 0.01 255);
+	/* Fonts */
+	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-serif: 'Instrument Serif', Georgia, serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 [data-theme="dark"] {
-	/* Backgrounds */
-	--primary-background-color: oklch(20% 0.03 255);
-	--secondary-background-color: oklch(24% 0.03 255);
-	--tertiary-background-color: oklch(30% 0.03 255);
+	--bg-primary: #0a0a0a;
+	--bg-secondary: #141414;
+	--bg-card: #1a1a1a;
 
-	
-	/* Accent */
-	--primary-background-active-color: oklch(65% 0.12 255);
-	--primary-background-hover-color: oklch(50% 0.1 255);
+	/* Accent - cyan for dark */
+	--accent: #38bdf8;
+	--accent-light: #0c2d44;
+	--accent-hover: #7dd3fc;
 
-	/* Text */
-	--primary-text-color: oklch(98% 0.01 255);
-	--secondary-text-color: oklch(70% 0.015 255);
+	--text-primary: #ebebeb;
+	--text-secondary: #999999;
+	--text-muted: #666666;
 
-	/* Titles */
-	--primary-title-color: oklch(85% 0.12 255);
-
-	/* Borders */
-	--primary-border-color: oklch(43.033% 0.01891 248.33);
-	--primary-border-hover-color: oklch(53.033% 0.01891 248.33);
-
-	/* Buttons */
-	--button-solid-background-color: oklch(90% 0.01 255);
-	--button-solid-text-color: oklch(10% 0.01 255);
-
-	--button-outlined-background-color: transparent;
-	--button-outlined-text-color: oklch(92% 0.01 255);
+	--border: #2a2a2a;
+	--border-hover: #3a3a3a;
 }
 
+/* ==================== BASE ==================== */
 
-.theme-options{
-	background-color: var(--primary-background-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 4px;
-	border-radius: 1rem;
-	gap: 10px;
+html {
+	scroll-behavior: smooth;
 }
 
 body {
-	touch-action: pan-y;
-	background: linear-gradient(
-		120deg,
-		var(--primary-background-color) 0%,
-		var(--secondary-background-color) 40%,
-		var(--primary-border-color) 100%
-	);
-	color: var(--primary-text-color);
-	font-family: "Momo Trust Display", sans-serif;
+	margin: 0;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	font-family: var(--font-sans);
+	font-weight: 400;
+	line-height: 1.6;
 	min-height: 100vh;
+	transition: background-color 0.4s ease, color 0.4s ease;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ==================== SELECTION ==================== */
+
+::selection {
+	background: var(--accent);
+	color: white;
+}
+
+/* ==================== SCROLLBAR ==================== */
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--border-hover);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--accent);
 }
