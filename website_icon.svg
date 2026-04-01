@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0e64b4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase-business-icon lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
+  <text
+    x="248"
+    y="340"
+    font-family="'Courier New', 'SF Mono', monospace"
+    font-weight="700"
+    font-size="280"
+    letter-spacing="-12"
+    fill="#ebebeb"
+    text-anchor="middle"
+  >IN</text>
+  <circle cx="430" cy="330" r="28" fill="#0ea5e9"/>
+</svg>
