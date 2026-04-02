@@ -34,10 +34,6 @@ export const Contact = () => {
 				{/* Left: info + socials */}
 				<ScrollReveal delay={0.2}>
 					<div className="contact-info">
-						<p className="contact-text">
-							{t('about.intro.greeting', { name: '' }).replace('  ', ' ').trim()}
-						</p>
-
 						<div className="contact-socials">
 							{SOCIALS.map(({ icon: Icon, href, label }) => (
 								<a

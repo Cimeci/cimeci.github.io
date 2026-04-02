@@ -7,8 +7,8 @@ import './Navbar.css';
 
 const NAV_ITEMS = [
 	{ id: 'about', key: 'about' },
-	{ id: 'projects', key: 'projects' },
 	{ id: 'stacks', key: 'stack' },
+	{ id: 'projects', key: 'projects' },
 	{ id: 'contact', key: 'contact' },
 ];
 

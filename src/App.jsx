@@ -9,8 +9,8 @@ function App() {
 
 			<section id="home"><Home /></section>
 			<section id="about"><About /></section>
-			<section id="projects"><Projects /></section>
 			<section id="stacks"><Stacks /></section>
+			<section id="projects"><Projects /></section>
 			<section id="contact"><Contact /></section>
 		</div>
 	);

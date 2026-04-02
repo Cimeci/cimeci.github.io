@@ -10,9 +10,9 @@
 		"title": "À propos",
 		"subtitle": "de moi",
 		"intro": {
-			"greeting": "Salut ! Je suis {{name}}, Fullstack développeur en formation à l'école 42.",
+			"greeting": "",
 			"name": "Ilan Nowak--Glandier",
-			"description": "Après une année à 42, j'ai terminé le tronc commun et exploré plein de domaines différents. Aujourd'hui je me spécialise dans le domaine du web, de la data et l'IA. Je suis un développeur motivé, curieux et rigoureux, animé par l'envie de relever des {{highlight1}} et de transformer des idées en solutions robustes.",
+			"description": "Développeur fullstack formé à 42, je construis des applications web et mobile de A à Z. Curieux, rigoureux et autonome, je suis animé par l'envie de relever des {{highlight1}} et de transformer des idées en produits concrets.",
 			"highlight1": "défis techniques concrets",
 			"startup": "Je suis particulièrement attiré par l'{{highlight}} — des environnements rapides où l'on construit, livre et itère avec un impact réel dès le premier jour.",
 			"startup_highlight": "écosystème startup"
@@ -22,7 +22,7 @@
 			"moncab": {
 				"role": "Développeur Full-Stack Stagiaire",
 				"company": "Moncab",
-				"date": "Fév. 2026 — Aujourd'hui",
+				"date": "Fév. 2026 — Août 2026",
 				"description": "De petits fixes à des features full-stack sur l'ensemble du codebase. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion d'annonces Ubiflow, optimistic updates messagerie, dashboard owner avec stats paiements, et plusieurs passes de sécurité sur les endpoints Stripe. 113+ commits en ~2 mois."
 			}
 		},
@@ -85,10 +85,11 @@
 	},
 	"home": {
 		"title": "Accueil",
-		"welcome": "Bienvenue sur mon site web",
-		"work": "Fullstack Développeur Web/Mobile",
-		"studying_domain": "Data Science / Développement Web / IA",
-		"cta": "Voir mes projets"
+		"welcome": "Je construis des produits de A à Z",
+		"work": "Du concept au déploiement",
+		"identity": "42 Student · Startup Enthusiast",
+		"studying_domain": "Fullstack Developer — Web / Mobile / AI",
+		"cta": "En savoir plus"
 	},
 	"projects": {
 		"title": "Projets",
@@ -111,19 +112,19 @@
 		},
 		"minishell": {
 			"title": "Minishell",
-			"description": "minishell est une implémentation minimaliste d’un interpréteur de commandes Unix, développée en C dans le cadre du Tronc Commun du cursus 42. L’objectif est de reproduire le comportement de base d’un shell comme Bash, en gérant l’exécution de commandes, les redirections, les pipes, les variables d’environnement et les signaux clavier. Le projet met l’accent sur la gestion des processus, des descripteurs de fichiers, et le traitement des entrées utilisateur tout en respectant les contraintes de la norme du projet et en évitant les fuites mémoire."
+			"description": "Interpréteur de commandes Unix en C — exécution, redirections, pipes, variables d’environnement et gestion des signaux."
 		},
 		"irc": {
 			"title": "IRC",
-			"description": "ft_irc est une implémentation personnalisée d’un serveur IRC (Internet Relay Chat) développée en C++ dans le cadre du Tronc Commun du cursus 42. Le projet consiste à comprendre et appliquer les protocoles réseau en implémentant un serveur capable de gérer plusieurs clients simultanément, d’authentifier les utilisateurs, de gérer des canaux et d’envoyer des messages publics et privés. Le serveur fonctionne via des sockets TCP non bloquants et respecte les spécifications du protocole IRC, offrant une communication en temps réel entre clients via des commandes standards comme NICK, USER, JOIN, PART et PRIVMSG. Ce projet améliore la maîtrise de la programmation réseau, de la gestion d’événements et des protocoles de communication."
+			"description": "Serveur IRC en C++ avec sockets TCP non bloquants — gestion multi-clients, authentification, canaux et messagerie temps réel."
 		},
 		"transcendence": {
 			"title": "Ft_Transcendence",
-			"description": "ft_transcendence est une application web full-stack interactive développée dans le cadre du projet final du Tronc Commun à l’école 42. Elle permet aux utilisateurs de s’authentifier, gérer leur profil et jouer à une version en ligne du jeu Pong en temps réel contre d’autres joueurs. L’application inclut également des fonctionnalités sociales comme le chat, les statistiques de jeu et l’historique des parties. Le projet met en œuvre une architecture moderne avec une API backend, des WebSockets pour le jeu en temps réel, une base de données pour la persistance et un frontend réactif pour une expérience fluide et engageante."
+			"description": "Application web full-stack — Pong multijoueur en temps réel via WebSockets, auth, chat, stats et historique de parties."
 		},
 		"music_room": {
 			"title": "Music_Room",
-			"description": "Music Room est une application innovante qui facilite la découverte et le partage de musique entre amis et passionnés. Les utilisateurs peuvent créer et gérer des playlists, participer à des événements musicaux, voter pour leurs morceaux favoris et personnaliser leur profil selon leurs goûts. Le projet repose sur une API performante développée avec Node.js et Prisma, ainsi qu’une application mobile React Native avec expo. Music Room favorise l’interaction sociale et propose une expérience musicale enrichie et personnalisée."
+			"description": "Application mobile de partage musical — playlists collaboratives, événements, votes et profils personnalisés avec React Native et Node.js."
 		},
 		"matcha": {
 			"title": "Matcha",

@@ -14,7 +14,7 @@ export const Home = () => {
 		if (!el) return;
 
 		const fx = new TextScramble(el);
-		const phrases = [t('home.welcome'), t('home.work')];
+		const phrases = [t('home.welcome'), t('home.work'), t('home.identity')];
 		let counter = 0;
 		let timeoutId = null;
 		let cancelled = false;
@@ -53,7 +53,7 @@ export const Home = () => {
 
 				<motion.button
 					className="hero-cta"
-					onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+					onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.6, duration: 0.5 }}

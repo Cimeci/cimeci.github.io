@@ -20,14 +20,6 @@ export const About = () => {
 			<ScrollReveal delay={0.2}>
 				<div className="about-intro-block">
 					<p className="about-text">
-						{t('about.intro.greeting', { name: t('about.intro.name') }).split(t('about.intro.name')).map((part, i, arr) => (
-							<React.Fragment key={i}>
-								{part}
-								{i < arr.length - 1 && <strong>{t('about.intro.name')}</strong>}
-							</React.Fragment>
-						))}
-					</p>
-					<p className="about-text">
 						{t('about.intro.description', { highlight1: t('about.intro.highlight1') }).split(t('about.intro.highlight1')).map((part, i, arr) => (
 							<React.Fragment key={i}>
 								{part}

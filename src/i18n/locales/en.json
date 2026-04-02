@@ -10,9 +10,9 @@
 		"title": "About",
 		"subtitle": "Me",
 		"intro": {
-			"greeting": "Hey! I'm {{name}}, a developer in training at 42 School.",
+			"greeting": "",
 			"name": "Ilan Nowak--Glandier",
-			"description": "After a year at 42, I completed the core curriculum and explored many different fields. Today, I specialize in web development, data science, and AI. I am a motivated, curious, and rigorous developer, driven by the desire to take on {{highlight1}} and transform ideas into robust solutions.",
+			"description": "Fullstack developer trained at 42, I build web and mobile applications end to end. Curious, rigorous and self-driven, I'm motivated by {{highlight1}} and turning ideas into real products.",
 			"highlight1": "concrete technical challenges",
 			"startup": "I'm particularly drawn to the {{highlight}} — fast-paced environments where you build, ship, and iterate with real impact from day one.",
 			"startup_highlight": "startup ecosystem"
@@ -22,7 +22,7 @@
 			"moncab": {
 				"role": "Full-Stack Developer Intern",
 				"company": "Moncab",
-				"date": "Feb. 2026 — Present",
+				"date": "Feb. 2026 — Aug. 2026",
 				"description": "From small fixes to full-stack features across the entire codebase. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, optimistic messaging updates, owner dashboard with payment stats, and multiple Stripe endpoint security passes. 113+ commits in ~2 months."
 			}
 		},
@@ -85,10 +85,11 @@
 	},
 	"home": {
 		"title": "Home",
-		"welcome": "Welcome To My Website",
-		"work": "Fullstack Developer Web/Mobile",
-		"studying_domain": "Data Science / Web Development / AI",
-		"cta": "See my work"
+		"welcome": "I build products end to end",
+		"work": "From concept to deployment",
+		"identity": "42 Student · Startup Enthusiast",
+		"studying_domain": "Fullstack Developer — Web / Mobile / AI",
+		"cta": "Learn more"
 	},
 	"projects": {
 		"title": "Projects",
@@ -111,19 +112,19 @@
 		},
 		"minishell": {
 			"title": "Minishell",
-			"description": "minishell is a minimalist Unix command interpreter implemented in C as part of the 42 Common Core. The goal is to replicate basic shell behavior similar to Bash, handling command execution, input/output redirections, pipes, environment variables, and keyboard signals. The project focuses on process management, file descriptor manipulation, and user input handling while adhering to project constraints and ensuring no memory leaks."
+			"description": "Unix command interpreter in C — execution, redirections, pipes, environment variables and signal handling."
 		},
 		"irc": {
 			"title": "IRC",
-			"description": "ft_irc is a custom implementation of an IRC (Internet Relay Chat) server developed in C++ as part of the 42 Common Core. The project focuses on network protocol fundamentals by building a server that handles multiple clients concurrently, authenticates users, manages channels, and facilitates public and private messaging. The server uses non-blocking TCP sockets and adheres to IRC protocol specifications, enabling real-time communication between clients through standard commands such as NICK, USER, JOIN, PART, and PRIVMSG. This project deepens understanding of network programming, event handling, and communication protocols."
+			"description": "IRC server in C++ with non-blocking TCP sockets — multi-client handling, authentication, channels and real-time messaging."
 		},
 		"transcendence": {
 			"title": "Transcendence",
-			"description": "transcendence is an interactive full-stack web application developed as part of the final project of the 42 Common Core. It enables users to authenticate, manage their profiles, and play a real-time online version of Pong against other players. The application also includes social features such as chat, game statistics, and match history. The project uses a modern architecture with a backend API, WebSockets for real-time gameplay, a database for persistence, and a responsive frontend for a smooth and engaging user experience."
+			"description": "Full-stack web app — real-time multiplayer Pong via WebSockets, auth, chat, stats and match history."
 		},
 		"music_room": {
 			"title": "Music_Room",
-			"description": "Music Room is an innovative application that makes it easy for friends and music enthusiasts to discover and share music. Users can create and manage playlists, join music events, vote for their favorite tracks, and customize their profiles based on their preferences. The project is built on a high-performance API using Node.js and Prisma, along with an intuitive React Native mobile app with expo. Music Room encourages social interaction and offers a rich, personalized music experience."
+			"description": "Mobile music sharing app — collaborative playlists, events, voting and personalized profiles with React Native and Node.js."
 		},
 		"matcha": {
 			"title": "Matcha",
