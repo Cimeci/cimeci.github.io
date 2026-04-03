@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useRef, useEffect } from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { TextScramble } from '../utils/Animation';
 import './Home.css';
@@ -51,16 +51,28 @@ export const Home = () => {
 
 				<p ref={titleRef} className="hero-scramble" />
 
-				<motion.button
-					className="hero-cta"
-					onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+				<motion.div
+					className="hero-buttons"
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.6, duration: 0.5 }}
 				>
-					<span>{t('home.cta')}</span>
-					<ArrowDown size={16} />
-				</motion.button>
+					<button
+						className="hero-cta"
+						onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+					>
+						<span>{t('home.cta')}</span>
+						<ArrowDown size={16} />
+					</button>
+					<a
+						href="/cv.pdf"
+						download
+						className="hero-cta hero-cta-outline"
+					>
+						<span>{t('home.cv')}</span>
+						<Download size={16} />
+					</a>
+				</motion.div>
 			</motion.div>
 		</div>
 	);

@@ -1,5 +1,6 @@
 import "./App.css";
 import { Navbar } from './components/utils/Navbar';
+import { ScrollToTop } from './components/utils/ScrollToTop';
 import { Home, About, Projects, Stacks, Contact } from "./components/pages";
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
 			<section id="stacks"><Stacks /></section>
 			<section id="projects"><Projects /></section>
 			<section id="contact"><Contact /></section>
+
+			<ScrollToTop />
 		</div>
 	);
 }

@@ -23,7 +23,7 @@
 				"role": "Développeur Full-Stack Stagiaire",
 				"company": "Moncab",
 				"date": "Fév. 2026 — Août 2026",
-				"description": "De petits fixes à des features full-stack sur l'ensemble du codebase. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion d'annonces Ubiflow, optimistic updates messagerie, dashboard owner avec stats paiements, et plusieurs passes de sécurité sur les endpoints Stripe. 113+ commits en ~2 mois."
+				"description": "Arrivé comme seul stagiaire dev, rapidement autonome sur l'ensemble du codebase. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion Ubiflow, dashboard owner avec stats paiements, et plusieurs passes de sécurité Stripe. 113+ commits en ~2 mois."
 			}
 		},
 		"values": {
@@ -85,29 +85,43 @@
 	},
 	"home": {
 		"title": "Accueil",
-		"welcome": "Je construis des produits de A à Z",
-		"work": "Du concept au déploiement",
-		"identity": "42 Student · Startup Enthusiast",
+		"welcome": "Curieux par nature, rigoureux par formation",
+		"work": "Je pense produit avant d'écrire du code",
+		"identity": "42 Student · Builder",
 		"studying_domain": "Fullstack Developer — Web / Mobile / AI",
-		"cta": "En savoir plus"
+		"cta": "En savoir plus",
+		"cv": "Télécharger CV"
 	},
 	"projects": {
 		"title": "Projets",
-		"personal": "Projets Personnels",
-		"school": "Projets 42",
+		"process": {
+			"title": "Comment j'aborde un projet",
+			"step1_label": "Problème",
+			"step1_desc": "Identifier un vrai problème qui vaut la peine d'être résolu",
+			"step2_label": "Réflexion",
+			"step2_desc": "Architecture, parcours UX, features, modèle économique",
+			"step3_label": "Build",
+			"step3_desc": "Livrer un MVP rapidement avec la bonne stack",
+			"step4_label": "Itérer",
+			"step4_desc": "Tester, récolter du feedback, améliorer"
+		},
+		"personal": "Orientés Produit",
+		"personal_subtitle": "Créés de zéro — pensés comme de vrais produits avec UX, modèle économique et logique MVP.",
+		"school": "Défis Techniques",
+		"school_subtitle": "Projets 42 — programmation bas niveau, conception système et implémentation de protocoles.",
 		"leairn": {
 			"title": "leAIrn",
-			"description": "Plateforme gamifiée d'apprentissage du prompting IA — un Duolingo des prompts. 6 types d'exercices, évaluation IA via Groq, gamification complète (XP, streaks, badges, leaderboard), fonctionnalités sociales et abonnements freemium/pro via Stripe.",
+			"description": "La plupart des gens utilisent mal l'IA parce que personne n'enseigne le prompting. J'ai construit une plateforme type Duolingo avec 6 types d'exercices, évaluation IA via Groq, gamification complète (XP, streaks, badges, leaderboard), fonctionnalités sociales et abonnements freemium/pro via Stripe.",
 			"status": "MVP"
 		},
 		"nali": {
 			"title": "Nali",
-			"description": "SaaS moderne alternatif à Jira/Linear, conçu pour les équipes de dev. Gestion multi-organisations, Kanban avec sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
+			"description": "Les outils de gestion de projet existants sont trop complexes pour les petites équipes dev. J'ai construit une alternative plus légère avec gestion multi-organisations, Kanban + sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
 			"status": "MVP"
 		},
 		"reflexion": {
 			"title": "scraping-polymarket",
-			"description": "Bot autonome de trading prédictif qui scrape des données multi-sources (Polymarket, Google News, Reddit, CoinGecko), analyse les marchés prédictifs via un LLM local (Qwen 2.5 7B) avec une méthodologie superforecaster, et génère des prédictions calibrées en paper trading.",
+			"description": "Les marchés prédictifs sont difficiles à analyser manuellement sur plusieurs sources. J'ai construit un bot autonome qui scrape Polymarket, Google News, Reddit et CoinGecko, analyse les marchés via un LLM local (Qwen 2.5 7B) avec méthodologie superforecaster, et génère des prédictions calibrées en paper trading.",
 			"status": "Paper Trading"
 		},
 		"minishell": {
@@ -132,15 +146,19 @@
 		},
 		"tokenizer": {
 			"title": "Tokenizer",
-			"description": "Outil de traitement du langage naturel pour la tokenisation et l'analyse de texte."
+			"description": "Création d'un actif numérique sur la blockchain en Solidity — smart contract, déploiement et interaction web3."
+		},
+		"learn2slither": {
+			"title": "Learn2Slither",
+			"description": "Un snake qui apprend à survivre et se nourrir de manière autonome grâce au Q-Learning — vision locale, Q-table, exploration/exploitation, entraîné from scratch sans librairie ML."
 		},
 		"linear_regression": {
 			"title": "Ft_Linear_Regression",
-			"description": "Projet de machine learning implémentant la régression linéaire from scratch pour la prédiction de prix."
+			"description": "Programme de prédiction du prix d'une voiture en utilisant la régression linéaire avec un algorithme du gradient, implémenté from scratch en Python."
 		},
-		"multiplayer_perception": {
-			"title": "Multiplayer_Perception",
-			"description": "Projet IA explorant la perception et les systèmes de prise de décision multi-agents."
+		"multilayer_perceptron": {
+			"title": "Multilayer_Perceptron",
+			"description": "Réseaux de neurones artificiels grâce à l'implémentation d'un multilayer perceptron from scratch en Python."
 
 		}
 	},
@@ -161,6 +179,8 @@
 		"subject": "Sujet",
 		"text": "Texte",
 		"send": "Envoyer",
+		"success": "Message envoyé avec succès !",
+		"error": "Une erreur est survenue. Veuillez réessayer.",
 		"mail": {
 			"reponse": "Bonjour,\n\nMerci d'avoir pris le temps de me contacter.\nJ'ai bien reçu votre message et je reviendrai vers vous dès que possible avec une réponse complète.\n\nSi vous avez d'autres questions entre-temps, n'hésitez pas à me les transmettre.\n\nBonne journée,\n\nIlan Nowak--Glandier"
 		}

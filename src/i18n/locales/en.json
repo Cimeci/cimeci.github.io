@@ -23,7 +23,7 @@
 				"role": "Full-Stack Developer Intern",
 				"company": "Moncab",
 				"date": "Feb. 2026 — Aug. 2026",
-				"description": "From small fixes to full-stack features across the entire codebase. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, optimistic messaging updates, owner dashboard with payment stats, and multiple Stripe endpoint security passes. 113+ commits in ~2 months."
+				"description": "Joined as the sole dev intern and quickly became autonomous across the entire codebase. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, owner dashboard with payment stats, and multiple Stripe security passes. 113+ commits in ~2 months."
 			}
 		},
 		"values": {
@@ -85,29 +85,43 @@
 	},
 	"home": {
 		"title": "Home",
-		"welcome": "I build products end to end",
-		"work": "From concept to deployment",
-		"identity": "42 Student · Startup Enthusiast",
+		"welcome": "Curious by nature, rigorous by training",
+		"work": "I think product before I write code",
+		"identity": "42 Student · Builder",
 		"studying_domain": "Fullstack Developer — Web / Mobile / AI",
-		"cta": "Learn more"
+		"cta": "Learn more",
+		"cv": "Download CV"
 	},
 	"projects": {
 		"title": "Projects",
-		"personal": "Personal Projects",
-		"school": "42 School Projects",
+		"process": {
+			"title": "How I approach a project",
+			"step1_label": "Problem",
+			"step1_desc": "Identify a real pain point worth solving",
+			"step2_label": "Think",
+			"step2_desc": "Architecture, UX flow, features, pricing model",
+			"step3_label": "Build",
+			"step3_desc": "Ship an MVP fast with the right stack",
+			"step4_label": "Iterate",
+			"step4_desc": "Test, get feedback, improve"
+		},
+		"personal": "Product-Oriented",
+		"personal_subtitle": "Built from scratch — thought as real products with UX, business model and MVP mindset.",
+		"school": "Technical Challenges",
+		"school_subtitle": "42 School projects — low-level programming, system design and protocol implementation.",
 		"leairn": {
 			"title": "leAIrn",
-			"description": "A gamified learning platform for mastering AI prompting — like Duolingo, but for prompts. Features 6 exercise types, AI-powered evaluation via Groq, full gamification (XP, streaks, badges, leaderboard), social features, and Stripe-based freemium/pro subscriptions.",
+			"description": "Most people use AI badly because nobody teaches prompting as a skill. I built a Duolingo-style platform with 6 exercise types, AI-powered evaluation via Groq, full gamification (XP, streaks, badges, leaderboard), social features, and Stripe-based freemium/pro subscriptions.",
 			"status": "MVP"
 		},
 		"nali": {
 			"title": "Nali",
-			"description": "A modern SaaS alternative to Jira/Linear, built for dev teams. Includes multi-org management, Kanban boards with sprints, real-time messaging, AES-256 encrypted documents, GitHub integration, WebRTC video calls, and Stripe billing with 4 plans.",
+			"description": "Existing project management tools are overengineered for small dev teams. I built a lighter alternative with multi-org management, Kanban + sprints, real-time messaging, AES-256 encrypted docs, GitHub integration, WebRTC video calls, and Stripe billing with 4 plans.",
 			"status": "MVP"
 		},
 		"reflexion": {
 			"title": "scraping-polymarket",
-			"description": "An autonomous predictive trading bot that scrapes multi-source data (Polymarket, Google News, Reddit, CoinGecko), analyzes prediction markets via a local LLM (Qwen 2.5 7B) using a superforecaster methodology, and generates calibrated predictions with paper trading.",
+			"description": "Prediction markets are hard to analyze manually across multiple sources. I built an autonomous bot that scrapes Polymarket, Google News, Reddit and CoinGecko, analyzes markets via a local LLM (Qwen 2.5 7B) with superforecaster methodology, and generates calibrated predictions in paper trading.",
 			"status": "Paper Trading"
 		},
 		"minishell": {
@@ -132,15 +146,19 @@
 		},
 		"tokenizer": {
 			"title": "Tokenizer",
-			"description": "Natural language processing tool for text tokenization and analysis."
+			"description": "Digital asset creation on the blockchain using Solidity — smart contract, deployment and web3 interaction."
+		},
+		"learn2slither": {
+			"title": "Learn2Slither",
+			"description": "A snake that learns to survive and feed autonomously using Q-Learning — local vision, Q-table, exploration/exploitation, trained from scratch with no ML library."
 		},
 		"linear_regression": {
 			"title": "Linear_Regression",
-			"description": "Machine learning project implementing linear regression from scratch for price prediction."
+			"description": "Car price prediction program using linear regression with gradient descent algorithm, implemented from scratch in Python."
 		},
-		"multiplayer_perception": {
-			"title": "Multiplayer_Perception",
-			"description": "AI project exploring multi-agent perception and decision-making systems."
+		"multilayer_perceptron": {
+			"title": "Multilayer_Perceptron",
+			"description": "Artificial neural networks through the implementation of a multilayer perceptron from scratch in Python."
 		}
 	},
 	"stack": {
@@ -160,6 +178,8 @@
 		"subject": "Subject",
 		"text": "Text",
 		"send": "Send",
+		"success": "Message sent successfully!",
+		"error": "Something went wrong. Please try again.",
 		"mail": {
 			"reponse": "Hello,\n\nThank you for taking the time to contact me.\nI have received your message and will get back to you as soon as possible with a complete response.\n\nIf you have any other questions in the meantime, feel free to send them my way.\n\nHave a great day,\n\nIlan Nowak--Glandier"
 		}

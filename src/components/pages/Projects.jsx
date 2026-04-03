@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Search, Lightbulb, Hammer, RefreshCw } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
 import './Projects.css';
 
@@ -15,6 +15,7 @@ const PERSONAL_PROJECTS = [
 		link: 'https://le-a-irn-delta.vercel.app/',
 		github: 'leAIrn',
 		logo: '/leairn-logo.png',
+		img: '/projects_visuals/leairn.png',
 		tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Supabase', 'Groq API', 'Stripe'],
 	},
 	{
@@ -22,28 +23,24 @@ const PERSONAL_PROJECTS = [
 		link: 'https://nali-frontend.vercel.app',
 		github: 'Nali',
 		logo: '/nali-logo.png',
+		img: '/projects_visuals/nali.png',
 		tags: ['Next.js', 'React 19', 'NestJS', 'Supabase', 'Stripe', 'WebRTC'],
 	},
 	{
 		key: 'reflexion',
 		link: `${GITHUB}scraping-polymarket`,
 		github: 'scraping-polymarket',
+		img: '/projects_visuals/scraping-polymarket.png',
 		tags: ['Python', 'Ollama', 'LLM', 'FastAPI', 'Discord.py', 'SQLite'],
 	},
 ];
 
 const SCHOOL_PROJECTS = [
 	{
-		key: 'music_room',
-		img: '/projects_visuals/Music-room_visual.svg',
-		link: 'Music_Room',
-		tags: ['React Native', 'Node.js', 'Prisma', 'Expo'],
-	},
-	{
-		key: 'transcendence',
-		img: '/projects_visuals/Transcendence_visual.svg',
-		link: 'ft_transcendence',
-		tags: ['Full-Stack', 'WebSockets', 'Pong', 'Auth'],
+		key: 'minishell',
+		img: '/projects_visuals/minishell_visual.svg',
+		link: 'minishell',
+		tags: ['C', 'Unix', 'Shell', 'Processes'],
 	},
 	{
 		key: 'irc',
@@ -52,10 +49,28 @@ const SCHOOL_PROJECTS = [
 		tags: ['C++', 'TCP Sockets', 'IRC Protocol'],
 	},
 	{
-		key: 'minishell',
-		img: '/projects_visuals/minishell_visual.svg',
-		link: 'minishell',
-		tags: ['C', 'Unix', 'Shell', 'Processes'],
+		key: 'transcendence',
+		img: '/projects_visuals/Transcendence_visual.svg',
+		link: 'ft_transcendence',
+		tags: ['Full-Stack', 'WebSockets', 'Pong', 'Auth'],
+	},
+	{
+		key: 'music_room',
+		img: '/projects_visuals/Music-room_visual.svg',
+		link: 'Music_Room',
+		tags: ['React Native', 'Node.js', 'Prisma', 'Expo'],
+	},
+	{
+		key: 'linear_regression',
+		img: '/projects_visuals/linear_regression_visual.svg',
+		link: 'ft_linear_regression',
+		tags: ['Python', 'Machine Learning', 'Gradient Descent'],
+	},
+	{
+		key: 'learn2slither',
+		img: '/projects_visuals/learn2slither_visual.svg',
+		link: 'Learn2Slither',
+		tags: ['Python', 'Q-Learning', 'Pygame', 'Reinforcement Learning'],
 	},
 ];
 
@@ -75,21 +90,32 @@ function PersonalCard({ project, index }) {
 				rel="noopener noreferrer"
 				className="personal-card"
 			>
-				<div className="personal-card-header">
-					<div className="personal-card-title-row">
-						{project.logo && <img src={project.logo} alt="" className="personal-card-logo" />}
-						<h3 className="personal-card-name">{t(`projects.${project.key}.title`)}</h3>
+				{project.img && (
+					<div className="personal-card-img-wrap">
+						<img
+							src={project.img}
+							alt={t(`projects.${project.key}.title`)}
+							loading="lazy"
+						/>
 					</div>
-					<span className="personal-card-status">{status}</span>
-				</div>
-				<p className="personal-card-desc">{t(`projects.${project.key}.description`)}</p>
-				<div className="personal-card-footer">
-					<div className="project-tags">
-						{project.tags.map((tag) => (
-							<span key={tag} className="project-tag">{tag}</span>
-						))}
+				)}
+				<div className="personal-card-body">
+					<div className="personal-card-header">
+						<div className="personal-card-title-row">
+							{project.logo && <img src={project.logo} alt="" className="personal-card-logo" />}
+							<h3 className="personal-card-name">{t(`projects.${project.key}.title`)}</h3>
+						</div>
+						<span className="personal-card-status">{status}</span>
 					</div>
-					<ExternalLink size={16} className="personal-card-arrow" />
+					<p className="personal-card-desc">{t(`projects.${project.key}.description`)}</p>
+					<div className="personal-card-footer">
+						<div className="project-tags">
+							{project.tags.map((tag) => (
+								<span key={tag} className="project-tag">{tag}</span>
+							))}
+						</div>
+						<ExternalLink size={16} className="personal-card-arrow" />
+					</div>
 				</div>
 			</a>
 		</ScrollReveal>
@@ -155,7 +181,24 @@ export const Projects = () => {
 
 			{/* Personal Projects */}
 			<ScrollReveal delay={0.15}>
-				<h3 className="projects-category">{t('projects.personal')}</h3>
+				<div className="projects-category-block">
+					<h3 className="projects-category">{t('projects.personal')}</h3>
+					<p className="projects-category-subtitle">{t('projects.personal_subtitle')}</p>
+					<div className="process-inline">
+						{[
+							{ icon: Search, label: t('projects.process.step1_label') },
+							{ icon: Lightbulb, label: t('projects.process.step2_label') },
+							{ icon: Hammer, label: t('projects.process.step3_label') },
+							{ icon: RefreshCw, label: t('projects.process.step4_label') },
+						].map(({ icon: Icon, label }, i, arr) => (
+							<span key={i} className="process-inline-step">
+								<Icon size={14} />
+								<span>{label}</span>
+								{i < arr.length - 1 && <span className="process-inline-arrow">→</span>}
+							</span>
+						))}
+					</div>
+				</div>
 			</ScrollReveal>
 			<div className="personal-grid">
 				{PERSONAL_PROJECTS.map((p, i) => (
@@ -165,7 +208,10 @@ export const Projects = () => {
 
 			{/* 42 School Projects */}
 			<ScrollReveal delay={0.1}>
-				<h3 className="projects-category projects-category-school">{t('projects.school')}</h3>
+				<div className="projects-category-block">
+					<h3 className="projects-category projects-category-school">{t('projects.school')}</h3>
+					<p className="projects-category-subtitle">{t('projects.school_subtitle')}</p>
+				</div>
 			</ScrollReveal>
 			<div className="projects-grid">
 				{SCHOOL_PROJECTS.map((p, i) => (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SiDiscord, SiGithub, SiLinkedin, SiX } from 'react-icons/si';
-import { SendHorizonal } from 'lucide-react';
+import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SendHorizonal, Check, X } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
 import './Contact.css';
 
@@ -9,16 +9,39 @@ const SOCIALS = [
 	{ icon: SiGithub, href: 'https://github.com/Cimeci', label: 'GitHub' },
 	{ icon: SiLinkedin, href: 'https://linkedin.com/in/ilan-nowak-glandier', label: 'LinkedIn' },
 	{ icon: SiX, href: 'https://x.com/Cimeci_23', label: 'X' },
-	{ icon: SiDiscord, href: 'https://discord.com/users/Cimeci', label: 'Discord' },
 ];
 
 export const Contact = () => {
 	const { t } = useTranslation();
 	const [loading, setLoading] = useState(false);
+	const [status, setStatus] = useState(null);
 
-	const handleSubmit = () => {
+	const handleSubmit = async (e) => {
+		e.preventDefault();
 		setLoading(true);
-		setTimeout(() => setLoading(false), 3000);
+		setStatus(null);
+
+		const form = e.target;
+		const formData = new FormData(form);
+
+		try {
+			const res = await fetch(form.action, {
+				method: 'POST',
+				body: formData,
+				headers: { Accept: 'application/json' },
+			});
+
+			if (res.ok) {
+				setStatus('success');
+				form.reset();
+			} else {
+				setStatus('error');
+			}
+		} catch {
+			setStatus('error');
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
@@ -98,6 +121,19 @@ export const Contact = () => {
 								</>
 							)}
 						</button>
+
+						{status === 'success' && (
+							<div className="contact-message contact-message-success">
+								<Check size={16} />
+								<span>{t('contact.success')}</span>
+							</div>
+						)}
+						{status === 'error' && (
+							<div className="contact-message contact-message-error">
+								<X size={16} />
+								<span>{t('contact.error')}</span>
+							</div>
+						)}
 
 						<input type="hidden" name="_next" value="https://cimeci.github.io" />
 						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')} />

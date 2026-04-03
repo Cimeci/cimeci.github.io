@@ -1,4 +1,35 @@
+/* ==================== PROCESS INLINE ==================== */
+
+.process-inline {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+	margin-top: 0.6rem;
+}
+
+.process-inline-step {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 500;
+	color: var(--accent);
+}
+
+.process-inline-arrow {
+	color: var(--text-muted);
+	margin: 0 0.2rem;
+}
+
 /* ==================== CATEGORY HEADERS ==================== */
+
+.projects-category-block {
+	margin-top: 2.5rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--border);
+}
 
 .projects-category {
 	font-family: var(--font-mono);
@@ -7,15 +38,26 @@
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
 	color: var(--accent);
-	margin-top: 2.5rem;
-	margin-bottom: 0.5rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 1px solid var(--border);
+	margin-bottom: 0.35rem;
+}
+
+.projects-category-subtitle {
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: var(--text-secondary);
 }
 
 .projects-category-school {
-	margin-top: 3.5rem;
+	margin-top: 0;
 	color: var(--text-muted);
+}
+
+.projects-category-school + .projects-category-subtitle {
+	color: var(--text-muted);
+}
+
+.projects-category-block:has(.projects-category-school) {
+	margin-top: 3.5rem;
 }
 
 /* ==================== PERSONAL PROJECTS GRID ==================== */
@@ -43,8 +85,6 @@
 .personal-card {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
-	padding: 1.5rem;
 	border: 1px solid var(--border);
 	border-radius: 16px;
 	background: var(--bg-card);
@@ -53,6 +93,33 @@
 	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 	position: relative;
 	height: 100%;
+	overflow: hidden;
+}
+
+.personal-card-img-wrap {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	background: var(--bg-secondary);
+}
+
+.personal-card-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.personal-card:hover .personal-card-img-wrap img {
+	transform: scale(1.05);
+}
+
+.personal-card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1.5rem;
+	flex: 1;
 }
 
 .personal-card::before {
