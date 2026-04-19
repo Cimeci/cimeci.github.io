@@ -80,7 +80,6 @@ export const About = () => {
 				{[
 					{ key: 'climbing', img: '/hobbies/Sport.svg' },
 					{ key: 'music', img: '/hobbies/Music.svg' },
-					{ key: 'cinema', img: '/hobbies/Cinema.svg' },
 					{ key: 'travel', img: '/hobbies/Travel.svg' },
 					{ key: 'games', img: '/hobbies/VideoGames.svg' },
 				].map((hobby, i) => (

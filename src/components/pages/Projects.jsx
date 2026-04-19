@@ -11,6 +11,13 @@ const GITHUB = 'https://github.com/Cimeci/';
 
 const PERSONAL_PROJECTS = [
 	{
+		key: 'setupia',
+		link: 'https://setup-ia.vercel.app',
+		github: 'setup.ia',
+		img: '/projects_visuals/setupia.png',
+		tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Stripe', 'Turborepo'],
+	},
+	{
 		key: 'leairn',
 		link: 'https://le-a-irn-delta.vercel.app/',
 		github: 'leAIrn',
@@ -25,13 +32,6 @@ const PERSONAL_PROJECTS = [
 		logo: '/nali-logo.png',
 		img: '/projects_visuals/nali.png',
 		tags: ['Next.js', 'React 19', 'NestJS', 'Supabase', 'Stripe', 'WebRTC'],
-	},
-	{
-		key: 'reflexion',
-		link: `${GITHUB}scraping-polymarket`,
-		github: 'scraping-polymarket',
-		img: '/projects_visuals/scraping-polymarket.png',
-		tags: ['Python', 'Ollama', 'LLM', 'FastAPI', 'Discord.py', 'SQLite'],
 	},
 ];
 

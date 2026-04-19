@@ -73,7 +73,6 @@
 			"climbing": "Sport",
 			"travel": "Voyager",
 			"music": "Musique",
-			"cinema": "Cinéma",
 			"games": "Jeux vidéo"
 		},
 		"cta": {
@@ -119,10 +118,10 @@
 			"description": "Les outils de gestion de projet existants sont trop complexes pour les petites équipes dev. J'ai construit une alternative plus légère avec gestion multi-organisations, Kanban + sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
 			"status": "MVP"
 		},
-		"reflexion": {
-			"title": "scraping-polymarket",
-			"description": "Les marchés prédictifs sont difficiles à analyser manuellement sur plusieurs sources. J'ai construit un bot autonome qui scrape Polymarket, Google News, Reddit et CoinGecko, analyse les marchés via un LLM local (Qwen 2.5 7B) avec méthodologie superforecaster, et génère des prédictions calibrées en paper trading.",
-			"status": "Paper Trading"
+		"setupia": {
+			"title": "setup.ia",
+			"description": "La plupart des devs qui codent avec l'IA n'ont aucun fichier de configuration (CLAUDE.md, .cursorrules...) ou copient des templates génériques. J'ai construit une plateforme qui génère des fichiers de config IA personnalisés selon le contexte, le niveau et les objectifs du développeur — avec un questionnaire interactif, des templates premium par domaine et un modèle freemium.",
+			"status": "En cours"
 		},
 		"minishell": {
 			"title": "Minishell",

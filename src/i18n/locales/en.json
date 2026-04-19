@@ -73,7 +73,6 @@
 			"climbing": "Sport",
 			"travel": "Travel",
 			"music": "Music",
-			"cinema": "Cinema",
 			"games": "Video games"
 		},
 		"cta": {
@@ -119,10 +118,10 @@
 			"description": "Existing project management tools are overengineered for small dev teams. I built a lighter alternative with multi-org management, Kanban + sprints, real-time messaging, AES-256 encrypted docs, GitHub integration, WebRTC video calls, and Stripe billing with 4 plans.",
 			"status": "MVP"
 		},
-		"reflexion": {
-			"title": "scraping-polymarket",
-			"description": "Prediction markets are hard to analyze manually across multiple sources. I built an autonomous bot that scrapes Polymarket, Google News, Reddit and CoinGecko, analyzes markets via a local LLM (Qwen 2.5 7B) with superforecaster methodology, and generates calibrated predictions in paper trading.",
-			"status": "Paper Trading"
+		"setupia": {
+			"title": "setup.ia",
+			"description": "Most devs coding with AI have no configuration file (CLAUDE.md, .cursorrules...) or copy generic templates. I built a platform that generates personalized AI config files based on the developer's context, skill level and goals — with an interactive questionnaire, premium domain-specific templates and a freemium model.",
+			"status": "In Progress"
 		},
 		"minishell": {
 			"title": "Minishell",
