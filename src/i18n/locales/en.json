@@ -111,17 +111,17 @@
 		"leairn": {
 			"title": "leAIrn",
 			"description": "Most people use AI badly because nobody teaches prompting as a skill. I built a Duolingo-style platform with 6 exercise types, AI-powered evaluation via Groq, full gamification (XP, streaks, badges, leaderboard), social features, and Stripe-based freemium/pro subscriptions.",
-			"status": "MVP"
+			"status": "Beta"
 		},
 		"nali": {
 			"title": "Nali",
 			"description": "Existing project management tools are overengineered for small dev teams. I built a lighter alternative with multi-org management, Kanban + sprints, real-time messaging, AES-256 encrypted docs, GitHub integration, WebRTC video calls, and Stripe billing with 4 plans.",
-			"status": "MVP"
+			"status": "Beta"
 		},
 		"setupia": {
 			"title": "setup.ia",
 			"description": "Most devs coding with AI have no configuration file (CLAUDE.md, .cursorrules...) or copy generic templates. I built a platform that generates personalized AI config files based on the developer's context, skill level and goals — with an interactive questionnaire, premium domain-specific templates and a freemium model.",
-			"status": "In Progress"
+			"status": "MVP"
 		},
 		"minishell": {
 			"title": "Minishell",

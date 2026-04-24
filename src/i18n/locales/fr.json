@@ -111,17 +111,17 @@
 		"leairn": {
 			"title": "leAIrn",
 			"description": "La plupart des gens utilisent mal l'IA parce que personne n'enseigne le prompting. J'ai construit une plateforme type Duolingo avec 6 types d'exercices, évaluation IA via Groq, gamification complète (XP, streaks, badges, leaderboard), fonctionnalités sociales et abonnements freemium/pro via Stripe.",
-			"status": "MVP"
+			"status": "Beta"
 		},
 		"nali": {
 			"title": "Nali",
 			"description": "Les outils de gestion de projet existants sont trop complexes pour les petites équipes dev. J'ai construit une alternative plus légère avec gestion multi-organisations, Kanban + sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
-			"status": "MVP"
+			"status": "Beta"
 		},
 		"setupia": {
 			"title": "setup.ia",
 			"description": "La plupart des devs qui codent avec l'IA n'ont aucun fichier de configuration (CLAUDE.md, .cursorrules...) ou copient des templates génériques. J'ai construit une plateforme qui génère des fichiers de config IA personnalisés selon le contexte, le niveau et les objectifs du développeur — avec un questionnaire interactif, des templates premium par domaine et un modèle freemium.",
-			"status": "En cours"
+			"status": "MVP"
 		},
 		"minishell": {
 			"title": "Minishell",
