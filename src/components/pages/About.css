@@ -115,6 +115,11 @@
 	grid-template-columns: 1fr;
 	gap: 1rem;
 	margin-bottom: 4rem;
+	align-items: stretch;
+}
+
+.about-grid > * {
+	height: 100%;
 }
 
 @media (min-width: 640px) {
@@ -124,6 +129,9 @@
 }
 
 .about-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	padding: 1.5rem;
 	border: 1px solid var(--border);
 	border-radius: 12px;

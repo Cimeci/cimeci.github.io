@@ -78,6 +78,40 @@
 	.personal-grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
+
+	.personal-grid-featured {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ==================== FEATURED PERSONAL CARD ==================== */
+
+@media (min-width: 768px) {
+	.personal-card-featured {
+		flex-direction: row;
+	}
+
+	.personal-card-featured .personal-card-img-wrap {
+		width: 55%;
+		flex-shrink: 0;
+		aspect-ratio: auto;
+		min-height: 360px;
+	}
+
+	.personal-card-featured .personal-card-body {
+		padding: 2.5rem;
+		gap: 1.5rem;
+		justify-content: center;
+	}
+
+	.personal-card-featured .personal-card-name {
+		font-size: 2rem;
+	}
+
+	.personal-card-featured .personal-card-desc {
+		font-size: 0.95rem;
+		flex: 0 1 auto;
+	}
 }
 
 /* ==================== PERSONAL CARD ==================== */

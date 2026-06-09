@@ -16,14 +16,6 @@ const PERSONAL_PROJECTS = [
 		img: '/projects_visuals/setupkit.png',
 		tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind', 'Teams'],
 	},
-	{
-		key: 'nali',
-		link: 'https://nali-frontend.vercel.app',
-		github: 'Nali',
-		logo: '/nali-logo.png',
-		img: '/projects_visuals/nali.png',
-		tags: ['Next.js', 'React 19', 'NestJS', 'Supabase', 'Stripe', 'WebRTC'],
-	},
 ];
 
 const SCHOOL_PROJECTS = [
@@ -69,7 +61,7 @@ const SCHOOL_PROJECTS = [
    PERSONAL PROJECT CARD
 ======================= */
 
-function PersonalCard({ project, index }) {
+function PersonalCard({ project, index, featured = false }) {
 	const { t } = useTranslation();
 	const status = t(`projects.${project.key}.status`);
 
@@ -79,7 +71,7 @@ function PersonalCard({ project, index }) {
 				href={project.link}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="personal-card"
+				className={`personal-card${featured ? ' personal-card-featured' : ''}`}
 			>
 				{project.img && (
 					<div className="personal-card-img-wrap">
@@ -191,9 +183,14 @@ export const Projects = () => {
 					</div>
 				</div>
 			</ScrollReveal>
-			<div className="personal-grid">
+			<div className={`personal-grid${PERSONAL_PROJECTS.length === 1 ? ' personal-grid-featured' : ''}`}>
 				{PERSONAL_PROJECTS.map((p, i) => (
-					<PersonalCard key={p.key} project={p} index={i} />
+					<PersonalCard
+						key={p.key}
+						project={p}
+						index={i}
+						featured={PERSONAL_PROJECTS.length === 1}
+					/>
 				))}
 			</div>
 
