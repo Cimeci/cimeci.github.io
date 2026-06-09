@@ -13,7 +13,8 @@ const PERSONAL_PROJECTS = [
 	{
 		key: 'setupkit',
 		link: 'https://setupkit.app',
-		img: '/projects_visuals/setupkit.png',
+		video: '/projects_visuals/setupkit.mp4',
+		poster: '/projects_visuals/setupkit-poster.jpg',
 		tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind', 'Teams'],
 	},
 ];
@@ -73,7 +74,20 @@ function PersonalCard({ project, index, featured = false }) {
 				rel="noopener noreferrer"
 				className={`personal-card${featured ? ' personal-card-featured' : ''}`}
 			>
-				{project.img && (
+				{project.video ? (
+					<div className="personal-card-img-wrap">
+						<video
+							src={project.video}
+							poster={project.poster}
+							autoPlay
+							loop
+							muted
+							playsInline
+							preload="metadata"
+							aria-label={t(`projects.${project.key}.title`)}
+						/>
+					</div>
+				) : project.img && (
 					<div className="personal-card-img-wrap">
 						<img
 							src={project.img}
