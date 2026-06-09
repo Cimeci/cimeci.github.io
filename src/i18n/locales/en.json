@@ -12,9 +12,9 @@
 		"intro": {
 			"greeting": "",
 			"name": "Ilan Nowak--Glandier",
-			"description": "Fullstack developer trained at 42, I build web and mobile applications end to end. Curious, rigorous and self-driven, I'm motivated by {{highlight1}} and turning ideas into real products.",
+			"description": "Fullstack developer trained at 42, I build web and mobile applications end to end. Curious, rigorous, self-driven, I'm motivated by {{highlight1}} and turning ideas into real products.",
 			"highlight1": "concrete technical challenges",
-			"startup": "I'm particularly drawn to the {{highlight}} — fast-paced environments where you build, ship, and iterate with real impact from day one.",
+			"startup": "I'm particularly drawn to the {{highlight}}, fast-paced environments where you build, ship, iterate with real impact from day one.",
 			"startup_highlight": "startup ecosystem"
 		},
 		"experience": {
@@ -22,8 +22,8 @@
 			"moncab": {
 				"role": "Full-Stack Developer Intern",
 				"company": "Moncab",
-				"date": "Feb. 2026 — Aug. 2026",
-				"description": "Joined as the sole dev intern and quickly became autonomous across the entire codebase. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, owner dashboard with payment stats, and multiple Stripe security passes. 113+ commits in ~2 months."
+				"date": "Feb. 2026 - Aug. 2026",
+				"description": "Joined as the sole dev intern, autonomous on the whole codebase in 3-4 weeks. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, owner dashboard with payment stats, multiple Stripe security passes. 113+ commits in ~2 months."
 			}
 		},
 		"values": {
@@ -38,7 +38,7 @@
 			},
 			"curiosity": {
 				"title": "Curiosity",
-				"description": "I love exploring new domains, technologies, and tackling fresh challenges."
+				"description": "I love exploring new domains, technologies, tackling fresh challenges."
 			},
 			"collaboration": {
 				"title": "Collaboration",
@@ -65,7 +65,7 @@
 			},
 			"ia": {
 				"title": "AI",
-				"description": "Creating, modeling and improving AI models."
+				"description": "Creating, modeling, improving AI models."
 			}
 		},
 		"hobbies": {
@@ -77,7 +77,7 @@
 		},
 		"cta": {
 			"title": "What I'm Looking For",
-			"description": "An internship or opportunity where I can tackle {{highlight1}}, contribute to {{highlight2}}, and grow both technically and personally.",
+			"description": "An internship or opportunity where I can tackle {{highlight1}}, contribute to {{highlight2}}, grow both technically and personally.",
 			"highlight1": "concrete challenges",
 			"highlight2": "meaningful projects"
 		}
@@ -87,7 +87,7 @@
 		"welcome": "Curious by nature, rigorous by training",
 		"work": "I think product before I write code",
 		"identity": "42 Student · Builder",
-		"studying_domain": "Fullstack Developer — Web / Mobile / AI",
+		"studying_domain": "Fullstack Developer · Web / Mobile / AI",
 		"cta": "Learn more",
 		"cv": "Download CV"
 	},
@@ -105,39 +105,34 @@
 			"step4_desc": "Test, get feedback, improve"
 		},
 		"personal": "Product-Oriented",
-		"personal_subtitle": "Built from scratch — thought as real products with UX, business model and MVP mindset.",
+		"personal_subtitle": "Built from scratch, thought as real products with UX, business model, MVP mindset.",
 		"school": "Technical Challenges",
-		"school_subtitle": "42 School projects — low-level programming, system design and protocol implementation.",
-		"leairn": {
-			"title": "leAIrn",
-			"description": "Most people use AI badly because nobody teaches prompting as a skill. I built a Duolingo-style platform with 6 exercise types, AI-powered evaluation via Groq, full gamification (XP, streaks, badges, leaderboard), social features, and Stripe-based freemium/pro subscriptions.",
-			"status": "Beta"
+		"school_subtitle": "42 School projects: low-level programming, system design, protocol implementation.",
+		"setupkit": {
+			"title": "SetupKit",
+			"description": "Educational SaaS that helps developers and teams take back control over their AI coding tools by generating complete configuration architectures (CLAUDE.md, .cursorrules, AGENTS.md, commands, skills) tailored to their stack and workflows.",
+			"status": "MVP"
 		},
 		"nali": {
 			"title": "Nali",
-			"description": "Existing project management tools are overengineered for small dev teams. I built a lighter alternative with multi-org management, Kanban + sprints, real-time messaging, AES-256 encrypted docs, GitHub integration, WebRTC video calls, and Stripe billing with 4 plans.",
+			"description": "Existing project management tools are overengineered for small dev teams. I built a lighter alternative with multi-org management, Kanban + sprints, real-time messaging, AES-256 encrypted docs, GitHub integration, WebRTC video calls, Stripe billing with 4 plans.",
 			"status": "Beta"
-		},
-		"setupia": {
-			"title": "setup.ia",
-			"description": "Most devs coding with AI have no configuration file (CLAUDE.md, .cursorrules...) or copy generic templates. I built a platform that generates personalized AI config files based on the developer's context, skill level and goals — with an interactive questionnaire, premium domain-specific templates and a freemium model.",
-			"status": "MVP"
 		},
 		"minishell": {
 			"title": "Minishell",
-			"description": "Unix command interpreter in C — execution, redirections, pipes, environment variables and signal handling."
+			"description": "Unix command interpreter in C. Execution, redirections, pipes, environment variables, signal handling."
 		},
 		"irc": {
 			"title": "IRC",
-			"description": "IRC server in C++ with non-blocking TCP sockets — multi-client handling, authentication, channels and real-time messaging."
+			"description": "IRC server in C++ with non-blocking TCP sockets. Multi-client handling, authentication, channels, real-time messaging."
 		},
 		"transcendence": {
 			"title": "Transcendence",
-			"description": "Full-stack web app — real-time multiplayer Pong via WebSockets, auth, chat, stats and match history."
+			"description": "Full-stack web app. Real-time multiplayer Pong via WebSockets, auth, chat, stats, match history."
 		},
 		"music_room": {
 			"title": "Music_Room",
-			"description": "Mobile music sharing app — collaborative playlists, events, voting and personalized profiles with React Native and Node.js."
+			"description": "Mobile music sharing app in React Native and Node.js. Collaborative playlists, events, voting, personalized profiles."
 		},
 		"matcha": {
 			"title": "Matcha",
@@ -145,11 +140,11 @@
 		},
 		"tokenizer": {
 			"title": "Tokenizer",
-			"description": "Digital asset creation on the blockchain using Solidity — smart contract, deployment and web3 interaction."
+			"description": "Digital asset creation on the blockchain using Solidity. Smart contract, deployment, web3 interaction."
 		},
 		"learn2slither": {
 			"title": "Learn2Slither",
-			"description": "A snake that learns to survive and feed autonomously using Q-Learning — local vision, Q-table, exploration/exploitation, trained from scratch with no ML library."
+			"description": "A snake that learns to survive and feed autonomously using Q-Learning. Local vision, Q-table, exploration/exploitation, trained from scratch with no ML library."
 		},
 		"linear_regression": {
 			"title": "Linear_Regression",

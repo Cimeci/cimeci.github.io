@@ -11,19 +11,10 @@ const GITHUB = 'https://github.com/Cimeci/';
 
 const PERSONAL_PROJECTS = [
 	{
-		key: 'setupia',
-		link: 'https://setup-ia.vercel.app',
-		github: 'setup.ia',
-		img: '/projects_visuals/setupia.png',
-		tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Stripe', 'Turborepo'],
-	},
-	{
-		key: 'leairn',
-		link: 'https://le-a-irn-delta.vercel.app/',
-		github: 'leAIrn',
-		logo: '/leairn-logo.png',
-		img: '/projects_visuals/leairn.png',
-		tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Supabase', 'Groq API', 'Stripe'],
+		key: 'setupkit',
+		link: 'https://setupkit.app',
+		img: '/projects_visuals/setupkit.png',
+		tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind', 'Teams'],
 	},
 	{
 		key: 'nali',

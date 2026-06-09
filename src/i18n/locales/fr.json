@@ -14,7 +14,7 @@
 			"name": "Ilan Nowak--Glandier",
 			"description": "Développeur fullstack formé à 42, je construis des applications web et mobile de A à Z. Curieux, rigoureux et autonome, je suis animé par l'envie de relever des {{highlight1}} et de transformer des idées en produits concrets.",
 			"highlight1": "défis techniques concrets",
-			"startup": "Je suis particulièrement attiré par l'{{highlight}} — des environnements rapides où l'on construit, livre et itère avec un impact réel dès le premier jour.",
+			"startup": "Je suis particulièrement attiré par l'{{highlight}}, des environnements rapides où l'on construit, livre, itère avec un impact réel dès le premier jour.",
 			"startup_highlight": "écosystème startup"
 		},
 		"experience": {
@@ -22,8 +22,8 @@
 			"moncab": {
 				"role": "Développeur Full-Stack Stagiaire",
 				"company": "Moncab",
-				"date": "Fév. 2026 — Août 2026",
-				"description": "Arrivé comme seul stagiaire dev, rapidement autonome sur l'ensemble du codebase. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion Ubiflow, dashboard owner avec stats paiements, et plusieurs passes de sécurité Stripe. 113+ commits en ~2 mois."
+				"date": "Fév. 2026 - Août 2026",
+				"description": "Arrivé comme seul stagiaire dev, autonome sur l'ensemble du codebase en 3-4 semaines. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion Ubiflow, dashboard owner avec stats paiements, plusieurs passes de sécurité Stripe. 113+ commits en ~2 mois."
 			}
 		},
 		"values": {
@@ -87,7 +87,7 @@
 		"welcome": "Curieux par nature, rigoureux par formation",
 		"work": "Je pense produit avant d'écrire du code",
 		"identity": "42 Student · Builder",
-		"studying_domain": "Fullstack Developer — Web / Mobile / AI",
+		"studying_domain": "Fullstack Developer · Web / Mobile / AI",
 		"cta": "En savoir plus",
 		"cv": "Télécharger CV"
 	},
@@ -105,39 +105,34 @@
 			"step4_desc": "Tester, récolter du feedback, améliorer"
 		},
 		"personal": "Orientés Produit",
-		"personal_subtitle": "Créés de zéro — pensés comme de vrais produits avec UX, modèle économique et logique MVP.",
+		"personal_subtitle": "Créés de zéro, pensés comme de vrais produits avec UX, modèle économique, logique MVP.",
 		"school": "Défis Techniques",
-		"school_subtitle": "Projets 42 — programmation bas niveau, conception système et implémentation de protocoles.",
-		"leairn": {
-			"title": "leAIrn",
-			"description": "La plupart des gens utilisent mal l'IA parce que personne n'enseigne le prompting. J'ai construit une plateforme type Duolingo avec 6 types d'exercices, évaluation IA via Groq, gamification complète (XP, streaks, badges, leaderboard), fonctionnalités sociales et abonnements freemium/pro via Stripe.",
-			"status": "Beta"
+		"school_subtitle": "Projets 42 : programmation bas niveau, conception système, implémentation de protocoles.",
+		"setupkit": {
+			"title": "SetupKit",
+			"description": "SaaS éducatif qui aide les développeurs et les équipes à reprendre le contrôle sur leurs outils IA en générant des architectures de configuration complètes (CLAUDE.md, .cursorrules, AGENTS.md, commandes, skills) adaptées à leur stack et à leurs workflows.",
+			"status": "MVP"
 		},
 		"nali": {
 			"title": "Nali",
 			"description": "Les outils de gestion de projet existants sont trop complexes pour les petites équipes dev. J'ai construit une alternative plus légère avec gestion multi-organisations, Kanban + sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
 			"status": "Beta"
 		},
-		"setupia": {
-			"title": "setup.ia",
-			"description": "La plupart des devs qui codent avec l'IA n'ont aucun fichier de configuration (CLAUDE.md, .cursorrules...) ou copient des templates génériques. J'ai construit une plateforme qui génère des fichiers de config IA personnalisés selon le contexte, le niveau et les objectifs du développeur — avec un questionnaire interactif, des templates premium par domaine et un modèle freemium.",
-			"status": "MVP"
-		},
 		"minishell": {
 			"title": "Minishell",
-			"description": "Interpréteur de commandes Unix en C — exécution, redirections, pipes, variables d’environnement et gestion des signaux."
+			"description": "Interpréteur de commandes Unix en C. Exécution, redirections, pipes, variables d’environnement, gestion des signaux."
 		},
 		"irc": {
 			"title": "IRC",
-			"description": "Serveur IRC en C++ avec sockets TCP non bloquants — gestion multi-clients, authentification, canaux et messagerie temps réel."
+			"description": "Serveur IRC en C++ avec sockets TCP non bloquants. Gestion multi-clients, authentification, canaux, messagerie temps réel."
 		},
 		"transcendence": {
 			"title": "Ft_Transcendence",
-			"description": "Application web full-stack — Pong multijoueur en temps réel via WebSockets, auth, chat, stats et historique de parties."
+			"description": "Application web full-stack. Pong multijoueur en temps réel via WebSockets, auth, chat, stats, historique de parties."
 		},
 		"music_room": {
 			"title": "Music_Room",
-			"description": "Application mobile de partage musical — playlists collaboratives, événements, votes et profils personnalisés avec React Native et Node.js."
+			"description": "Application mobile de partage musical en React Native et Node.js. Playlists collaboratives, événements, votes, profils personnalisés."
 		},
 		"matcha": {
 			"title": "Matcha",
@@ -145,11 +140,11 @@
 		},
 		"tokenizer": {
 			"title": "Tokenizer",
-			"description": "Création d'un actif numérique sur la blockchain en Solidity — smart contract, déploiement et interaction web3."
+			"description": "Création d'un actif numérique sur la blockchain en Solidity. Smart contract, déploiement, interaction web3."
 		},
 		"learn2slither": {
 			"title": "Learn2Slither",
-			"description": "Un snake qui apprend à survivre et se nourrir de manière autonome grâce au Q-Learning — vision locale, Q-table, exploration/exploitation, entraîné from scratch sans librairie ML."
+			"description": "Un snake qui apprend à survivre et se nourrir de manière autonome grâce au Q-Learning. Vision locale, Q-table, exploration/exploitation, entraîné from scratch sans librairie ML."
 		},
 		"linear_regression": {
 			"title": "Ft_Linear_Regression",
