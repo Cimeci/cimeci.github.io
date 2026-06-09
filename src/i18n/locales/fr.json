@@ -26,6 +26,19 @@
 				"description": "Arrivé comme seul stagiaire dev, autonome sur l'ensemble du codebase en 3-4 semaines. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion Ubiflow, dashboard owner avec stats paiements, plusieurs passes de sécurité Stripe. 113+ commits en ~2 mois."
 			}
 		},
+		"certifications": {
+			"title": "Certifications",
+			"ai_fluency": {
+				"name": "AI Fluency: Framework and Foundation",
+				"date": "Juin 2026",
+				"skills": ["Intelligence Artificielle", "Prompt Engineering", "Context Engineering"]
+			},
+			"claude_code": {
+				"name": "Claude Code in Action",
+				"date": "Mai 2026",
+				"skills": ["Anthropic Claude", "Sub-Agents", "Skills", "Hooks"]
+			}
+		},
 		"values": {
 			"title": "Mes Valeurs",
 			"autonomy": {
@@ -164,6 +177,7 @@
 		"algorithm": "LANGAGES",
 		"data": "BASE DE DONNÉES & ORM",
 		"ai": "IA & LLM",
+		"ai_engineering": "AI ENGINEERING",
 		"dev_environment": "ENVIRONNEMENT DE DÉVELOPPEMENT"
 	},
 	"contact": {

@@ -26,6 +26,19 @@
 				"description": "Joined as the sole dev intern, autonomous on the whole codebase in 3-4 weeks. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, owner dashboard with payment stats, multiple Stripe security passes. 113+ commits in ~2 months."
 			}
 		},
+		"certifications": {
+			"title": "Certifications",
+			"ai_fluency": {
+				"name": "AI Fluency: Framework and Foundation",
+				"date": "Jun. 2026",
+				"skills": ["Artificial Intelligence", "Prompt Engineering", "Context Engineering"]
+			},
+			"claude_code": {
+				"name": "Claude Code in Action",
+				"date": "May 2026",
+				"skills": ["Anthropic Claude", "Sub-Agents", "Skills", "Hooks"]
+			}
+		},
 		"values": {
 			"title": "My Values",
 			"autonomy": {
@@ -163,6 +176,7 @@
 		"algorithm": "LANGUAGES",
 		"data": "DATABASE & ORM",
 		"ai": "AI & LLM",
+		"ai_engineering": "AI ENGINEERING",
 		"dev_environment": "DEV ENVIRONMENT"
 	},
 	"contact": {

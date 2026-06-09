@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { MessageSquareCode, Layers, Network } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
 import './Stacks.css';
 
@@ -45,6 +46,11 @@ const STACKS = {
 		{ name: 'Ollama', icon: `${L}ollama.svg` },
 		{ name: 'OpenAI', icon: `${L}openai.svg` },
 	],
+	ai_engineering: [
+		{ name: 'Prompt Engineering', IconComponent: MessageSquareCode },
+		{ name: 'Context Engineering', IconComponent: Layers },
+		{ name: 'Sub-Agents', IconComponent: Network },
+	],
 	dev_environment: [
 		{ name: 'Git', icon: `${D}git/git-original.svg` },
 		{ name: 'GitHub', icon: `${D}github/github-original.svg` },
@@ -60,10 +66,14 @@ const STACKS = {
 	],
 };
 
-function StackItem({ name, icon }) {
+function StackItem({ name, icon, IconComponent }) {
 	return (
 		<div className="stack-item">
-			<img src={icon} alt={name} loading="lazy" />
+			{IconComponent ? (
+				<IconComponent className="stack-item-lucide" strokeWidth={1.5} />
+			) : (
+				<img src={icon} alt={name} loading="lazy" />
+			)}
 			<span>{name}</span>
 		</div>
 	);

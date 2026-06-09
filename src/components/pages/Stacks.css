@@ -43,10 +43,16 @@
 	transform: translateY(-2px);
 }
 
-.stack-item img {
+.stack-item img,
+.stack-item .stack-item-lucide {
 	width: 1.25rem;
 	height: 1.25rem;
 	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.stack-item .stack-item-lucide {
+	color: var(--accent);
 }
 
 .stack-item span {

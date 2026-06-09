@@ -108,6 +108,132 @@
 	letter-spacing: 0.02em;
 }
 
+/* ==================== CERTIFICATIONS ==================== */
+
+.about-certifications-title {
+	font-family: var(--font-serif);
+	font-size: 1.8rem;
+	color: var(--text-primary);
+	margin-bottom: 1.5rem;
+}
+
+.about-certifications-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-bottom: 4rem;
+	align-items: stretch;
+}
+
+.about-certifications-grid > * {
+	height: 100%;
+}
+
+@media (min-width: 720px) {
+	.about-certifications-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.about-certification-card {
+	display: flex;
+	gap: 1.1rem;
+	height: 100%;
+	padding: 1.25rem 1.4rem;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	background: var(--bg-card);
+	transition: all 0.3s ease;
+}
+
+.about-certification-card:hover {
+	border-color: var(--accent);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .about-certification-card:hover {
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-certification-logo {
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	border-radius: 10px;
+	background: var(--bg-secondary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-certification-logo img {
+	width: 22px;
+	height: 22px;
+	object-fit: contain;
+	color: var(--text-primary);
+}
+
+.about-certification-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	min-width: 0;
+}
+
+.about-certification-issuer {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--accent);
+}
+
+.about-certification-name {
+	font-family: var(--font-serif);
+	font-size: 1.05rem;
+	font-weight: 500;
+	color: var(--text-primary);
+	line-height: 1.3;
+}
+
+.about-certification-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	align-items: center;
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	color: var(--text-muted);
+}
+
+.about-certification-sep {
+	opacity: 0.4;
+}
+
+.about-certification-id {
+	letter-spacing: 0.04em;
+}
+
+.about-certification-skills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-top: 0.4rem;
+}
+
+.about-certification-skill {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	font-weight: 500;
+	padding: 0.2rem 0.55rem;
+	border-radius: 100px;
+	background: var(--bg-secondary);
+	color: var(--text-secondary);
+	letter-spacing: 0.02em;
+}
+
 /* ==================== VALUES GRID ==================== */
 
 .about-grid {

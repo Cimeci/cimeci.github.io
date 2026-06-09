@@ -60,6 +60,39 @@ export const About = () => {
 				</div>
 			</ScrollReveal>
 
+			{/* Certifications */}
+			<ScrollReveal delay={0.15}>
+				<h3 className="about-certifications-title">{t('about.certifications.title')}</h3>
+			</ScrollReveal>
+			<div className="about-certifications-grid">
+				{[
+					{ key: 'ai_fluency', issuer: 'Anthropic', date: t('about.certifications.ai_fluency.date'), id: '38v27y52fc3o' },
+					{ key: 'claude_code', issuer: 'Anthropic', date: t('about.certifications.claude_code.date'), id: 'hgrf2bwk65ct' },
+				].map((cert, i) => (
+					<ScrollReveal key={cert.key} delay={0.1 * i}>
+						<article className="about-certification-card">
+							<div className="about-certification-logo">
+								<img src="/icons/anthropic.svg" alt={cert.issuer} loading="lazy" />
+							</div>
+							<div className="about-certification-body">
+								<p className="about-certification-issuer">{cert.issuer}</p>
+								<h4 className="about-certification-name">{t(`about.certifications.${cert.key}.name`)}</h4>
+								<p className="about-certification-meta">
+									<span>{cert.date}</span>
+									<span className="about-certification-sep">·</span>
+									<span className="about-certification-id">ID {cert.id}</span>
+								</p>
+								<div className="about-certification-skills">
+									{t(`about.certifications.${cert.key}.skills`, { returnObjects: true }).map((skill) => (
+										<span key={skill} className="about-certification-skill">{skill}</span>
+									))}
+								</div>
+							</div>
+						</article>
+					</ScrollReveal>
+				))}
+			</div>
+
 			{/* Values */}
 			<div className="about-grid">
 				{['autonomy', 'pragmatism', 'curiosity', 'collaboration'].map((value, i) => (
