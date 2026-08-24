@@ -15,7 +15,7 @@ const PERSONAL_PROJECTS = [
 		link: 'https://setupkit.app',
 		video: '/projects_visuals/setupkit.mp4',
 		poster: '/projects_visuals/setupkit-poster.jpg',
-		tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind', 'Teams'],
+		tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind', 'AI'],
 	},
 ];
 
