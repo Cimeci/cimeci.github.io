@@ -1,0 +1,427 @@
+/* ==================== PROCESS INLINE ==================== */
+
+.process-inline {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.25rem;
+	margin-top: 0.6rem;
+}
+
+.process-inline-step {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-family: var(--font-display);
+	font-size: 0.7rem;
+	font-weight: 500;
+	color: var(--accent);
+}
+
+.process-inline-arrow {
+	color: var(--text-muted);
+	margin: 0 0.2rem;
+}
+
+/* ==================== CATEGORY HEADERS ==================== */
+
+.projects-category-block {
+	margin-top: 2.5rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.projects-category {
+	font-family: var(--font-display);
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--accent);
+	margin-bottom: 0.35rem;
+}
+
+.projects-category-subtitle {
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: var(--text-secondary);
+}
+
+.projects-category-school {
+	margin-top: 0;
+	color: var(--text-muted);
+}
+
+.projects-category-school + .projects-category-subtitle {
+	color: var(--text-muted);
+}
+
+.projects-category-block:has(.projects-category-school) {
+	margin-top: 3.5rem;
+}
+
+/* ==================== PERSONAL PROJECTS GRID ==================== */
+
+.personal-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1rem;
+	align-items: stretch;
+}
+
+.personal-grid > * {
+	height: 100%;
+}
+
+@media (min-width: 768px) {
+	.personal-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.personal-grid-featured {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ==================== FEATURED PERSONAL CARD ==================== */
+
+.personal-card.personal-card-featured {
+	border-radius: 20px;
+}
+
+.personal-card.personal-card-featured::before {
+	border-radius: 20px 20px 0 0;
+}
+
+@media (min-width: 768px) {
+	.personal-card.personal-card-featured {
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	.personal-card.personal-card-featured .personal-card-img-wrap {
+		width: 50%;
+		flex-shrink: 0;
+		aspect-ratio: auto;
+		height: auto;
+		align-self: stretch;
+		border-right: 1px solid var(--border);
+	}
+
+	.personal-card.personal-card-featured .personal-card-img-wrap img,
+	.personal-card.personal-card-featured .personal-card-img-wrap video {
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	.personal-card.personal-card-featured .personal-card-body {
+		width: 50%;
+		padding: 3rem 3rem 2.25rem;
+		gap: 1.5rem;
+		justify-content: space-between;
+	}
+
+	.personal-card.personal-card-featured .personal-card-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.85rem;
+	}
+
+	.personal-card.personal-card-featured .personal-card-status {
+		order: -1;
+		font-size: 0.6rem;
+		padding: 0.25rem 0.7rem;
+	}
+
+	.personal-card.personal-card-featured .personal-card-name {
+		font-size: 2.5rem;
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+	.personal-card.personal-card-featured .personal-card-desc {
+		font-size: 0.98rem;
+		line-height: 1.7;
+		max-width: 46ch;
+		flex: 0 1 auto;
+	}
+
+	.personal-card.personal-card-featured .personal-card-footer {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	.personal-card.personal-card-featured .project-tags {
+		gap: 0.4rem;
+	}
+}
+
+@media (min-width: 1100px) {
+	.personal-card.personal-card-featured .personal-card-body {
+		padding: 3.5rem 3.5rem 2.5rem;
+	}
+
+	.personal-card.personal-card-featured .personal-card-name {
+		font-size: 3rem;
+	}
+}
+
+/* ==================== PERSONAL CARD ==================== */
+
+.personal-card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	background: var(--bg-card);
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+.personal-card-img-wrap {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	background: var(--bg-secondary);
+}
+
+.personal-card-img-wrap img,
+.personal-card-img-wrap video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.personal-card:hover .personal-card-img-wrap img,
+.personal-card:hover .personal-card-img-wrap video {
+	transform: scale(1.05);
+}
+
+.personal-card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1.5rem;
+	flex: 1;
+}
+
+.personal-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: var(--accent);
+	border-radius: 16px 16px 0 0;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.personal-card:hover {
+	border-color: var(--accent);
+	transform: translateY(-6px);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.personal-card:hover::before {
+	opacity: 1;
+}
+
+[data-theme="dark"] .personal-card:hover {
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.personal-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.personal-card-title-row {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.personal-card-logo {
+	width: 2rem;
+	height: 2rem;
+	object-fit: contain;
+	border-radius: 6px;
+}
+
+.personal-card-name {
+	font-family: 	var(--font-display);
+	font-size: 1.4rem;
+	font-weight: 400;
+	color: var(--text-primary);
+}
+
+.personal-card-status {
+	font-family: var(--font-display);
+	font-size: 0.65rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--accent);
+	background: var(--accent-light);
+	padding: 0.2rem 0.6rem;
+	border-radius: 100px;
+	white-space: nowrap;
+}
+
+.personal-card-desc {
+	font-size: 0.85rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	flex: 1;
+}
+
+.personal-card-footer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 0.5rem;
+}
+
+.personal-card-arrow {
+	color: var(--text-muted);
+	flex-shrink: 0;
+	transition: color 0.2s ease;
+}
+
+.personal-card:hover .personal-card-arrow {
+	color: var(--accent);
+}
+
+/* ==================== SCHOOL PROJECTS GRID ==================== */
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+	.projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ==================== SCHOOL CARD ==================== */
+
+.project-card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	overflow: hidden;
+	background: var(--bg-card);
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+	border-color: var(--border-hover);
+	transform: translateY(-4px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .project-card:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== IMAGE ==================== */
+
+.project-img-wrap {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 16 / 10;
+	background: var(--bg-secondary);
+}
+
+.project-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-img-wrap img {
+	transform: scale(1.05);
+}
+
+.project-img-overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	color: white;
+}
+
+.project-card:hover .project-img-overlay {
+	opacity: 1;
+}
+
+/* ==================== INFO ==================== */
+
+.project-info {
+	padding: 1.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.project-name {
+	font-family: 	var(--font-display);
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: var(--text-primary);
+}
+
+.project-desc {
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* ==================== TAGS ==================== */
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.25rem;
+	overflow: hidden;
+}
+
+.project-tag {
+	font-family: var(--font-display);
+	font-size: 0.65rem;
+	font-weight: 500;
+	color: var(--accent);
+	background: var(--accent-light);
+	padding: 0.2rem 0.5rem;
+	border-radius: 100px;
+	letter-spacing: 0.02em;
+}

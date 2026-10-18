@@ -1,0 +1,155 @@
+.nav-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	transition: all 0.3s ease;
+}
+
+.nav-scrolled {
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	background: color-mix(in srgb, var(--bg-primary) 85%, transparent);
+	border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+	.nav-inner {
+		padding: 1rem 3rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.nav-inner {
+		padding: 1rem 4rem;
+	}
+}
+
+/* Logo */
+.nav-logo {
+	font-family: var(--font-display);
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: var(--text-primary);
+	background: none;
+	border: none;
+	cursor: pointer;
+	letter-spacing: -0.5px;
+}
+
+.nav-logo-accent {
+	color: var(--accent);
+}
+
+/* Desktop links */
+.nav-links {
+	display: none;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+@media (min-width: 768px) {
+	.nav-links {
+		display: flex;
+	}
+}
+
+.nav-link {
+	font-family: var(--font-display);
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: var(--text-secondary);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem 0.75rem;
+	border-radius: 6px;
+	transition: all 0.2s ease;
+	text-transform: lowercase;
+}
+
+.nav-link:hover {
+	color: var(--text-primary);
+	background: var(--bg-secondary);
+}
+
+.nav-link-prefix {
+	color: var(--accent);
+	margin-right: 2px;
+}
+
+/* Right actions */
+.nav-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.nav-menu-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-primary);
+	padding: 0.4rem;
+	border-radius: 6px;
+}
+
+.nav-menu-btn:hover {
+	background: var(--bg-secondary);
+}
+
+@media (min-width: 768px) {
+	.nav-menu-btn {
+		display: none;
+	}
+}
+
+/* Mobile menu */
+.nav-mobile {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem 1.5rem 1rem;
+	background: var(--bg-primary);
+	border-bottom: 1px solid var(--border);
+}
+
+.nav-mobile-link {
+	font-family: var(--font-display);
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.75rem 0;
+	text-align: left;
+	text-transform: lowercase;
+	border-bottom: 1px solid var(--border);
+	transition: color 0.2s ease;
+}
+
+.nav-mobile-link:last-child {
+	border-bottom: none;
+}
+
+.nav-mobile-link:hover {
+	color: var(--accent);
+}
+
+@media (min-width: 768px) {
+	.nav-mobile {
+		display: none;
+	}
+}

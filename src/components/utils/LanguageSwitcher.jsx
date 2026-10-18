@@ -1,0 +1,34 @@
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import './LanguageSwitcher.css'
+
+export const LanguageSwitcher = () => {
+	const { i18n } = useTranslation()
+
+	const changeLanguage = (lng) => {
+		i18n.changeLanguage(lng)
+		localStorage.setItem('language', lng)
+	}
+
+	return (
+		<div className="language-switcher">
+			{i18n.language === 'en' ?
+				<button
+					onClick={() => changeLanguage('fr')}
+					aria-label="Switch to French"
+				>
+					<img className="lang-btn" src="https://countryflagsapi.netlify.app/flag/us.svg" alt="English (US)"/>
+				</button>
+				:
+				<button
+					onClick={() => changeLanguage('en')}
+					aria-label="Switch to English"
+				>
+					<img className="lang-btn" src="https://countryflagsapi.netlify.app/flag/fr.svg" alt="Français"/>
+				</button>
+			}
+		</div>
+	)
+}
+
+export default LanguageSwitcher

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV - Ilan Nowak--Glandier</title>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+	*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+	html {
+		font-size: 13px;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	body {
+		font-family: 'Inter', system-ui, sans-serif;
+		color: #1a1a1a;
+		background: #fff;
+		line-height: 1.45;
+	}
+
+	@page {
+		size: A4;
+		margin: 0;
+	}
+
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 210mm;
+	}
+
+	.page {
+		width: 210mm;
+		min-height: 297mm;
+		margin: 0 auto;
+		padding: 0 32px 24px 32px;
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		gap: 22px;
+	}
+
+	/* ── HEADER ── */
+	.header {
+		grid-column: 1 / -1;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		border-bottom: 2.5px solid #1a1a1a;
+		padding-bottom: 12px;
+		margin-bottom: 4px;
+	}
+
+	.header-left h1 {
+		font-size: 1.85rem;
+		font-weight: 700;
+		letter-spacing: -0.5px;
+		color: #1a1a1a;
+	}
+
+	.header-left .subtitle {
+		font-size: 1rem;
+		font-weight: 600;
+		color: #555;
+		margin-top: 2px;
+	}
+
+	.header-right {
+		text-align: right;
+		font-size: 0.82rem;
+		color: #444;
+		line-height: 1.6;
+	}
+
+	.header-right a {
+		color: #1a1a1a;
+		text-decoration: none;
+	}
+
+	/* ── SIDEBAR ── */
+	.sidebar { display: flex; flex-direction: column; gap: 16px; justify-content: space-between; }
+
+	.sidebar h2 {
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		color: #1a1a1a;
+		border-bottom: 1.5px solid #e0e0e0;
+		padding-bottom: 4px;
+		margin-bottom: 6px;
+		font-weight: 700;
+	}
+
+	.sidebar ul {
+		list-style: none;
+		font-size: 0.85rem;
+		color: #333;
+	}
+
+	.sidebar ul li {
+		margin-bottom: 3px;
+		padding-left: 10px;
+		position: relative;
+	}
+
+	.sidebar ul li::before {
+		content: "•";
+		position: absolute;
+		left: 0;
+		color: #1a1a1a;
+		font-weight: 700;
+	}
+
+	.sidebar .info-item {
+		font-size: 0.83rem;
+		color: #444;
+		margin-bottom: 3px;
+	}
+
+	/* ── MAIN ── */
+	.main { display: flex; flex-direction: column; gap: 14px; justify-content: space-between; }
+
+	.main h2 {
+		font-size: 0.82rem;
+		text-transform: uppercase;
+		letter-spacing: 1.2px;
+		color: #1a1a1a;
+		border-bottom: 1.5px solid #e0e0e0;
+		padding-bottom: 4px;
+		margin-bottom: 4px;
+		font-weight: 700;
+	}
+
+	.section { margin-bottom: 2px; }
+
+	/* ── Experience / Project entry ── */
+	.entry { margin-bottom: 9px; }
+
+	.entry-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+
+	.entry-title {
+		font-weight: 600;
+		font-size: 0.92rem;
+		color: #1a1a1a;
+	}
+
+	.entry-meta {
+		font-size: 0.78rem;
+		color: #666;
+		white-space: nowrap;
+	}
+
+	.entry-company {
+		font-weight: 500;
+		font-size: 0.85rem;
+		color: #555;
+	}
+
+	.entry-desc {
+		font-size: 0.83rem;
+		color: #333;
+		margin-top: 2px;
+	}
+
+	.entry-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		margin-top: 4px;
+	}
+
+	.tag {
+		font-size: 0.7rem;
+		background: #f0f0f0;
+		color: #1a1a1a;
+		padding: 1px 7px;
+		border-radius: 3px;
+		font-weight: 500;
+	}
+
+	/* ── Section subtitle ── */
+	.section-subtitle {
+		font-size: 0.74rem;
+		color: #666;
+		font-style: italic;
+		margin-top: -2px;
+		margin-bottom: 6px;
+	}
+
+	/* ── Projects grid ── */
+	.projects-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8px;
+	}
+
+	.project-mini {
+		margin-bottom: 2px;
+	}
+
+	.project-mini .entry-title {
+		font-size: 0.87rem;
+	}
+
+	.project-mini .entry-desc {
+		font-size: 0.79rem;
+	}
+
+	/* ── Intro box ── */
+	.intro {
+		background: #f5f5f5;
+		border-left: 3px solid #1a1a1a;
+		padding: 8px 12px;
+		font-size: 0.85rem;
+		color: #333;
+		border-radius: 0 4px 4px 0;
+		grid-column: 1 / -1;
+		margin-bottom: 0;
+	}
+
+	@media print {
+		html, body {
+			margin: 0;
+			padding: 0;
+			width: 210mm;
+			height: 297mm;
+			background: #fff;
+		}
+		.page {
+			width: 210mm;
+			min-height: 297mm;
+			margin: 0;
+			padding: 0 32px 24px 32px;
+			box-shadow: none;
+			page-break-after: avoid;
+		}
+	}
+</style>
+</head>
+<body>
+<div class="page">
+
+	<!-- HEADER -->
+	<div class="header">
+		<div class="header-left">
+			<h1>Ilan Nowak--Glandier</h1>
+			<div class="subtitle">Développeur Fullstack</div>
+		</div>
+		<div class="header-right">
+			06 47 78 80 15<br>
+			<a href="mailto:ilannowakglandierpro@gmail.com">ilannowakglandierpro@gmail.com</a><br>
+			<a href="https://cimeci.github.io">cimeci.github.io</a> | <a href="https://github.com/Cimeci">github.com/Cimeci</a> | <a href="https://linkedin.com/in/IlanNowakGlandier">linkedin.com/in/IlanNowakGlandier</a><br>
+			19 ans | Angoulême | Permis B
+		</div>
+	</div>
+
+	<!-- INTRO -->
+	<div class="intro">
+		Curieux par nature, rigoureux par formation. J'apprends vite, je comprends en profondeur, je construis concrètement. Je suis du genre à plonger à fond dans un sujet qui me prend, et à préférer livrer une première version imparfaite plutôt que sur-planifier.
+	</div>
+
+	<!-- SIDEBAR -->
+	<div class="sidebar">
+
+		<div>
+			<h2>Compétences</h2>
+			<ul>
+				<li><strong>Langages :</strong> C, C++, Python, TypeScript, JavaScript</li>
+				<li><strong>Frameworks Fullstack :</strong> Next.js, Nuxt</li>
+				<li><strong>Frontend :</strong> React, Vue, Tailwind CSS</li>
+				<li><strong>Backend :</strong> Node.js, Express, REST API</li>
+				<li><strong>Mobile :</strong> React Native, Expo</li>
+				<li><strong>Data :</strong> PostgreSQL, Supabase, Prisma, Airtable</li>
+				<li><strong>IA :</strong> Claude, Ollama, OpenAI</li>
+				<li><strong>Outils :</strong> Git, Docker, Vercel, Render, Postman, Stripe, n8n, Figma</li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>Formations</h2>
+			<div class="entry">
+				<div class="entry-title">École 42</div>
+				<div class="entry-meta">2024 - 2028</div>
+				<div class="entry-desc">RNCP 7 : Data / Web / IA - Angoulême</div>
+			</div>
+			<div class="entry">
+				<div class="entry-title">Bac STI2D (mention bien)</div>
+				<div class="entry-meta">2021 - 2024</div>
+				<div class="entry-desc">Lycée Jean Moulin - Angers</div>
+			</div>
+		</div>
+
+		<div>
+			<h2>Langues</h2>
+			<ul>
+				<li>Anglais - B2 (avancé)</li>
+				<li>Espagnol - B1 (intermédiaire)</li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>Certifications</h2>
+			<ul>
+				<li>Anthropic Claude (en préparation)</li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>Centres d'intérêt</h2>
+			<ul>
+				<li>IA</li>
+				<li>Escalade</li>
+				<li>Voyage (10 pays)</li>
+				<li>Musique</li>
+				<li>Jeux vidéo</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- MAIN CONTENT -->
+	<div class="main">
+
+		<!-- EXPERIENCE -->
+		<div class="section">
+			<h2>Expérience Professionnelle</h2>
+			<div class="entry">
+				<div class="entry-header">
+					<span class="entry-title">Développeur Full-Stack Stagiaire</span>
+					<span class="entry-meta">Fév. 2026 - Août 2026</span>
+				</div>
+				<div class="entry-company">Moncab - Plateforme SaaS pour cabinets médicaux</div>
+				<div class="entry-desc">
+					Seul stagiaire dev, autonome sur tout le codebase en 3-4 semaines. Algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA, webhooks), refacto complet de la gestion des mails de prospection, dashboard propriétaire avec stats paiements, plusieurs passes de sécurité Stripe. 113+ commits en ~2 mois.
+				</div>
+				<div class="entry-tags">
+					<span class="tag">Nuxt 3</span>
+					<span class="tag">Vue 3</span>
+					<span class="tag">TypeScript</span>
+					<span class="tag">Supabase</span>
+					<span class="tag">Stripe</span>
+					<span class="tag">Pennylane</span>
+					<span class="tag">n8n</span>
+					<span class="tag">Airtable</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROJETS PERSO -->
+		<div class="section">
+			<h2>Projets Personnels</h2>
+			<div class="section-subtitle">Orientés produit, conçus de zéro avec UX, modèle économique et MVP shippé.</div>
+			<div class="entry">
+				<div class="entry-header">
+					<span class="entry-title"><a href="https://setupkit.app" style="color:#1a1a1a;text-decoration:none;">SetupKit</a></span>
+					<span class="entry-meta">MVP | 2026</span>
+				</div>
+				<div class="entry-desc">
+					Fondateur. SaaS qui génère des fichiers de configuration personnalisés pour les outils de code IA (Claude Code, Cursor, Windsurf, Copilot, AGENTS.md). Deux modes : config single-tool ou architecture complète multi-fichiers. Espace Teams avec page publique, onboarding et éditeur de commandes partagées. Modèle freemium avec offre Pro.
+				</div>
+				<div class="entry-tags">
+					<span class="tag">Next.js</span>
+					<span class="tag">TypeScript</span>
+					<span class="tag">Supabase</span>
+					<span class="tag">Stripe</span>
+					<span class="tag">Tailwind</span>
+				</div>
+			</div>
+			<div class="entry">
+				<div class="entry-header">
+					<span class="entry-title">Nali</span>
+					<span class="entry-meta">Beta | 2025</span>
+				</div>
+				<div class="entry-desc">
+					Outil de gestion de projet léger : multi-organisations, Kanban + sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC, facturation Stripe (4 plans).
+				</div>
+				<div class="entry-tags">
+					<span class="tag">Next.js</span>
+					<span class="tag">NestJS</span>
+					<span class="tag">Supabase</span>
+					<span class="tag">Stripe</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROJETS 42 -->
+		<div class="section">
+			<h2>Projets 42</h2>
+			<div class="section-subtitle">Défis techniques : programmation bas niveau, conception système, ML.</div>
+			<div class="projects-grid">
+				<div class="project-mini">
+					<div class="entry-title">Minishell</div>
+					<div class="entry-desc">Shell Unix : parsing, exécution, redirections, pipes, signaux.</div>
+					<div class="entry-tags"><span class="tag">C</span><span class="tag">Unix</span></div>
+				</div>
+				<div class="project-mini">
+					<div class="entry-title">IRC</div>
+					<div class="entry-desc">Serveur IRC : sockets TCP non bloquants, multi-clients, canaux.</div>
+					<div class="entry-tags"><span class="tag">C++</span><span class="tag">TCP</span></div>
+				</div>
+				<div class="project-mini">
+					<div class="entry-title">Ft_Transcendence</div>
+					<div class="entry-desc">App web Pong multijoueur : WebSockets, auth, chat, tournois, inventaire.</div>
+					<div class="entry-tags"><span class="tag">TS</span><span class="tag">Tailwind</span><span class="tag">Node.js</span><span class="tag">SQLite</span></div>
+				</div>
+				<div class="project-mini">
+					<div class="entry-title">Music_Room</div>
+					<div class="entry-desc">App mobile de partage musical : playlists collaboratives, événements, votes.</div>
+					<div class="entry-tags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">Prisma</span><span class="tag">Expo</span></div>
+				</div>
+				<div class="project-mini">
+					<div class="entry-title">Ft_Linear_Regression</div>
+					<div class="entry-desc">Prédiction de prix par régression linéaire et descente de gradient.</div>
+					<div class="entry-tags"><span class="tag">Python</span><span class="tag">ML</span></div>
+				</div>
+				<div class="project-mini">
+					<div class="entry-title">Learn2Slither</div>
+					<div class="entry-desc">Snake autonome par Q-Learning : vision locale, Q-table, from scratch sans lib ML.</div>
+					<div class="entry-tags"><span class="tag">Python</span><span class="tag">Q-Learning</span><span class="tag">Pygame</span></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- BENEVOLAT -->
+		<div class="section">
+			<h2>Bénévolat - École 42</h2>
+			<div class="entry-desc">
+				6 journées portes ouvertes | Salons étudiants | Tutorat de la Piscine (concours d'admission) | Initiation au code (Piscine Discovery) | Surveillance de 4 sessions d'examens.
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</body>
+</html>

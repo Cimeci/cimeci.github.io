@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
+  <text
+    x="248"
+    y="340"
+    font-family="'Courier New', 'SF Mono', monospace"
+    font-weight="700"
+    font-size="280"
+    letter-spacing="-12"
+    fill="#ebebeb"
+    text-anchor="middle"
+  >IN</text>
+  <circle cx="430" cy="330" r="28" fill="#0ea5e9"/>
+</svg>

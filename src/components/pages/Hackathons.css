@@ -1,0 +1,210 @@
+/* ==================== HACKATHONS GRID ==================== */
+
+.hackathons-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+	.hackathons-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ==================== HACKATHON CARD ==================== */
+
+.hackathon-card {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	overflow: hidden;
+
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	background: var(--bg-card);
+	color: inherit;
+
+	transition:
+		border-color 0.4s ease,
+		transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+		box-shadow 0.4s ease;
+}
+
+.hackathon-card:hover {
+	border-color: var(--border-hover);
+	transform: translateY(-4px);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .hackathon-card:hover {
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== MEDIA ==================== */
+
+.hackathon-media {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	background: var(--bg-secondary);
+}
+
+.hackathon-media-link {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	color: inherit;
+	text-decoration: none;
+}
+
+.hackathon-media-content {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.hackathon-media-link:hover .hackathon-media-content {
+	transform: scale(1.05);
+}
+
+/* ==================== CAROUSEL ==================== */
+
+.hackathon-carousel {
+	width: 100%;
+	height: 100%;
+}
+
+/* Neutralise le zoom des images du carrousel au survol de la carte. */
+.hackathon-carousel img {
+	transition: none;
+}
+
+/* ==================== MEDIA OVERLAY ==================== */
+
+.hackathon-media-overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(0, 0, 0, 0.4);
+	color: white;
+
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+}
+
+.hackathon-media-link:hover .hackathon-media-overlay,
+.hackathon-media-link:focus-visible .hackathon-media-overlay {
+	opacity: 1;
+}
+
+.hackathon-media-link:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: -2px;
+}
+
+/* ==================== HACKATHON INFO ==================== */
+
+.hackathon-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+	padding: 1.25rem;
+}
+
+.hackathon-name {
+	font-family: 	var(--font-display);
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: var(--text-primary);
+}
+
+.hackathon-track {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+}
+
+.hackathon-description {
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.hackathon-description.expanded {
+	-webkit-line-clamp: unset;
+}
+
+.hackathon-see-more {
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 500;
+	color: var(--accent);
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	transition: color 0.2s ease;
+	letter-spacing: 0.02em;
+}
+
+.hackathon-see-more:hover {
+	color: var(--accent-hover);
+	text-decoration: underline;
+}
+
+/* ==================== TAGS ==================== */
+
+.hackathon-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-top: 0.25rem;
+}
+
+.hackathon-tag {
+	font-family: var(--font-display);
+	font-size: 0.65rem;
+	font-weight: 500;
+	color: var(--accent);
+	background: var(--accent-light);
+	padding: 0.2rem 0.5rem;
+	border-radius: 100px;
+	letter-spacing: 0.02em;
+}
+
+/* ==================== LINKEDIN ==================== */
+
+.hackathon-linkedin {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0.5rem;
+	color: var(--text-muted);
+	transition: color 0.2s ease;
+}
+
+.hackathon-linkedin:hover {
+	color: var(--accent);
+}
+
+.hackathon-linkedin:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+}

@@ -1,0 +1,62 @@
+.stacks-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	margin-top: 2rem;
+}
+
+/* ==================== GROUP ==================== */
+
+.stack-group-title {
+	font-family: var(--font-display);
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: var(--text-muted);
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.stack-items {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+/* ==================== ITEM ==================== */
+
+.stack-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.5rem 0.85rem;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background: var(--bg-card);
+	transition: all 0.2s ease;
+}
+
+.stack-item:hover {
+	border-color: var(--accent);
+	transform: translateY(-2px);
+}
+
+.stack-item img,
+.stack-item .stack-item-lucide {
+	width: 1.25rem;
+	height: 1.25rem;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+.stack-item .stack-item-lucide {
+	color: var(--accent);
+}
+
+.stack-item span {
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: var(--text-primary);
+}
