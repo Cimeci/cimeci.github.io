@@ -2,7 +2,7 @@
 
 ## HOSTING
 
-[ ]: Choose new hosting + GitHub account
+[ ]: Deploy on Vercel via CLI (email login, no GitHub link): `vercel` then `vercel --prod`
 [ ]: Update all URLs (index.html, cv.html, Contact `_next`, GitHub links)
 
 ## PERF

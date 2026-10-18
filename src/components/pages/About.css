@@ -33,13 +33,36 @@
 	margin-bottom: 1.5rem;
 }
 
+.about-experience-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	margin-bottom: 4rem;
+}
+
 .about-experience-card {
 	padding: 1.5rem 2rem;
 	border: 1px solid var(--border);
 	border-radius: 12px;
 	background: var(--bg-card);
-	margin-bottom: 4rem;
 	transition: all 0.3s ease;
+}
+
+.about-experience-kind {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	padding: 0.2rem 0.6rem;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	color: var(--text-muted);
+}
+
+.about-experience-kind-education {
+	border-color: var(--accent);
+	color: var(--accent);
+	background: var(--accent-light);
 }
 
 .about-experience-card:hover {
@@ -63,38 +86,32 @@
 .about-experience-role-block {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
-	padding: 1rem 0;
+	gap: 0.75rem;
+	padding: 1.25rem 0;
+}
+
+.about-experience-role-block + .about-experience-role-block {
 	border-top: 1px solid var(--border);
 }
 
-.about-experience-role-block:first-child {
-	border-top: none;
-	padding-top: 0;
+.about-experience-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
 }
 
 @media (min-width: 768px) {
-	.about-experience-header {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
 	.about-experience-role-block {
-		flex-direction: row;
-		border-top: none;
-		border-left: 1px solid var(--border);
-		padding-left: 1.5rem;
+		display: grid;
+		grid-template-columns: minmax(12rem, 16rem) 1fr;
+		gap: 2.5rem;
+		padding: 1.75rem 0;
 	}
 
-	.about-experience-role-block:first-child {
-		border-left: none;
-		padding-left: 0;
-	}
-
-	.about-experience-role-block h4,
-	.about-experience-role-block span,
-	.about-experience-role-block p {
-		flex: 1;
+	.about-experience-meta {
+		position: sticky;
+		top: 6rem;
+		align-self: start;
 	}
 }
 

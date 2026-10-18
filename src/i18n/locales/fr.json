@@ -20,6 +20,7 @@
 		},
 		"experience": {
 			"title": "Parcours",
+			"kind": { "work": "Entreprise", "education": "Formation" },
 			"moncab_internship": {
 				"role": "Développeur Full-Stack Stagiaire",
 				"company": "Moncab",
@@ -29,8 +30,14 @@
 			"moncab_apprentice": {
 				"role": "Développeur Full-Stack Alternant",
 				"company": "Moncab",
-				"date": "Sept. 2026 - Sept 2028",
+				"date": "Sept. 2026 - Sept. 2028",
 				"description": "Dans la continuité du stage, reprise des tickets en cours, correction de bugs, maintenance des automatisations n8n et montée en compétence sur l'architecture globale."
+			},
+			"school42": {
+				"company": "École 42 Angoulême",
+				"role": "Titre RNCP niveau 7 — Data / Web / IA",
+				"date": "2024 - 2028",
+				"description": "Pédagogie par les pairs, sans cours ni professeurs : apprentissage par projets, chacun évalué par d’autres étudiants. Tronc commun validé, spécialisation data, web et IA en parallèle de l’alternance chez Moncab, vers le titre RNCP de niveau 7 (équivalent Bac+5)."
 			}
 		},
 		"certifications": {
@@ -178,7 +185,6 @@
 		"multilayer_perceptron": {
 			"title": "Multilayer_Perceptron",
 			"description": "Réseaux de neurones artificiels grâce à l'implémentation d'un multilayer perceptron from scratch en Python."
-
 		}
 	},
 	"hackathons": {

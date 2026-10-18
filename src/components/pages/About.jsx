@@ -6,16 +6,27 @@ import './About.css';
 export const About = () => {
 	const { t } = useTranslation();
 
-	const experiences = [
+	const MONCAB_TAGS = ['Nuxt 3', 'Vue 3', 'TypeScript', 'Supabase', 'PostgreSQL', 'Stripe', 'Tailwind', 'Claude Code', 'n8n', 'Airtable', 'Mandrill', 'Mailchimp'];
+
+	const background = [
 		{
-			key: 'moncab_internship',
-			tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Supabase', 'PostgreSQL', 'Stripe', 'Tailwind', 'Claude Code', 'n8n', 'Airtable', 'Mandrill', 'Mailchimp'],
-			url_company: 'https://cabinetmoncab.fr'
+			key: 'school42',
+			kind: 'education',
+			companyKey: 'school42',
+			url: 'https://42angouleme.fr',
+			roles: [
+				{ key: 'school42', tags: ['C', 'C++', 'Python', 'TypeScript', 'Unix', 'Networking', 'Algorithms', 'Machine Learning', 'Peer Learning'] },
+			],
 		},
 		{
-			key: 'moncab_apprentice',
-			tags: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Supabase', 'PostgreSQL', 'Stripe', 'Tailwind', 'Claude Code', 'n8n', 'Airtable', 'Mandrill', 'Mailchimp'],
-			url_company: 'https://cabinetmoncab.fr'
+			key: 'moncab',
+			kind: 'work',
+			companyKey: 'moncab_internship',
+			url: 'https://cabinetmoncab.fr',
+			roles: [
+				{ key: 'moncab_internship', tags: MONCAB_TAGS },
+				{ key: 'moncab_apprentice', tags: MONCAB_TAGS },
+			],
 		},
 	];
 
@@ -55,39 +66,50 @@ export const About = () => {
 			<ScrollReveal delay={0.15}>
 				<h3 className="about-experience-title">{t('about.experience.title')}</h3>
 			</ScrollReveal>
-			<ScrollReveal delay={0.2}>
-				<div className="about-experience-card">
-					<div className="about-experience-item">
-						<div className="about-experience-header">
-							<a href={experiences[0].url_company} target="_blank" rel="noopener noreferrer">
-								<p className="about-experience-company">
-									{t('about.experience.moncab_internship.company')}
-								</p>
-							</a>
-						</div>
-						{experiences.map(({ key, tags }) => (
-							<div className="about-experience-role-block" key={key}>
-								<h4 className="about-experience-role">
-									{t(`about.experience.${key}.role`)}
-								</h4>
-								<span className="about-experience-date">
-									{t(`about.experience.${key}.date`)}
-								</span>
-								<p className="about-experience-desc">
-									{t(`about.experience.${key}.description`)}
-								</p>
-								<div className="about-experience-tags">
-									{tags.map((tag) => (
-										<span key={tag} className="about-experience-tag">
-											{tag}
-										</span>
-									))}
+			<div className="about-experience-list">
+				{background.map((org, orgIndex) => (
+					<ScrollReveal key={org.key} delay={0.2 + orgIndex * 0.1}>
+						<div className="about-experience-card">
+							<div className="about-experience-item">
+								<div className="about-experience-header">
+									<a href={org.url} target="_blank" rel="noopener noreferrer">
+										<p className="about-experience-company">
+											{t(`about.experience.${org.companyKey}.company`)}
+										</p>
+									</a>
+									<span className={`about-experience-kind about-experience-kind-${org.kind}`}>
+										{t(`about.experience.kind.${org.kind}`)}
+									</span>
 								</div>
+								{org.roles.map(({ key, tags }) => (
+									<div className="about-experience-role-block" key={key}>
+										<div className="about-experience-meta">
+											<h4 className="about-experience-role">
+												{t(`about.experience.${key}.role`)}
+											</h4>
+											<span className="about-experience-date">
+												{t(`about.experience.${key}.date`)}
+											</span>
+										</div>
+										<div className="about-experience-body">
+											<p className="about-experience-desc">
+												{t(`about.experience.${key}.description`)}
+											</p>
+											<div className="about-experience-tags">
+												{tags.map((tag) => (
+													<span key={tag} className="about-experience-tag">
+														{tag}
+													</span>
+												))}
+											</div>
+										</div>
+									</div>
+								))}
 							</div>
-						))}
-					</div>
-				</div>
-			</ScrollReveal>
+						</div>
+					</ScrollReveal>
+				))}
+			</div>
 
 			{/* Certifications */}
 			<ScrollReveal delay={0.15}>

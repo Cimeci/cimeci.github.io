@@ -19,7 +19,8 @@
 			"startup_highlight": "startup ecosystem"
 		},
 		"experience": {
-			"title": "Experience",
+			"title": "Background",
+			"kind": { "work": "Work", "education": "Education" },
 			"moncab_internship": {
 				"role": "Full-Stack Developer Intern",
 				"company": "Moncab",
@@ -29,8 +30,14 @@
 			"moncab_apprentice": {
 				"role": "Full-Stack Developer Apprentice",
 				"company": "Moncab",
-				"date": "Sept. 2026 - Sept 2028",
+				"date": "Sept. 2026 - Sept. 2028",
 				"description": "After the internship. Continuation as an apprentice on the same scope: maintaining and evolving existing features, new integrations, user support, and ramping up on the overall architecture."
+			},
+			"school42": {
+				"company": "École 42 Angoulême",
+				"role": "RNCP Level 7 — Data / Web / AI",
+				"date": "2024 - 2028",
+				"description": "Peer-to-peer curriculum with no classes and no teachers: learning by projects, each one reviewed by other students. Common core completed, now specialising in data, web and AI alongside the apprenticeship at Moncab, towards the RNCP level 7 degree (Master equivalent)."
 			}
 		},
 		"certifications": {
