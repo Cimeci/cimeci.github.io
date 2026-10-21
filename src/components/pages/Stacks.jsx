@@ -18,9 +18,11 @@ const STACKS = {
 	backend: [
 		{ name: 'Supabase', daily: true },
 		{ name: 'PostgreSQL', daily: true },
+		{ name: 'Airtable', daily: true },
 		{ name: 'Node.js' },
 		{ name: 'NestJS' },
 		{ name: 'Prisma' },
+		{ name: 'Better Auth' },
 		{ name: 'Stripe' },
 	],
 	ai: [
