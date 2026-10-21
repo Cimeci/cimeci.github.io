@@ -1,0 +1,66 @@
+.section-head {
+	margin-bottom: 3rem;
+	max-width: 46rem;
+}
+
+.section-head-meta {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin-bottom: 1.25rem;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	letter-spacing: 0.04em;
+	color: var(--text-muted);
+	text-transform: lowercase;
+}
+
+.section-head-index {
+	color: var(--text-primary);
+	font-weight: 500;
+}
+
+.section-head-total {
+	color: var(--text-muted);
+}
+
+.section-head-bits {
+	display: inline-flex;
+	gap: 3px;
+}
+
+.section-head-bit {
+	width: 9px;
+	height: 9px;
+	background: var(--cell-empty);
+}
+
+.section-head-bit.is-done {
+	background: var(--cell-done);
+}
+
+.section-head-bit.is-current {
+	background: var(--accent);
+	animation: cell-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes cell-pulse {
+	50% { opacity: 0.45; }
+}
+
+.section-title {
+	font-family: var(--font-display);
+	font-size: clamp(2.4rem, 1.6rem + 3.2vw, 4.25rem);
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: -0.035em;
+	color: var(--text-primary);
+}
+
+.section-lead {
+	margin-top: 1.25rem;
+	font-size: 1.05rem;
+	line-height: 1.6;
+	color: var(--text-secondary);
+	max-width: 38rem;
+}

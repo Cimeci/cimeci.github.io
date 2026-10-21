@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
+import { SiLinkedin } from 'react-icons/si';
 import { SendHorizonal, Check, X } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
+import { SectionHeader } from '../utils/SectionHeader';
 import './Contact.css';
 
 const SOCIALS = [
-	{ icon: SiGithub, href: 'https://github.com/Cimeci2', label: 'GitHub' },
+	// GitHub hidden while the account is flagged: { icon: SiGithub, href: 'https://github.com/Cimeci2', label: 'GitHub' },
 	{ icon: SiLinkedin, href: 'https://linkedin.com/in/ilan-nowak-glandier', label: 'LinkedIn' },
-	// { icon: SiX, href: 'https://x.com/Cimeci_23', label: 'X' },
 ];
 
 export const Contact = () => {
@@ -46,17 +46,14 @@ export const Contact = () => {
 
 	return (
 		<div className="py-20 sm:py-32">
-			<ScrollReveal>
-				<p className="section-header">// {t('nav.contact')}</p>
-			</ScrollReveal>
-			<ScrollReveal delay={0.1}>
-				<h2 className="section-title">{t('contact.contact_me')}</h2>
-			</ScrollReveal>
+			<SectionHeader id="contact" title={t('contact.contact_me')} />
 
 			<div className="contact-layout">
 				{/* Left: info + socials */}
 				<ScrollReveal delay={0.2}>
 					<div className="contact-info">
+						<p className="contact-pitch">{t('contact.pitch')}</p>
+
 						<div className="contact-socials">
 							{SOCIALS.map(({ icon: Icon, href, label }) => (
 								<a
@@ -72,10 +69,6 @@ export const Contact = () => {
 								</a>
 							))}
 						</div>
-
-						<p className="contact-copy">
-							&copy; {new Date().getFullYear()} Ilan Nowak--Glandier
-						</p>
 					</div>
 				</ScrollReveal>
 
@@ -135,7 +128,7 @@ export const Contact = () => {
 							</div>
 						)}
 
-						<input type="hidden" name="_next" value="https://cimeci.github.io" />
+						<input type="hidden" name="_next" value="https://portfolio-ecru-nine-a0g2u7xwsx.vercel.app" />
 						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')} />
 					</form>
 				</ScrollReveal>

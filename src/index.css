@@ -1,57 +1,79 @@
-/* ==================== CUSTOM FONTS ==================== */
-
-@font-face {
-    font-family: 'Myako';
-    src: url('/font/myako/MyakoDemo-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* ==================== DESIGN TOKENS ==================== */
+/* ==================== DESIGN TOKENS ====================
+   Direction: "pixel grid on paper".
+   Warm paper + ink, one vermilion accent that always means
+   "active / in progress", square cells instead of rounded cards.
+========================================================== */
 
 :root {
-	/* Backgrounds */
-	--bg-primary: #fafafa;
-	--bg-secondary: #f3f3f3;
-	--bg-card: #ffffff;
+	/* Surfaces */
+	--bg-primary: #f3f0e8;
+	--bg-secondary: #e8e4d9;
+	--bg-card: #faf8f3;
 
-	/* Accent - cyan */
-	--accent: #0ea5e9;
-	--accent-light: #e0f2fe;
-	--accent-hover: #0284c7;
+	/* Accent - vermilion: active, in progress, links */
+	--accent: #c4400f;
+	--accent-strong: #a3340b;
+	--accent-light: #f6dccf;
+	--accent-hover: #a3340b;
+	--on-accent: #fffaf5;
 
-	/* Text */
-	--text-primary: #1a1a1a;
-	--text-secondary: #666666;
-	--text-muted: #737373;
+	/* Ink */
+	--text-primary: #16150f;
+	--text-secondary: #46433b;
+	--text-muted: #6b675d;
 
-	/* Borders */
-	--border: #e5e5e5;
-	--border-hover: #d0d0d0;
+	/* Lines */
+	--border: #d8d2c3;
+	--border-hover: #16150f;
 
-	/* Fonts */
-	--font-sans: 'Instrument Sans', sans-serif;
-	--font-display: 'Syne', sans-serif;
-	--font-mono: 'JetBrains Mono', monospace;
+	/* Cells (pixel grid motif) */
+	--cell-empty: #e2ddd0;
+	--cell-done: #16150f;
+	--grid-dot: rgba(22, 21, 15, 0.07);
+
+	/* Shape */
+	--radius: 3px;
+	--radius-sm: 2px;
+	--shadow-offset: 4px 4px 0 var(--text-primary);
+
+	/* Fonts: one grotesk with character + one mono for data */
+	--font-sans: 'Familjen Grotesk', system-ui, sans-serif;
+	--font-display: 'Familjen Grotesk', system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+	/* Motion */
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--duration-fast: 150ms;
+	--duration-normal: 300ms;
+
+	color-scheme: light;
 }
 
 [data-theme="dark"] {
-	--bg-primary: #0a0a0a;
-	--bg-secondary: #141414;
-	--bg-card: #1a1a1a;
+	--bg-primary: #11100d;
+	--bg-secondary: #1b1a16;
+	--bg-card: #171612;
 
-	/* Accent - cyan for dark */
-	--accent: #38bdf8;
-	--accent-light: #0c2d44;
-	--accent-hover: #7dd3fc;
+	--accent: #ff6a3d;
+	--accent-strong: #ff8a63;
+	--accent-light: #3a1d12;
+	--accent-hover: #ff8a63;
+	--on-accent: #11100d;
 
-	--text-primary: #ebebeb;
-	--text-secondary: #999999;
-	--text-muted: #666666;
+	--text-primary: #ece8dd;
+	--text-secondary: #bdb8ab;
+	--text-muted: #8f8a7d;
 
-	--border: #2a2a2a;
-	--border-hover: #3a3a3a;
+	--border: #2e2c25;
+	--border-hover: #ece8dd;
+
+	--cell-empty: #24221d;
+	--cell-done: #ece8dd;
+	--grid-dot: rgba(236, 232, 221, 0.06);
+
+	--shadow-offset: 4px 4px 0 var(--accent);
+
+	color-scheme: dark;
 }
 
 /* ==================== BASE ==================== */
@@ -64,7 +86,10 @@ html {
 body {
 	margin: 0;
 	overflow-x: hidden;
-	background: var(--bg-primary);
+	background-color: var(--bg-primary);
+	/* Dot grid: the board every cell sits on */
+	background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+	background-size: 24px 24px;
 	color: var(--text-primary);
 	font-family: var(--font-sans);
 	font-weight: 400;
@@ -75,17 +100,24 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* ==================== FOCUS ==================== */
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
 /* ==================== SELECTION ==================== */
 
 ::selection {
 	background: var(--accent);
-	color: white;
+	color: var(--on-accent);
 }
 
 /* ==================== SCROLLBAR ==================== */
 
 ::-webkit-scrollbar {
-	width: 6px;
+	width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -93,8 +125,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--border-hover);
-	border-radius: 3px;
+	background: var(--border);
 }
 
 ::-webkit-scrollbar-thumb:hover {

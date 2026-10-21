@@ -1,62 +1,86 @@
-.stacks-container {
-	display: flex;
-	flex-direction: column;
-	gap: 2.5rem;
-	margin-top: 2rem;
+.stacks {
+	margin: 0;
+	border-top: 2px solid var(--text-primary);
 }
 
-/* ==================== GROUP ==================== */
-
-.stack-group-title {
-	font-family: var(--font-display);
-	font-size: 0.75rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	color: var(--text-muted);
-	margin-bottom: 1rem;
-	padding-bottom: 0.5rem;
+.stack-row {
+	display: grid;
+	gap: 0.75rem;
+	padding: 1.4rem 0;
 	border-bottom: 1px solid var(--border);
 }
 
+@media (min-width: 768px) {
+	.stack-row {
+		grid-template-columns: 14rem 1fr;
+		gap: 2rem;
+		align-items: baseline;
+	}
+}
+
+.stack-group {
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	color: var(--text-muted);
+}
+
 .stack-items {
+	margin: 0;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.6rem;
+	gap: 0.5rem 1.5rem;
 }
 
-/* ==================== ITEM ==================== */
-
-.stack-item {
+/* Cell marker before each tech: filled = daily use, outline = used */
+.stack-item,
+.stack-legend-piece {
 	display: inline-flex;
 	align-items: center;
-	gap: 0.5rem;
-	padding: 0.5rem 0.85rem;
-	border: 1px solid var(--border);
-	border-radius: 8px;
-	background: var(--bg-card);
-	transition: all 0.2s ease;
+	gap: 0.55rem;
 }
 
-.stack-item:hover {
-	border-color: var(--accent);
-	transform: translateY(-2px);
-}
-
-.stack-item img,
-.stack-item .stack-item-lucide {
-	width: 1.25rem;
-	height: 1.25rem;
-	object-fit: contain;
-	flex-shrink: 0;
-}
-
-.stack-item .stack-item-lucide {
-	color: var(--accent);
-}
-
-.stack-item span {
-	font-size: 0.8rem;
+.stack-item {
+	font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem);
 	font-weight: 500;
+	letter-spacing: -0.01em;
+	color: var(--text-secondary);
+}
+
+.stack-item.is-daily {
 	color: var(--text-primary);
+}
+
+.stack-item::before,
+.stack-legend-piece {
+	content: '';
+	flex-shrink: 0;
+	width: 9px;
+	height: 9px;
+	box-shadow: inset 0 0 0 1px var(--text-muted);
+}
+
+.stack-item.is-daily::before,
+.stack-legend-piece.is-daily {
+	background: var(--cell-done);
+	box-shadow: none;
+}
+
+.stack-item:hover::before {
+	background: var(--accent);
+	box-shadow: none;
+}
+
+.stack-legend {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 1.25rem;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	color: var(--text-muted);
+}
+
+.stack-legend-piece:not(:first-child) {
+	margin-left: 1rem;
 }

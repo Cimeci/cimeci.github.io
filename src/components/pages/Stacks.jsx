@@ -1,120 +1,73 @@
 import { useTranslation } from 'react-i18next';
-import { MessageSquareCode, Layers, Network } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
+import { SectionHeader } from '../utils/SectionHeader';
 import './Stacks.css';
 
-const D = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/';
-const L = '/icons/';
-
+/*
+ * What I actually use, not everything I've touched once.
+ * `daily: true` = used every week at Moncab or 42 (rendered as a filled cell).
+ */
 const STACKS = {
 	web: [
-		{ name: 'React', icon: `${D}react/react-original.svg` },
-		{ name: 'Vue.js', icon: `${D}vuejs/vuejs-original.svg` },
-		{ name: 'Next.js', icon: `${D}nextjs/nextjs-original.svg` },
-		{ name: 'Nuxt', icon: `${D}nuxtjs/nuxtjs-original.svg` },
-		{ name: 'Tailwind', icon: `${D}tailwindcss/tailwindcss-original.svg` },
-		// { name: 'Framer Motion', icon: `${L}framer.svg` },
+		{ name: 'TypeScript', daily: true },
+		{ name: 'Vue 3 / Nuxt', daily: true },
+		{ name: 'React / Next.js', daily: true },
+		{ name: 'Tailwind', daily: true },
+		{ name: 'React Native / Expo' },
 	],
 	backend: [
-		{ name: 'Node.js', icon: `${D}nodejs/nodejs-original.svg` },
-		{ name: 'NestJS', icon: `${D}nestjs/nestjs-original.svg` },
-		{ name: 'Express', icon: `${D}express/express-original.svg` },
-		{ name: 'REST API', icon: `${L}restapi.svg` },
-	],
-	mobile: [
-		{ name: 'React Native', icon: `${D}react/react-original.svg` },
-		{ name: 'Expo', icon: `${L}expo.svg` },
-	],
-	algorithm: [
-		{ name: 'TypeScript', icon: `${D}typescript/typescript-original.svg` },
-		{ name: 'JavaScript', icon: `${D}javascript/javascript-original.svg` },
-		{ name: 'Python', icon: `${D}python/python-original.svg` },
-		{ name: 'C++', icon: `${D}cplusplus/cplusplus-original.svg` },
-		{ name: 'C', icon: `${D}c/c-original.svg` },
-		{ name: 'Bash', icon: `${D}bash/bash-original.svg` },
-	],
-	data: [
-		{ name: 'Supabase', icon: `${D}supabase/supabase-original.svg` },
-		{ name: 'PostgreSQL', icon: `${D}postgresql/postgresql-original.svg` },
-		{ name: 'SQLite', icon: `${D}sqlite/sqlite-original.svg` },
-		{ name: 'Prisma', icon: `${D}prisma/prisma-original.svg` },
-		{ name: 'Airtable', icon: `${L}airtable.svg` },
+		{ name: 'Supabase', daily: true },
+		{ name: 'PostgreSQL', daily: true },
+		{ name: 'Node.js' },
+		{ name: 'NestJS' },
+		{ name: 'Prisma' },
+		{ name: 'Stripe' },
 	],
 	ai: [
-		{ name: 'Claude Code', icon: `${L}anthropic.svg` },
-		{ name: 'Ollama', icon: `${L}ollama.svg` },
-		{ name: 'OpenAI', icon: `${L}openai.svg` },
-		{ name: 'OpenCode', icon: `${L}opencode.svg` },
+		{ name: 'n8n', daily: true },
+		{ name: 'Claude Code', daily: true },
+		{ name: 'OpenCode' },
+		{ name: 'OpenAI API' },
+		{ name: 'Ollama' },
 	],
-	ai_engineering: [
-		{ name: 'Prompt Engineering', IconComponent: MessageSquareCode },
-		{ name: 'Context Engineering', IconComponent: Layers },
-		{ name: 'Sub-Agents', IconComponent: Network },
-	],
-	dev_environment: [
-		{ name: 'Git', icon: `${D}git/git-original.svg` },
-		{ name: 'GitHub', icon: `${D}github/github-original.svg` },
-		{ name: 'VS Code', icon: `${D}vscode/vscode-original.svg` },
-		{ name: 'Docker', icon: `${D}docker/docker-original.svg` },
-		{ name: 'Apple', icon: `${D}apple/apple-original.svg` },
-		{ name: 'Linux', icon: `${D}linux/linux-original.svg` },
-		{ name: 'Figma', icon: `${D}figma/figma-original.svg` },
-		{ name: 'Notion', icon: `${D}notion/notion-original.svg` },
-		{ name: 'Vercel', icon: `${D}vercel/vercel-original.svg` },
-		{ name: 'Render', icon: `${L}render.svg` },
-		{ name: 'Stripe', icon: `${L}stripe.svg` },
-		{ name: 'Postman', icon: `${L}postman.svg` },
-		{ name: 'n8n', icon: `${L}n8n.svg` },
-		{ name: 'Mailchimp', icon: `${L}mailchimp.svg` },
+	low_level: [
+		{ name: 'C' },
+		{ name: 'C++' },
+		{ name: 'ASM' },
+		{ name: 'Python' },
+		{ name: 'Docker' },
+		{ name: 'Linux' },
 	],
 };
-
-function StackItem({ name, icon, IconComponent }) {
-	return (
-		<div className="stack-item">
-			{IconComponent ? (
-				<IconComponent className="stack-item-lucide" strokeWidth={1.5} />
-			) : (
-				<img src={icon} alt={name} loading="lazy" />
-			)}
-			<span>{name}</span>
-		</div>
-	);
-}
-
-function StackGroup({ name, items, index }) {
-	const { t } = useTranslation();
-	return (
-		<ScrollReveal delay={index * 0.1}>
-			<div className="stack-group">
-				<h3 className="stack-group-title">{t(`stack.${name}`)}</h3>
-				<div className="stack-items">
-					{items.map((item) => (
-						<StackItem key={item.name} {...item} />
-					))}
-				</div>
-			</div>
-		</ScrollReveal>
-	);
-}
 
 export const Stacks = () => {
 	const { t } = useTranslation();
 
 	return (
 		<div className="py-20 sm:py-32">
-			<ScrollReveal>
-				<p className="section-header">// {t('nav.stack')}</p>
-			</ScrollReveal>
-			<ScrollReveal delay={0.1}>
-				<h2 className="section-title">{t('stack.title')}</h2>
-			</ScrollReveal>
+			<SectionHeader id="stacks" title={t('stack.title')} lead={t('stack.lead')} />
 
-			<div className="stacks-container">
-				{Object.entries(STACKS).map(([name, items], i) => (
-					<StackGroup key={name} name={name} items={items} index={i} />
+			<dl className="stacks">
+				{Object.entries(STACKS).map(([group, items], i) => (
+					<ScrollReveal key={group} delay={i * 0.06}>
+						<div className="stack-row">
+							<dt className="stack-group">{t(`stack.${group}`)}</dt>
+							<dd className="stack-items">
+								{items.map(({ name, daily }) => (
+									<span key={name} className={`stack-item${daily ? ' is-daily' : ''}`}>
+										{name}
+									</span>
+								))}
+							</dd>
+						</div>
+					</ScrollReveal>
 				))}
-			</div>
+			</dl>
+
+			<p className="stack-legend">
+				<span className="stack-legend-piece is-daily" /> {t('stack.legend_daily')}
+				<span className="stack-legend-piece" /> {t('stack.legend_used')}
+			</p>
 		</div>
 	);
 };

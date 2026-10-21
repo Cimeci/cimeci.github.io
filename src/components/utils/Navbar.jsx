@@ -3,87 +3,96 @@ import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import ThemeOption from './ThemeOption';
 import LanguageSwitcher from './LanguageSwitcher';
+import { SECTIONS } from '../../sections';
 import './Navbar.css';
 
-const NAV_ITEMS = [
-	{ id: 'about', key: 'about' },
-	{ id: 'stacks', key: 'stack' },
-	{ id: 'hackathons', key: 'hackathons'},
-	{ id: 'projects', key: 'projects' },
-	{ id: 'contact', key: 'contact' },
-];
+const getInitialTheme = () =>
+	document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+
+/** Tracks which section is currently under the navbar. */
+const useActiveSection = () => {
+	const [active, setActive] = useState(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const visible = entries.filter((e) => e.isIntersecting);
+				if (visible.length > 0) setActive(visible[0].target.id);
+			},
+			{ rootMargin: '-45% 0px -50% 0px' }
+		);
+		SECTIONS.forEach(({ id }) => {
+			const el = document.getElementById(id);
+			if (el) observer.observe(el);
+		});
+		return () => observer.disconnect();
+	}, []);
+
+	return active;
+};
 
 export const Navbar = () => {
 	const { t } = useTranslation();
 	const [menuOpen, setMenuOpen] = useState(false);
-	const [currentTheme, setCurrentTheme] = useState('light');
+	const [currentTheme, setCurrentTheme] = useState(getInitialTheme);
 	const [scrolled, setScrolled] = useState(false);
+	const active = useActiveSection();
 
 	useEffect(() => {
-		const savedTheme = localStorage.getItem('theme') || 'light';
-		setCurrentTheme(savedTheme);
-		document.body.setAttribute('data-theme', savedTheme);
-
 		const handleScroll = () => setScrolled(window.scrollY > 20);
-		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
 	const toggleTheme = () => {
 		const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 		setCurrentTheme(newTheme);
-		document.body.setAttribute('data-theme', newTheme);
-		localStorage.setItem('theme', newTheme);
+		document.documentElement.setAttribute('data-theme', newTheme);
+		try {
+			localStorage.setItem('theme', newTheme);
+		} catch {
+			// Storage unavailable (private mode): theme still applies for this visit
+		}
 	};
 
 	const scrollTo = (id) => {
-		const element = document.getElementById(id);
-
-		if (element) {
-			const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-
-			window.scrollTo({
-				top: elementPosition + 25,
-				behavior: 'smooth',
-			});
-		}
-
+		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 		setMenuOpen(false);
 	};
 
+	const renderLinks = (className) =>
+		SECTIONS.map(({ id, key }, i) => (
+			<button
+				key={id}
+				onClick={() => scrollTo(id)}
+				className={`${className}${active === id ? ' is-active' : ''}`}
+				aria-current={active === id ? 'true' : undefined}
+			>
+				<span className="nav-link-index">{String(i + 1).padStart(2, '0')}</span>
+				{t(`nav.${key}`)}
+			</button>
+		));
+
 	return (
-		<nav className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}`}>
+		<nav className={`nav-bar ${scrolled ? 'nav-scrolled' : ''}`} aria-label={t('nav.label')}>
 			<div className="nav-inner">
-				{/* Logo */}
 				<button
 					onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 					className="nav-logo"
-					aria-label="Back to top"
+					aria-label={t('nav.top')}
 				>
-					IN<span className="nav-logo-accent">.</span>
+					IN<span className="nav-logo-accent" />
 				</button>
 
-				{/* Desktop nav */}
-				<div className="nav-links">
-					{NAV_ITEMS.map(({ id, key }) => (
-						<button
-							key={id}
-							onClick={() => scrollTo(id)}
-							className="nav-link"
-						>
-							<span className="nav-link-prefix">//</span> {t(`nav.${key}`)}
-						</button>
-					))}
-				</div>
+				<div className="nav-links">{renderLinks('nav-link')}</div>
 
-				{/* Right side */}
 				<div className="nav-actions">
 					<LanguageSwitcher />
 					<ThemeOption currentTheme={currentTheme} onToggle={toggleTheme} />
 					<button
 						className="nav-menu-btn"
 						onClick={() => setMenuOpen(!menuOpen)}
-						aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+						aria-label={menuOpen ? t('nav.close') : t('nav.open')}
 						aria-expanded={menuOpen}
 					>
 						{menuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -91,20 +100,7 @@ export const Navbar = () => {
 				</div>
 			</div>
 
-			{/* Mobile menu */}
-			{menuOpen && (
-				<div className="nav-mobile">
-					{NAV_ITEMS.map(({ id, key }) => (
-						<button
-							key={id}
-							onClick={() => scrollTo(id)}
-							className="nav-mobile-link"
-						>
-							<span className="nav-link-prefix">//</span> {t(`nav.${key}`)}
-						</button>
-					))}
-				</div>
-			)}
+			{menuOpen && <div className="nav-mobile">{renderLinks('nav-mobile-link')}</div>}
 		</nav>
 	);
 };

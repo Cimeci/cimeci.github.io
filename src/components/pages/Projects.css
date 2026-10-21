@@ -1,28 +1,3 @@
-/* ==================== PROCESS INLINE ==================== */
-
-.process-inline {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.25rem;
-	margin-top: 0.6rem;
-}
-
-.process-inline-step {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.3rem;
-	font-family: var(--font-display);
-	font-size: 0.7rem;
-	font-weight: 500;
-	color: var(--accent);
-}
-
-.process-inline-arrow {
-	color: var(--text-muted);
-	margin: 0 0.2rem;
-}
-
 /* ==================== CATEGORY HEADERS ==================== */
 
 .projects-category-block {
@@ -32,29 +7,20 @@
 }
 
 .projects-category {
-	font-family: var(--font-display);
-	font-size: 0.85rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	color: var(--accent);
-	margin-bottom: 0.35rem;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: var(--text-primary);
+	margin-bottom: 0.25rem;
 }
 
 .projects-category-subtitle {
-	font-size: 0.8rem;
+	font-size: 0.95rem;
 	line-height: 1.5;
 	color: var(--text-secondary);
 }
 
-.projects-category-school {
-	margin-top: 0;
-	color: var(--text-muted);
-}
 
-.projects-category-school + .projects-category-subtitle {
-	color: var(--text-muted);
-}
 
 .projects-category-block:has(.projects-category-school) {
 	margin-top: 3.5rem;
@@ -76,7 +42,7 @@
 
 @media (min-width: 768px) {
 	.personal-grid {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.personal-grid-featured {
@@ -87,12 +53,9 @@
 /* ==================== FEATURED PERSONAL CARD ==================== */
 
 .personal-card.personal-card-featured {
-	border-radius: 20px;
+	border-radius: var(--radius);
 }
 
-.personal-card.personal-card-featured::before {
-	border-radius: 20px 20px 0 0;
-}
 
 @media (min-width: 768px) {
 	.personal-card.personal-card-featured {
@@ -130,8 +93,6 @@
 
 	.personal-card.personal-card-featured .personal-card-status {
 		order: -1;
-		font-size: 0.6rem;
-		padding: 0.25rem 0.7rem;
 	}
 
 	.personal-card.personal-card-featured .personal-card-name {
@@ -174,11 +135,11 @@
 	display: flex;
 	flex-direction: column;
 	border: 1px solid var(--border);
-	border-radius: 16px;
+	border-radius: var(--radius);
 	background: var(--bg-card);
 	text-decoration: none;
 	color: inherit;
-	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-normal) ease;
 	position: relative;
 	height: 100%;
 	overflow: hidden;
@@ -200,8 +161,8 @@
 	transition: transform 0.6s ease;
 }
 
-.personal-card:hover .personal-card-img-wrap img,
-.personal-card:hover .personal-card-img-wrap video {
+a.personal-card:hover .personal-card-img-wrap img,
+a.personal-card:hover .personal-card-img-wrap video {
 	transform: scale(1.05);
 }
 
@@ -213,32 +174,14 @@
 	flex: 1;
 }
 
-.personal-card::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 3px;
-	background: var(--accent);
-	border-radius: 16px 16px 0 0;
-	opacity: 0;
-	transition: opacity 0.3s ease;
+
+a.personal-card:hover {
+	border-color: var(--text-primary);
+	transform: translate(-3px, -3px);
+	box-shadow: var(--shadow-offset);
 }
 
-.personal-card:hover {
-	border-color: var(--accent);
-	transform: translateY(-6px);
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-}
 
-.personal-card:hover::before {
-	opacity: 1;
-}
-
-[data-theme="dark"] .personal-card:hover {
-	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
 
 .personal-card-header {
 	display: flex;
@@ -257,27 +200,31 @@
 	width: 2rem;
 	height: 2rem;
 	object-fit: contain;
-	border-radius: 6px;
+	border-radius: var(--radius);
 }
 
 .personal-card-name {
-	font-family: 	var(--font-display);
-	font-size: 1.4rem;
-	font-weight: 400;
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: -0.02em;
 	color: var(--text-primary);
 }
 
 .personal-card-status {
-	font-family: var(--font-display);
-	font-size: 0.65rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	color: var(--accent);
-	background: var(--accent-light);
-	padding: 0.2rem 0.6rem;
-	border-radius: 100px;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--accent-strong);
 	white-space: nowrap;
+}
+
+.personal-card-status::before {
+	content: '';
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-right: 0.45rem;
+	background: var(--accent);
 }
 
 .personal-card-desc {
@@ -300,7 +247,7 @@
 	transition: color 0.2s ease;
 }
 
-.personal-card:hover .personal-card-arrow {
+a.personal-card:hover .personal-card-arrow {
 	color: var(--accent);
 }
 
@@ -325,23 +272,20 @@
 	display: flex;
 	flex-direction: column;
 	border: 1px solid var(--border);
-	border-radius: 16px;
+	border-radius: var(--radius);
 	overflow: hidden;
 	background: var(--bg-card);
 	text-decoration: none;
 	color: inherit;
-	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-normal) ease;
 }
 
-.project-card:hover {
-	border-color: var(--border-hover);
-	transform: translateY(-4px);
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+a.project-card:hover {
+	border-color: var(--text-primary);
+	transform: translate(-3px, -3px);
+	box-shadow: var(--shadow-offset);
 }
 
-[data-theme="dark"] .project-card:hover {
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-}
 
 /* ==================== IMAGE ==================== */
 
@@ -359,7 +303,7 @@
 	transition: transform 0.6s ease;
 }
 
-.project-card:hover .project-img-wrap img {
+a.project-card:hover .project-img-wrap img {
 	transform: scale(1.05);
 }
 
@@ -375,7 +319,7 @@
 	color: white;
 }
 
-.project-card:hover .project-img-overlay {
+a.project-card:hover .project-img-overlay {
 	opacity: 1;
 }
 
@@ -389,9 +333,10 @@
 }
 
 .project-name {
-	font-family: 	var(--font-display);
-	font-size: 1.2rem;
-	font-weight: 400;
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+	font-weight: 600;
+	letter-spacing: -0.015em;
 	color: var(--text-primary);
 }
 
@@ -416,12 +361,44 @@
 }
 
 .project-tag {
-	font-family: var(--font-display);
-	font-size: 0.65rem;
-	font-weight: 500;
-	color: var(--accent);
-	background: var(--accent-light);
-	padding: 0.2rem 0.5rem;
-	border-radius: 100px;
-	letter-spacing: 0.02em;
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 400;
+	color: var(--text-secondary);
+	background: transparent;
+	border: 1px solid var(--border);
+	padding: 0.15rem 0.45rem;
+	border-radius: var(--radius-sm);
+}
+
+/* ==================== TEXT-ONLY PERSONAL CARD (no media) ==================== */
+
+.personal-card-quote {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	gap: 1rem;
+	margin: 0;
+	padding: 2rem;
+	background: var(--text-primary);
+	color: var(--bg-primary);
+	font-family: var(--font-mono);
+	font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem);
+	line-height: 1.35;
+	aspect-ratio: 16 / 9;
+}
+
+.personal-card-quote::before {
+	content: '';
+	width: 14px;
+	height: 14px;
+	background: var(--accent);
+}
+
+@media (min-width: 768px) {
+	.personal-card.personal-card-featured .personal-card-quote {
+		width: 50%;
+		flex-shrink: 0;
+		padding: 3rem;
+	}
 }

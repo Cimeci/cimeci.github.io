@@ -1,26 +1,31 @@
 .language-switcher {
 	display: flex;
 	align-items: center;
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
 }
 
 .language-switcher button {
-	display: flex;
-	align-items: center;
 	background: none;
 	border: none;
 	cursor: pointer;
-	padding: 0.3rem;
-	border-radius: 4px;
-	transition: opacity 0.2s ease;
+	padding: 0.35rem 0.4rem;
+	color: var(--text-muted);
+	font: inherit;
+	transition: color var(--duration-fast) ease-out;
+}
+
+.language-switcher button + button::before {
+	content: '/';
+	margin-right: 0.8rem;
+	color: var(--border);
 }
 
 .language-switcher button:hover {
-	opacity: 0.7;
+	color: var(--text-primary);
 }
 
-.lang-btn {
-	width: 1.5rem;
-	height: 1.1rem;
-	border-radius: 2px;
-	object-fit: cover;
+.language-switcher button.is-active {
+	color: var(--text-primary);
+	font-weight: 500;
 }

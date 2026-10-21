@@ -1,0 +1,82 @@
+.talks {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 2px solid var(--text-primary);
+}
+
+.talk {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.5rem;
+	padding: 1.75rem 0;
+	border-bottom: 1px solid var(--border);
+	transition: background-color var(--duration-normal) ease-out;
+}
+
+@media (min-width: 768px) {
+	.talk {
+		grid-template-columns: 8rem minmax(0, 1fr) 4rem;
+		gap: 2rem;
+		align-items: baseline;
+	}
+}
+
+.talk::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: -1px;
+	width: 100%;
+	height: 2px;
+	background: var(--accent);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.talk:hover::before {
+	transform: scaleX(1);
+}
+
+.talk-date {
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	color: var(--accent-strong);
+	text-transform: lowercase;
+}
+
+.talk-title {
+	font-size: clamp(1.2rem, 1rem + 0.8vw, 1.6rem);
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	line-height: 1.25;
+	color: var(--text-primary);
+	margin-bottom: 0.4rem;
+}
+
+.talk-desc {
+	color: var(--text-secondary);
+	line-height: 1.65;
+	max-width: 44rem;
+}
+
+.talk-index {
+	display: none;
+	font-family: var(--font-mono);
+	font-size: 2rem;
+	color: var(--cell-empty);
+	text-align: right;
+	transition: color var(--duration-normal) ease-out;
+}
+
+@media (min-width: 768px) {
+	.talk-index {
+		display: block;
+	}
+}
+
+.talk:hover .talk-index {
+	color: var(--accent);
+}

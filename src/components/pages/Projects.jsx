@@ -1,60 +1,75 @@
 import { useTranslation } from 'react-i18next';
-import { ExternalLink, Search, Lightbulb, Hammer, RefreshCw } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
+import { SectionHeader } from '../utils/SectionHeader';
 import './Projects.css';
 
 /* =======================
    DATA
 ======================= */
 
-const GITHUB = 'https://github.com/Cimeci2/';
+// GitHub profile is hidden while the account is flagged: links would 404 for visitors.
+// Set back to 'https://github.com/Cimeci2/' once it is public again.
+const GITHUB = null;
 
 const PERSONAL_PROJECTS = [
+	{
+		key: 'open42',
+		link: '',
+		quote: 'AI as your guide, not your crutch.',
+		tags: ['OpenCode', 'Agents', 'Pédagogie'],
+	},
 	{
 		key: 'setupkit',
 		link: 'https://setupkit.app',
 		video: '/projects_visuals/setupkit.mp4',
-		poster: '/projects_visuals/setupkit-poster.jpg',
-		tags: ['Next.js', 'TypeScript', 'Supabase', 'Stripe', 'Tailwind', 'AI'],
+		poster: '/projects_visuals/setupkit-poster.webp',
+		tags: ['Next.js', 'Supabase', 'Stripe'],
 	},
 ];
 
+// Cursus order
 const SCHOOL_PROJECTS = [
 	{
 		key: 'minishell',
-		img: '/projects_visuals/minishell_visual.svg',
+		img: '/projects_visuals/minishell_visual.webp',
 		link: 'minishell',
-		tags: ['C', 'Unix', 'Shell', 'Processes'],
+		tags: ['C', 'Unix', 'Processes'],
 	},
 	{
 		key: 'irc',
-		img: '/projects_visuals/Irc_visual.svg',
+		img: '/projects_visuals/Irc_visual.webp',
 		link: 'ft_irc',
 		tags: ['C++', 'TCP Sockets', 'IRC Protocol'],
 	},
 	{
 		key: 'transcendence',
-		img: '/projects_visuals/Transcendence_visual.svg',
+		img: '/projects_visuals/Transcendence_visual.webp',
 		link: '',
-		tags: ['Full-Stack', 'WebSockets', 'Pong', 'Auth'],
+		tags: ['WebSockets', 'Auth', 'Full-Stack'],
 	},
 	{
 		key: 'music_room',
-		img: '/projects_visuals/Music-room_visual.svg',
+		img: '/projects_visuals/Music-room_visual.webp',
 		link: 'Music_room',
-		tags: ['React Native', 'Node.js', 'Prisma', 'Expo'],
+		tags: ['React Native', 'Node.js', 'Prisma'],
 	},
 	{
 		key: 'linear_regression',
-		img: '/projects_visuals/linear_regression_visual.svg',
+		img: '/projects_visuals/linear_regression_visual.webp',
 		link: 'ft_linear_regression',
 		tags: ['Python', 'Machine Learning', 'Gradient Descent'],
 	},
 	{
 		key: 'learn2slither',
-		img: '/projects_visuals/learn2slither_visual.svg',
+		img: '/projects_visuals/learn2slither_visual.webp',
 		link: '',
-		tags: ['Python', 'Q-Learning', 'Pygame', 'Reinforcement Learning'],
+		tags: ['Python', 'Q-Learning', 'Reinforcement Learning'],
+	},
+	{
+		key: 'hypertube',
+		link: '',
+		tags: ['TypeScript', 'TCP', 'Streaming'],
 	},
 ];
 
@@ -62,46 +77,55 @@ const SCHOOL_PROJECTS = [
    PERSONAL PROJECT CARD
 ======================= */
 
-function PersonalCard({ project, index, featured = false }) {
+function PersonalCard({ project, index }) {
 	const { t } = useTranslation();
 	const status = t(`projects.${project.key}.status`);
+	const hasLink = Boolean(project.link);
+	const Wrapper = hasLink ? 'a' : 'article';
+	const linkProps = hasLink ? { href: project.link, target: '_blank', rel: 'noopener noreferrer' } : {};
+
+	// Video only plays on hover/focus: no autoplay bandwidth or motion by default
+	const play = (e) => e.currentTarget.querySelector('video')?.play().catch(() => {});
+	const pause = (e) => e.currentTarget.querySelector('video')?.pause();
 
 	return (
 		<ScrollReveal delay={index * 0.1}>
-			<a
-				href={project.link}
-				target="_blank"
-				rel="noopener noreferrer"
-				className={`personal-card${featured ? ' personal-card-featured' : ''}`}
+			<Wrapper
+				{...linkProps}
+				className="personal-card"
+				onMouseEnter={play}
+				onMouseLeave={pause}
+				onFocus={play}
+				onBlur={pause}
 			>
 				{project.video ? (
 					<div className="personal-card-img-wrap">
 						<video
 							src={project.video}
 							poster={project.poster}
-							autoPlay
 							loop
 							muted
 							playsInline
-							preload="metadata"
+							preload="none"
 							aria-label={t(`projects.${project.key}.title`)}
 						/>
 					</div>
-				) : project.img && (
+				) : project.img ? (
 					<div className="personal-card-img-wrap">
 						<img
 							src={project.img}
 							alt={t(`projects.${project.key}.title`)}
 							loading="lazy"
+							width="1050"
+							height="600"
 						/>
 					</div>
+				) : project.quote && (
+					<blockquote className="personal-card-quote" lang="en">{project.quote}</blockquote>
 				)}
 				<div className="personal-card-body">
 					<div className="personal-card-header">
-						<div className="personal-card-title-row">
-							{project.logo && <img src={project.logo} alt="" className="personal-card-logo" />}
-							<h3 className="personal-card-name">{t(`projects.${project.key}.title`)}</h3>
-						</div>
+						<h3 className="personal-card-name">{t(`projects.${project.key}.title`)}</h3>
 						<span className="personal-card-status">{status}</span>
 					</div>
 					<p className="personal-card-desc">{t(`projects.${project.key}.description`)}</p>
@@ -111,10 +135,10 @@ function PersonalCard({ project, index, featured = false }) {
 								<span key={tag} className="project-tag">{tag}</span>
 							))}
 						</div>
-						<ExternalLink size={16} className="personal-card-arrow" />
+						{hasLink && <ExternalLink size={16} className="personal-card-arrow" />}
 					</div>
 				</div>
-			</a>
+			</Wrapper>
 		</ScrollReveal>
 	);
 }
@@ -126,7 +150,7 @@ function PersonalCard({ project, index, featured = false }) {
 function SchoolCard({ project, index }) {
 	const { t } = useTranslation();
 
-	const hasLink = Boolean(project.link);
+	const hasLink = Boolean(GITHUB && project.link);
 	const Wrapper = hasLink ? 'a' : 'article';
 	const linkProps = hasLink
 		? { href: `${GITHUB}${project.link}`, target: '_blank', rel: 'noopener noreferrer' }
@@ -141,6 +165,8 @@ function SchoolCard({ project, index }) {
 							src={project.img}
 							alt={t(`projects.${project.key}.title`)}
 							loading="lazy"
+							width="1050"
+							height="600"
 						/>
 						{hasLink && (
 							<div className="project-img-overlay">
@@ -172,42 +198,18 @@ export const Projects = () => {
 
 	return (
 		<div className="py-20 sm:py-32">
-			<ScrollReveal>
-				<p className="section-header">// {t('nav.projects')}</p>
-			</ScrollReveal>
-			<ScrollReveal delay={0.1}>
-				<h2 className="section-title">{t('projects.title')}</h2>
-			</ScrollReveal>
+			<SectionHeader id="projects" title={t('projects.title')} />
 
 			{/* Personal Projects */}
 			<ScrollReveal delay={0.15}>
 				<div className="projects-category-block">
 					<h3 className="projects-category">{t('projects.personal')}</h3>
 					<p className="projects-category-subtitle">{t('projects.personal_subtitle')}</p>
-					<div className="process-inline">
-						{[
-							{ icon: Search, label: t('projects.process.step1_label') },
-							{ icon: Lightbulb, label: t('projects.process.step2_label') },
-							{ icon: Hammer, label: t('projects.process.step3_label') },
-							{ icon: RefreshCw, label: t('projects.process.step4_label') },
-						].map(({ icon: Icon, label }, i, arr) => (
-							<span key={i} className="process-inline-step">
-								<Icon size={14} />
-								<span>{label}</span>
-								{i < arr.length - 1 && <span className="process-inline-arrow">→</span>}
-							</span>
-						))}
-					</div>
 				</div>
 			</ScrollReveal>
-			<div className={`personal-grid${PERSONAL_PROJECTS.length === 1 ? ' personal-grid-featured' : ''}`}>
+			<div className="personal-grid">
 				{PERSONAL_PROJECTS.map((p, i) => (
-					<PersonalCard
-						key={p.key}
-						project={p}
-						index={i}
-						featured={PERSONAL_PROJECTS.length === 1}
-					/>
+					<PersonalCard key={p.key} project={p} index={i} />
 				))}
 			</div>
 

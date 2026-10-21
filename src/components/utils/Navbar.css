@@ -4,7 +4,7 @@
 	left: 0;
 	right: 0;
 	z-index: 1000;
-	transition: all 0.3s ease;
+	transition: background-color var(--duration-normal) ease, border-color var(--duration-normal) ease;
 }
 
 .nav-scrolled {
@@ -48,7 +48,11 @@
 }
 
 .nav-logo-accent {
-	color: var(--accent);
+	display: inline-block;
+	width: 0.28em;
+	height: 0.28em;
+	margin-left: 0.08em;
+	background: var(--accent);
 }
 
 /* Desktop links */
@@ -58,34 +62,41 @@
 	gap: 0.25rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
 	.nav-links {
 		display: flex;
 	}
 }
 
 .nav-link {
-	font-family: var(--font-display);
-	font-size: 0.8rem;
-	font-weight: 400;
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.35rem;
+	font-family: var(--font-sans);
+	font-size: 0.85rem;
+	font-weight: 500;
 	color: var(--text-secondary);
 	background: none;
 	border: none;
 	cursor: pointer;
-	padding: 0.5rem 0.75rem;
-	border-radius: 6px;
-	transition: all 0.2s ease;
-	text-transform: lowercase;
+	padding: 0.5rem 0.6rem;
+	transition: color var(--duration-fast) ease-out;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.is-active {
 	color: var(--text-primary);
-	background: var(--bg-secondary);
 }
 
-.nav-link-prefix {
-	color: var(--accent);
-	margin-right: 2px;
+.nav-link-index {
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	color: var(--text-muted);
+}
+
+.nav-link.is-active .nav-link-index,
+.nav-mobile-link.is-active .nav-link-index {
+	color: var(--accent-strong);
 }
 
 /* Right actions */
@@ -104,14 +115,14 @@
 	cursor: pointer;
 	color: var(--text-primary);
 	padding: 0.4rem;
-	border-radius: 6px;
+	border-radius: var(--radius);
 }
 
 .nav-menu-btn:hover {
 	background: var(--bg-secondary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
 	.nav-menu-btn {
 		display: none;
 	}
@@ -127,15 +138,17 @@
 }
 
 .nav-mobile-link {
-	font-family: var(--font-display);
-	font-size: 0.9rem;
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+	font-family: var(--font-sans);
+	font-size: 1.05rem;
 	color: var(--text-secondary);
 	background: none;
 	border: none;
 	cursor: pointer;
 	padding: 0.75rem 0;
 	text-align: left;
-	text-transform: lowercase;
 	border-bottom: 1px solid var(--border);
 	transition: color 0.2s ease;
 }
@@ -144,11 +157,12 @@
 	border-bottom: none;
 }
 
-.nav-mobile-link:hover {
-	color: var(--accent);
+.nav-mobile-link:hover,
+.nav-mobile-link.is-active {
+	color: var(--text-primary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
 	.nav-mobile {
 		display: none;
 	}

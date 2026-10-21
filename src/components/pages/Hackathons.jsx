@@ -2,19 +2,22 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
+import { SectionHeader } from '../utils/SectionHeader';
 import Carousel from '../utils/Carousel';
 import './Hackathons.css';
-import { SiLinkedin, SiGithub } from 'react-icons/si';
+import { SiLinkedin } from 'react-icons/si';
 
-const GITHUB = 'https://github.com/Cimeci2/';
+// GitHub profile is hidden while the account is flagged: links would 404 for visitors.
+// Set back to 'https://github.com/Cimeci2/' once it is public again.
+const GITHUB = null;
 
 const HACKATHONS = [
 	{
 		key: 'Mira',
-		img: ['group.jpg', 'project.jpg'],
+		img: ['group.webp', 'project.webp'],
 		video: [''],
 		link: 'Mira',
-		tags: ['Next.js', 'TypeScript', 'Supabase', 'AI', 'Google DeepMind', 'RGPD'],
+		tags: ['Next.js', 'FastAPI', 'Gemini', 'Playwright'],
 		track: ['Raise Hackathon', 'Google DeepMind'],
 		post_url: 'https://www.linkedin.com/feed/update/urn:li:activity:7480920723566481408/',
 	},
@@ -22,10 +25,10 @@ const HACKATHONS = [
 		key: 'Cellule_rouge',
 		img: [''],
 		video: ['project.mp4'],
-		poster: '/hackathons/Cellule_rouge/poster.jpg',
+		poster: '/hackathons/Cellule_rouge/poster.webp',
 		link: '',
-		tags: ['n8n', 'SEO', 'GEO', 'Google Insigth', 'RGPD', 'Pipeline AI', 'Scrapping'],
-		track: ['Neoloji Technopole', '42 Angouleme'],
+		tags: ['n8n', 'SEO / GEO', 'PageSpeed', 'Gemini'],
+		track: ['Neoloji Technopole', '42 Angoulême'],
 		post_url: 'https://www.linkedin.com/feed/update/urn:li:activity:7515313351057534977/',
 	},
 ];
@@ -40,7 +43,7 @@ function HackathonCard({ project, index }) {
 	const hasVideo = Boolean(project.video?.[0]);
 	const hasImages = Boolean(project.img?.filter(Boolean).length);
 	const hasMedia = hasVideo || hasImages;
-	const githubUrl = project.link ? `${GITHUB}${project.link}` : null;
+	const githubUrl = GITHUB && project.link ? `${GITHUB}${project.link}` : null;
 	const [expanded, setExpanded] = useState(false);
 	const description = t(`hackathons.${project.key}.description`);
 	const isLong = description.length > 160;
@@ -57,7 +60,7 @@ function HackathonCard({ project, index }) {
 								href={githubUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								aria-label={`Voir ${t(`hackathons.${project.key}.title`)} sur GitHub`}
+								aria-label={t('hackathons.github_aria', { name: t(`hackathons.${project.key}.title`) })}
 							>
 								{hasVideo ? (
 									<video
@@ -119,7 +122,12 @@ function HackathonCard({ project, index }) {
 					</h3>
 
 					<p className="hackathon-track">
-						Track : {project.track.join(', ')}
+						{t('hackathons.track_label')} {project.track.join(', ')}
+					</p>
+
+					<p className="hackathon-role">
+						<span className="hackathon-role-label">{t('hackathons.role_label')}</span>
+						{t(`hackathons.${project.key}.role`)}
 					</p>
 
 					<p className={`hackathon-description${expanded ? ' expanded' : ''}`}>
@@ -149,7 +157,7 @@ function HackathonCard({ project, index }) {
 						href={project.post_url}
 						target="_blank"
 						rel="noopener noreferrer"
-						aria-label={`Voir le post LinkedIn de ${project.key}`}
+						aria-label={t('hackathons.linkedin_aria', { name: t(`hackathons.${project.key}.title`) })}
 					>
 						<SiLinkedin size={20} />
 					</a>
@@ -168,17 +176,7 @@ export const Hackathons = () => {
 
 	return (
 		<div className="py-20 sm:py-32">
-			<ScrollReveal>
-				<p className="section-header">
-					// {t('nav.hackathons')}
-				</p>
-			</ScrollReveal>
-
-			<ScrollReveal delay={0.1}>
-				<h2 className="section-title">
-					{t('hackathons.title')}
-				</h2>
-			</ScrollReveal>
+			<SectionHeader id="hackathons" title={t('hackathons.title')} />
 
 			<div className="hackathons-grid">
 				{HACKATHONS.map((project, index) => (

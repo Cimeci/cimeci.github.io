@@ -1,0 +1,113 @@
+.help-layout {
+	display: grid;
+	gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+	.help-layout {
+		grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+		gap: 4rem;
+		align-items: start;
+	}
+}
+
+/* ==================== TOPICS ==================== */
+
+.help-topics {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 2px solid var(--text-primary);
+}
+
+.help-topic {
+	display: grid;
+	grid-template-columns: 3rem 1fr;
+	gap: 1rem;
+	padding: 1.75rem 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.help-topic-index {
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	color: var(--accent-strong);
+	padding-top: 0.35rem;
+}
+
+.help-topic-title {
+	font-size: clamp(1.2rem, 1rem + 0.8vw, 1.55rem);
+	font-weight: 600;
+	letter-spacing: -0.015em;
+	line-height: 1.25;
+	color: var(--text-primary);
+	margin-bottom: 0.5rem;
+}
+
+.help-topic-desc {
+	color: var(--text-secondary);
+	line-height: 1.65;
+	max-width: 40rem;
+}
+
+/* ==================== CTA PANEL ==================== */
+
+.help-cta {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	padding: 2rem;
+	background: var(--text-primary);
+	color: var(--bg-primary);
+	border-radius: var(--radius-sm);
+}
+
+.help-cta-meta {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-family: var(--font-mono);
+	font-size: 0.78rem;
+	opacity: 0.75;
+}
+
+.help-cta-meta::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: var(--accent);
+	flex-shrink: 0;
+}
+
+.help-cta-text {
+	font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem);
+	line-height: 1.45;
+}
+
+.help-cta-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.95rem 1.25rem;
+	background: var(--accent);
+	color: var(--on-accent);
+	font-weight: 600;
+	text-decoration: none;
+	border-radius: var(--radius-sm);
+	transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.help-cta-button:hover {
+	transform: translate(-3px, -3px);
+	box-shadow: 3px 3px 0 var(--bg-primary);
+}
+
+.help-cta-button:active {
+	transform: none;
+	box-shadow: none;
+}
+
+.help-cta-button:focus-visible {
+	outline-color: var(--bg-primary);
+}

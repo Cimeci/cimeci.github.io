@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Carousel.css';
 export default function Carousel({
 	img = [],
@@ -7,10 +8,12 @@ export default function Carousel({
 	alt = 'Image',
 	className = '',
 }) {
+	const { t } = useTranslation();
 	const images = img.filter(Boolean);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	useEffect(() => {
 		if (images.length <= 1 || interval <= 0) return;
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 		const timer = setInterval(() => {
 			setCurrentIndex((prev) => (prev + 1) % images.length);
 		}, interval);
@@ -31,6 +34,8 @@ export default function Carousel({
 							src={basePath ? `${basePath}/${image}` : image}
 							alt={`${alt} ${index + 1}`}
 							loading={index === 0 ? 'eager' : 'lazy'}
+							width="1050"
+							height="656"
 						/>
 					</div>
 				))}
@@ -44,7 +49,7 @@ export default function Carousel({
 								index === currentIndex ? 'active' : ''
 							}`}
 							onClick={() => setCurrentIndex(index)}
-							aria-label={`Afficher l'image ${index + 1}`}
+							aria-label={t('carousel.show_image', { n: index + 1 })}
 							aria-current={
 								index === currentIndex ? 'true' : undefined
 							}

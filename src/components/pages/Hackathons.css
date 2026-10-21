@@ -13,34 +13,29 @@
 	}
 }
 
+/* Cards sit inside a ScrollReveal wrapper: make both fill the grid row so cards share one height */
+.hackathons-grid > * {
+	height: 100%;
+}
+
 /* ==================== HACKATHON CARD ==================== */
 
 .hackathon-card {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	min-width: 0;
 	overflow: hidden;
 
 	border: 1px solid var(--border);
-	border-radius: 16px;
+	border-radius: var(--radius);
 	background: var(--bg-card);
 	color: inherit;
 
-	transition:
-		border-color 0.4s ease,
-		transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-		box-shadow 0.4s ease;
+	transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out), border-color var(--duration-normal) ease;
 }
 
-.hackathon-card:hover {
-	border-color: var(--border-hover);
-	transform: translateY(-4px);
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-}
 
-[data-theme="dark"] .hackathon-card:hover {
-	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-}
 
 /* ==================== MEDIA ==================== */
 
@@ -119,6 +114,7 @@
 
 .hackathon-info {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 0.5rem;
@@ -126,20 +122,22 @@
 }
 
 .hackathon-name {
-	font-family: 	var(--font-display);
-	font-size: 1.2rem;
-	font-weight: 400;
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: -0.02em;
 	color: var(--text-primary);
 }
 
 .hackathon-track {
-	font-size: 0.8rem;
-	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	color: var(--accent-strong);
 }
 
 .hackathon-description {
-	font-size: 0.8rem;
-	line-height: 1.6;
+	font-size: 0.95rem;
+	line-height: 1.65;
 	color: var(--text-secondary);
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -153,20 +151,41 @@
 
 .hackathon-see-more {
 	margin-top: 0.5rem;
+	font-family: var(--font-mono);
 	font-size: 0.75rem;
-	font-weight: 500;
-	color: var(--accent);
+	color: var(--text-primary);
+	text-decoration: underline;
+	text-underline-offset: 3px;
 	background: none;
 	border: none;
 	cursor: pointer;
 	padding: 0;
-	transition: color 0.2s ease;
-	letter-spacing: 0.02em;
+	transition: color var(--duration-fast) ease-out;
 }
 
 .hackathon-see-more:hover {
-	color: var(--accent-hover);
-	text-decoration: underline;
+	color: var(--accent-strong);
+}
+
+/* ==================== ROLE ==================== */
+
+.hackathon-role {
+	width: 100%;
+	margin-top: 0.25rem;
+	padding: 0.75rem 0.9rem;
+	border-left: 3px solid var(--accent);
+	background: var(--bg-secondary);
+	font-size: 0.92rem;
+	line-height: 1.6;
+	color: var(--text-primary);
+}
+
+.hackathon-role-label {
+	display: block;
+	margin-bottom: 0.2rem;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--accent-strong);
 }
 
 /* ==================== TAGS ==================== */
@@ -179,14 +198,14 @@
 }
 
 .hackathon-tag {
-	font-family: var(--font-display);
-	font-size: 0.65rem;
-	font-weight: 500;
-	color: var(--accent);
-	background: var(--accent-light);
-	padding: 0.2rem 0.5rem;
-	border-radius: 100px;
-	letter-spacing: 0.02em;
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	font-weight: 400;
+	color: var(--text-secondary);
+	background: transparent;
+	border: 1px solid var(--border);
+	padding: 0.15rem 0.45rem;
+	border-radius: var(--radius-sm);
 }
 
 /* ==================== LINKEDIN ==================== */
@@ -195,7 +214,8 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 0.5rem;
+	margin-top: auto;
+	padding-top: 0.5rem;
 	color: var(--text-muted);
 	transition: color 0.2s ease;
 }

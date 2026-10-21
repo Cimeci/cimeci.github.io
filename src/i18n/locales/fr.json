@@ -5,39 +5,53 @@
 		"stack": "Stack",
 		"hackathons": "Hackathons",
 		"projects": "Projets",
-		"contact": "Contact"
+		"contact": "Contact",
+		"talks": "Conférences",
+		"background": "Parcours",
+		"label": "Navigation principale",
+		"top": "Retour en haut",
+		"open": "Ouvrir le menu",
+		"close": "Fermer le menu",
+		"language": "Langue",
+		"help": "Aide IA"
 	},
 	"about": {
 		"title": "À propos",
-		"subtitle": "de moi",
 		"intro": {
 			"greeting": "",
-			"name": "Ilan Nowak--Glandier",
-			"description": "Développeur fullstack formé à 42, je construis des applications web et mobile de A à Z. Curieux, rigoureux et autonome, je suis animé par l'envie de relever des {{highlight1}} et de transformer des idées en produits concrets.",
-			"highlight1": "défis techniques concrets",
-			"startup": "Je suis particulièrement attiré par l'{{highlight}}, des environnements rapides où l'on construit, livre, itère avec un impact réel dès le premier jour.",
-			"startup_highlight": "écosystème startup"
+			"p1": "Je suis arrivé à 42 en 2024 après un bac STI2D. Ce qui me fait avancer, c'est l'envie de toujours comprendre comment les choses fonctionnent vraiment, plutôt que de me contenter qu'elles marchent."
 		},
 		"experience": {
 			"title": "Parcours",
-			"kind": { "work": "Entreprise", "education": "Formation" },
+			"kind": {
+				"work": "Entreprise",
+				"education": "Formation"
+			},
 			"moncab_internship": {
 				"role": "Développeur Full-Stack Stagiaire",
 				"company": "Moncab",
 				"date": "Fév. 2026 - Août 2026",
-				"description": "Arrivé comme seul stagiaire dev, autonome sur l'ensemble du codebase en 3-4 semaines. Système d'invitations, algorithme de recherche v2 (scoring pondéré, 6 facteurs), intégration Pennylane (facturation, TVA dynamique, webhooks), diffusion Ubiflow, dashboard owner avec stats paiements, plusieurs passes de sécurité Stripe. Aussi bien du front comme les pages annonces, gestions des locataires, etc. Aussi intégration d'une architecture d'automatisation n8n pour toute la gestion d'emails, que ce soit de la prospection, des relances, des notifications (15 automatisations). 263 commits en 6 mois."
+				"description": "Seul stagiaire dev, autonome sur toute la codebase en 3-4 semaines. Système d'invitations, algorithme de recherche v2 (score pondéré sur 6 critères), facturation Pennylane (TVA dynamique, webhooks), diffusion des annonces via Ubiflow, dashboard propriétaire, plusieurs passes de sécurité Stripe. Côté automatisation, j'ai mis en place l'architecture n8n de tous les e-mails : prospection, relances, notifications. 263 commits en 6 mois."
 			},
 			"moncab_apprentice": {
 				"role": "Développeur Full-Stack Alternant",
 				"company": "Moncab",
 				"date": "Sept. 2026 - Sept. 2028",
-				"description": "Dans la continuité du stage, reprise des tickets en cours, correction de bugs, maintenance des automatisations n8n et montée en compétence sur l'architecture globale."
+				"description": "Le stage continue en alternance, en parallèle de 42. Je fais évoluer le produit et les automatisations n8n, avec et sans IA (Supabase, Airtable) : entre 40 et 50 automatisations créées ou reprises depuis mon arrivée. Le workflow de relance principal traite chaque jour entre 80 et 110 utilisateurs."
 			},
 			"school42": {
 				"company": "École 42 Angoulême",
 				"role": "Titre RNCP niveau 7 — Data / Web / IA",
 				"date": "2024 - 2028",
-				"description": "Pédagogie par les pairs, sans cours ni professeurs : apprentissage par projets, chacun évalué par d’autres étudiants. Tronc commun validé, spécialisation data, web et IA en parallèle de l’alternance chez Moncab, vers le titre RNCP de niveau 7 (équivalent Bac+5)."
+				"description": "Tronc commun validé, aujourd'hui au grade Transcender (level 12). J'y suis passé du bas niveau, avec un shell en C et un serveur IRC en C++, au web temps réel (ft_transcendence), au mobile (Music Room) puis au machine learning codé from scratch (régression linéaire, Q-learning). Distingué Great Tutor pour l'accompagnement des autres étudiants, j'y ai aussi animé un cycle de conférences sur l'IA. Objectif : le titre RNCP 7 Data / Web / IA, en parallèle de l'alternance."
+			},
+			"moncab": {
+				"company": "Moncab"
+			},
+			"school42_volunteer": {
+				"role": "Bénévolat & tutorat",
+				"date": "En parallèle du cursus",
+				"description": "Tutorat de la Piscine (le concours d'admission), initiation au code pendant la Piscine Discovery, six journées portes ouvertes, salons étudiants et surveillance de quatre sessions d'examens."
 			}
 		},
 		"certifications": {
@@ -58,97 +72,50 @@
 				"skills": ["Microsoft", "Vivatech", "Copilot", "Prompt Engineering", "Context Engineering"]
 			}
 		},
-		"values": {
-			"title": "Mes Valeurs",
-			"autonomy": {
-				"title": "Autonomie & Rigueur",
-				"description": "Je structure mon travail méthodiquement tout en gardant la liberté d'innover."
-			},
-			"pragmatism": {
-				"title": "Pragmatisme",
-				"description": "Je cherche l'équilibre entre qualité et performance, en anticipant les risques sans me bloquer."
-			},
-			"curiosity": {
-				"title": "Curiosité",
-				"description": "J'adore explorer de nouveaux domaines, technologies et relever de nouveaux défis."
-			},
-			"collaboration": {
-				"title": "Collaboration",
-				"description": "Je crois au pouvoir du travail d'équipe et à l'importance d'une communication efficace."
-			}
-		},
-		"skills": {
-			"title": "Mes Domaines",
-			"web": {
-				"title": "Développement Web",
-				"description": "Construire des applications interactives et performantes."
-			},
-			"mobile": {
-				"title": "Développement Mobile",
-				"description": "Créer des expériences mobiles fluides."
-			},
-			"data": {
-				"title": "Data",
-				"description": "Analyser et extraire des insights à partir de données."
-			},
-			"design": {
-				"title": "Design & UX",
-				"description": "Penser utilisateur et créer des interfaces intuitives."
-			},
-			"ia": {
-				"title": "IA",
-				"description": "Créer, modeler et améliorer des modèles IA."
-			}
-		},
 		"hobbies": {
-			"title": "Au-delà du code",
-			"climbing": "Sport",
+			"title": "Hors écran",
+			"climbing": "Escalade & sport",
 			"travel": "Voyager",
 			"music": "Musique",
 			"games": "Jeux vidéo"
 		},
-		"cta": {
-			"title": "Ce que je recherche",
-			"description": "Un stage ou une opportunité où je peux relever des {{highlight1}}, contribuer à des {{highlight2}}, et grandir tant techniquement que personnellement.",
-			"highlight1": "défis concrets",
-			"highlight2": "projets significatifs"
+		"languages": {
+			"title": "Langues",
+			"fr": {
+				"name": "Français",
+				"level": "langue maternelle"
+			},
+			"en": {
+				"name": "Anglais",
+				"level": "conversationnel"
+			},
+			"es": {
+				"name": "Espagnol",
+				"level": "échanges très basiques"
+			},
+			"ja": {
+				"name": "Japonais",
+				"level": "premières bases"
+			}
 		}
 	},
 	"home": {
-		"title": "Accueil",
-		"welcome": "Curieux par nature, rigoureux par formation",
-		"work": "Je pense produit avant d'écrire du code",
-		"identity": "42 Student · Builder",
-		"studying_domain": "Fullstack Developer · Web / Mobile / AI",
-		"cta": "En savoir plus",
-		"cv": "Télécharger CV"
+		"cta": "Voir mes réalisations",
+		"cv": "Télécharger le CV",
+		"kicker": "Développeur fullstack · École 42 Angoulême · alternant chez Moncab",
+		"lead": "Je construis des produits web et des automatisations, et j'apprends aux autres à coder avec l'IA sans perdre la main.",
+		"contact": "Me contacter"
 	},
 	"projects": {
 		"title": "Projets",
-		"process": {
-			"title": "Comment j'aborde un projet",
-			"step1_label": "Problème",
-			"step1_desc": "Identifier un vrai problème qui vaut la peine d'être résolu",
-			"step2_label": "Réflexion",
-			"step2_desc": "Architecture, parcours UX, features, modèle économique",
-			"step3_label": "Build",
-			"step3_desc": "Livrer un MVP rapidement avec la bonne stack",
-			"step4_label": "Itérer",
-			"step4_desc": "Tester, récolter du feedback, améliorer"
-		},
-		"personal": "Orientés Produit",
-		"personal_subtitle": "Créés de zéro, pensés comme de vrais produits avec UX, modèle économique, logique MVP.",
-		"school": "Défis Techniques",
-		"school_subtitle": "Projets 42 : programmation bas niveau, conception système, implémentation de protocoles.",
+		"personal": "Projets perso",
+		"personal_subtitle": "Des outils construits pour moi et pour les autres étudiants.",
+		"school": "Projets 42",
+		"school_subtitle": "Bas niveau, réseau, conception système : la pédagogie par projets de 42.",
 		"setupkit": {
 			"title": "SetupKit",
-			"description": "SaaS éducatif qui aide les développeurs et les équipes à reprendre le contrôle sur leurs outils IA en générant des architectures de configuration complètes (CLAUDE.md, .cursorrules, AGENTS.md, commandes, skills) adaptées à leur stack et à leurs workflows.",
-			"status": "MVP"
-		},
-		"nali": {
-			"title": "Nali",
-			"description": "Les outils de gestion de projet existants sont trop complexes pour les petites équipes dev. J'ai construit une alternative plus légère avec gestion multi-organisations, Kanban + sprints, messagerie temps réel, documents chiffrés AES-256, intégration GitHub, appels vidéo WebRTC et facturation Stripe avec 4 plans.",
-			"status": "Beta"
+			"description": "Générateur de configurations pour les outils de code IA (CLAUDE.md, .cursorrules, AGENTS.md, commandes, skills), adaptées à la stack et aux habitudes d'une équipe. Bêta mise en pause : elle m'a surtout appris le SEO et le lancement d'un produit.",
+			"status": "En pause"
 		},
 		"minishell": {
 			"title": "Minishell",
@@ -166,14 +133,6 @@
 			"title": "Music_Room",
 			"description": "Application mobile de partage musical en React Native et Node.js. Playlists collaboratives, événements, votes, profils personnalisés."
 		},
-		"matcha": {
-			"title": "Matcha",
-			"description": "Matcha est une application de rencontre sociale. Elle permet aux utilisateurs de créer des profils, de parcourir d’autres profils, d’envoyer des messages et de trouver des correspondances basées sur des intérêts communs. L’application intègre des fonctionnalités telles que la géolocalisation, les préférences utilisateur et un système de notifications en temps réel. Le projet met en œuvre une architecture full-stack avec une API backend, une base de données pour la gestion des utilisateurs et un frontend interactif pour une expérience utilisateur engageante."
-		},
-		"tokenizer": {
-			"title": "Tokenizer",
-			"description": "Création d'un actif numérique sur la blockchain en Solidity. Smart contract, déploiement, interaction web3."
-		},
 		"learn2slither": {
 			"title": "Learn2Slither",
 			"description": "Un snake qui apprend à survivre et se nourrir de manière autonome grâce au Q-Learning. Vision locale, Q-table, exploration/exploitation, entraîné from scratch sans librairie ML."
@@ -182,48 +141,99 @@
 			"title": "Ft_Linear_Regression",
 			"description": "Programme de prédiction du prix d'une voiture en utilisant la régression linéaire avec un algorithme du gradient, implémenté from scratch en Python."
 		},
-		"multilayer_perceptron": {
-			"title": "Multilayer_Perceptron",
-			"description": "Réseaux de neurones artificiels grâce à l'implémentation d'un multilayer perceptron from scratch en Python."
+		"open42": {
+			"title": "Open42",
+			"status": "En cours",
+			"description": "Mon harness IA pédagogique pour les étudiants de 42, en cours de reconstruction sur un fork open source d'OpenCode. J'en fais un « harness prof » qui porte toute ma logique d'apprentissage, avec des agents mentors (tuteur, architecte, reviewer, coach IA) qui guident sans donner la réponse."
+		},
+		"hypertube": {
+			"title": "ft_hypertube",
+			"description": "Client BitTorrent écrit from scratch en TypeScript (tracker, handshake, échange de pièces, vérification SHA-1) pour du streaming vidéo. En cours."
 		}
 	},
 	"hackathons": {
 		"title": "Hackathons",
 		"Mira": {
 			"title": "Mira",
-			"description": "Agent IA consensuel qui aide les victimes d'images intimes non consenties (NCII / deepfakes sexuels) a faire retirer le contenu sous le droit europeen (DSA Article 16) sans jamais avoir a voir le materiel, chercher l'hebergeur ou rediger un texte juridique. Pipeline en quatre etapes : Mandat, Localiser, Analyser, Notifier. Construit avec Next.js, TypeScript, Supabase, FastAPI, Playwright et Gemini 2.5 Computer Use. Hackathon RAISE 2026.",
-			"track": "Mira track"
+			"description": "Agent IA fondé sur le consentement, qui aide les victimes d'images intimes non consenties (NCII, deepfakes sexuels) à faire retirer le contenu grâce au droit européen (DSA, article 16), sans jamais devoir regarder les images, chercher l'hébergeur ou rédiger un texte juridique. Pipeline en quatre étapes : Mandat, Localiser, Analyser, Notifier. Construit avec Next.js, TypeScript, Supabase, FastAPI, Playwright et Gemini 2.5 Computer Use. Hackathon RAISE 2026, équipe de cinq.",
+			"role": "Responsable du dépôt et principal contributeur (~46 commits) dans une équipe de cinq. J'ai défini les contrats d'API, construit le harness Computer Use et coordonné le travail en parallèle de cinq sessions Claude grâce à un CLAUDE.md d'équipe."
 		},
 		"Cellule_rouge": {
 			"title": "Cellule Rouge",
-			"description": "Solutions textiles pour les patients portes d'une chambre implantable (PAC/CIP). Kit modulaire avec coque Cinelle, poche adaptable et t-shirt technique pour proteger la chambre et retrouver le droit de bouger. Audit SEO/GEO, roadmap en quatre phases et pipeline n8n de veille avec redaction assistee par IA (Gemini) realise lors du challenge 42 Angouleme.",
-			"track": "Cellule Rouge track"
+			"description": "Mission de conseil d'une journée pour Cellule Rouge, une start-up qui conçoit des solutions textiles pour les porteurs de chambre implantable. En binôme : audit SEO/GEO et PageSpeed, roadmap en quatre phases, et un pipeline n8n de veille (RSS, PubMed) avec rédaction assistée par Gemini et validation humaine avant publication. Challenge Neoloji x 42 Angoulême.",
+			"role": "J'ai produit l'ensemble des livrables techniques : audits SEO/GEO et PageSpeed (84 sur mobile, 99 sur desktop), roadmap, pipeline n8n de veille et back-office de validation intégré au site."
 		},
 		"see_more": "Voir plus",
-		"see_less": "Voir moins"
+		"see_less": "Voir moins",
+		"track_label": "Track :",
+		"role_label": "Mon rôle",
+		"github_aria": "Voir {{name}} sur GitHub",
+		"linkedin_aria": "Voir le post LinkedIn sur {{name}}"
 	},
 	"stack": {
-		"title": "Stacks",
-		"web": "WEB",
-		"backend": "BACKEND",
-		"mobile": "MOBILE",
-		"algorithm": "LANGAGES",
-		"data": "BASE DE DONNÉES & ORM",
-		"ai": "IA & LLM",
-		"ai_engineering": "AI ENGINEERING",
-		"dev_environment": "ENVIRONNEMENT DE DÉVELOPPEMENT"
+		"title": "Stack",
+		"web": "web & mobile",
+		"backend": "back-end & données",
+		"ai": "ia & automatisation",
+		"lead": "Ce que j'utilise vraiment, pas tout ce que j'ai touché une fois.",
+		"low_level": "bas niveau & outils",
+		"legend_daily": "usage quotidien",
+		"legend_used": "déjà utilisé en projet"
 	},
 	"contact": {
 		"title": "Contact",
-		"contact_me": "Me Contacter",
-		"email_address": "Votre Adresse Email",
+		"contact_me": "Me contacter",
+		"email_address": "Votre adresse e-mail",
 		"subject": "Sujet",
-		"text": "Texte",
+		"text": "Votre message",
 		"send": "Envoyer",
 		"success": "Message envoyé avec succès !",
 		"error": "Une erreur est survenue. Veuillez réessayer.",
 		"mail": {
 			"reponse": "Bonjour,\n\nMerci d'avoir pris le temps de me contacter.\nJ'ai bien reçu votre message et je reviendrai vers vous dès que possible avec une réponse complète.\n\nSi vous avez d'autres questions entre-temps, n'hésitez pas à me les transmettre.\n\nBonne journée,\n\nIlan Nowak--Glandier"
+		},
+		"pitch": "Un projet, une question sur l'IA ? Écrivez-moi."
+	},
+	"talks": {
+		"title": "Conférences",
+		"lead": "Un cycle de quatre conférences à 42 Angoulême en juin 2026, en binôme, dans un amphi d'environ 45 places. Le fil rouge : apprendre avec l'IA sans perdre en compétence.",
+		"items": {
+			"debate": {
+				"title": "Débat ouvert sur l'IA",
+				"description": "Une séance d'échange avec les étudiants : ce que l'IA change dans notre façon d'apprendre, ses limites, et où placer la frontière."
+			},
+			"learn_with_ai": {
+				"title": "Apprendre avec l'IA",
+				"description": "Des méthodes concrètes pour utiliser l'IA comme tuteur plutôt que comme générateur de réponses : méthode CRAFT, framework 4D, contexte stable et contexte adaptatif."
+			},
+			"code_with_ai": {
+				"title": "Apprendre à coder avec l'IA",
+				"description": "Ce qui sépare le vibe coding d'un développeur de celui d'un non-développeur, et comment garder la main sur son code. Exemple à l'appui : mon CLAUDE.md pédagogique."
+			},
+			"full_setup": {
+				"title": "Mon setup, de bout en bout",
+				"description": "Configuration de Claude Code, MCP, harness, agents, automatisations n8n et CI/CD : le setup que j'utilise au quotidien, expliqué pièce par pièce."
+			}
 		}
+	},
+	"carousel": {
+		"show_image": "Afficher l'image {{n}}"
+	},
+	"help": {
+		"title": "Besoin d'aide avec l'IA ?",
+		"lead": "Je propose un échange de 30 minutes pour vous aider à mieux utiliser l'IA, ou à apprendre avec elle sans perdre en compétence.",
+		"topics": {
+			"use_ai": {
+				"title": "Utiliser l'IA dans votre travail",
+				"description": "Choisir et configurer vos outils (Claude Code, agents, automatisations n8n), cadrer vos prompts et votre contexte, savoir quand l'IA fait gagner du temps et quand elle en fait perdre."
+			},
+			"learn_with_ai": {
+				"title": "Maîtriser l'apprentissage avec l'IA",
+				"description": "En faire un tuteur plutôt qu'une béquille : des méthodes pour progresser vraiment, comprendre ce que l'IA produit et garder la main sur ce que vous apprenez."
+			}
+		},
+		"cta_meta": "Appel de 30 min · en visio",
+		"cta_text": "Dites-moi où vous en êtes et ce qui bloque, on regarde ensemble par où commencer.",
+		"cta_button": "Réserver un créneau"
 	}
 }
