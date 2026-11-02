@@ -1,0 +1,39 @@
+<!--
+  Source of public/og-image.png (1200x630 social preview).
+  Regenerate: open this file in Chrome at a 1200x630 viewport and take a screenshot,
+  e.g. with Playwright: page.setViewportSize({ width: 1200, height: 630 }); page.screenshot().
+-->
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 630px; overflow: hidden; background: #f3f0e8;
+    background-image: radial-gradient(rgba(22,21,15,.08) 1.2px, transparent 1.2px); background-size: 24px 24px;
+    font-family: 'Familjen Grotesk', sans-serif; color: #16150f; position: relative; }
+  .frame { position: absolute; inset: 0; padding: 72px 80px; display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: center; }
+  .kicker { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #a3340b; margin-bottom: 28px; }
+  h1 { font-size: 104px; line-height: .92; letter-spacing: -0.045em; font-weight: 700; }
+  h1 span { display: block; font-weight: 400; color: #46433b; white-space: nowrap; font-size: 92px; }
+  .lead { margin-top: 30px; font-size: 30px; line-height: 1.35; color: #46433b; max-width: 680px; }
+  .grid { display: grid; grid-template-columns: repeat(15, 1fr); gap: 4px; }
+  .c { aspect-ratio: 1; background: #e2ddd0; }
+  .c.i { background: #16150f; } .c.a { background: #c4400f; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #16150f; }
+  .bar::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 14%; background: #c4400f; }
+</style></head>
+<body>
+  <div class="frame">
+    <div>
+      <p class="kicker">Développeur fullstack · École 42 Angoulême</p>
+      <h1>Ilan <span>Nowak--Glandier</span></h1>
+      <p class="lead">Je construis des produits web et des automatisations, et j'apprends aux autres à coder avec l'IA.</p>
+    </div>
+    <div class="grid" id="g"></div>
+  </div>
+  <div class="bar"></div>
+  <script>
+    const M = ['...............','.###.#...#.....','..#..##..#.....','..#..##..#.....','..#..#.#.#.....','..#..#..##.....','..#..#..##.....','.###.#...#.**..','...........**..'];
+    document.getElementById('g').innerHTML = M.join('').split('').map(ch => `<span class="c ${ch === '#' ? 'i' : ch === '*' ? 'a' : ''}"></span>`).join('');
+  </script>
+</body></html>

@@ -1,0 +1,9 @@
+# Never upload: dependencies, local builds, personal notes
+node_modules
+dist
+.DS_Store
+pagesave
+TodoList.md
+# Outdated CV, hidden until it is regenerated
+public/cv.pdf
+public/cv.html

@@ -3,27 +3,55 @@
 		"home": "Home",
 		"about": "About",
 		"stack": "Stack",
+		"hackathons": "Hackathons",
 		"projects": "Projects",
-		"contact": "Contact"
+		"contact": "Contact",
+		"talks": "Talks",
+		"background": "Background",
+		"label": "Main navigation",
+		"top": "Back to top",
+		"open": "Open menu",
+		"close": "Close menu",
+		"language": "Language",
+		"help": "AI help"
 	},
 	"about": {
 		"title": "About",
-		"subtitle": "Me",
 		"intro": {
 			"greeting": "",
-			"name": "Ilan Nowak--Glandier",
-			"description": "Fullstack developer trained at 42, I build web and mobile applications end to end. Curious, rigorous, self-driven, I'm motivated by {{highlight1}} and turning ideas into real products.",
-			"highlight1": "concrete technical challenges",
-			"startup": "I'm particularly drawn to the {{highlight}}, fast-paced environments where you build, ship, iterate with real impact from day one.",
-			"startup_highlight": "startup ecosystem"
+			"p1": "I joined 42 in 2024 after a technical baccalaureate. What drives me is always wanting to understand how things really work, rather than settling for the fact that they do."
 		},
 		"experience": {
-			"title": "Experience",
-			"moncab": {
+			"title": "Background",
+			"kind": {
+				"work": "Work",
+				"education": "Education"
+			},
+			"moncab_internship": {
 				"role": "Full-Stack Developer Intern",
 				"company": "Moncab",
 				"date": "Feb. 2026 - Aug. 2026",
-				"description": "Joined as the sole dev intern, autonomous on the whole codebase in 3-4 weeks. Built the invitation system, v2 search algorithm (weighted scoring, 6 factors), Pennylane billing integration (invoicing, dynamic VAT, webhooks), Ubiflow listing syndication, owner dashboard with payment stats, multiple Stripe security passes. 113+ commits in ~2 months."
+				"description": "Sole dev intern, autonomous on the whole codebase within 3-4 weeks. Invitation system, v2 search algorithm (weighted score over 6 criteria), Pennylane invoicing (dynamic VAT, webhooks), listing syndication via Ubiflow, owner dashboard, several Stripe security passes. On the automation side, I set up the n8n architecture behind every email: prospecting, follow-ups, notifications. 263 commits in 6 months."
+			},
+			"moncab_apprentice": {
+				"role": "Full-Stack Developer Apprentice",
+				"company": "Moncab",
+				"date": "Sept. 2026 - Sept. 2028",
+				"description": "The internship continues as an apprenticeship alongside 42. I keep evolving the product and the n8n automations, with and without AI (Supabase, Airtable): between 40 and 50 automations built or taken over since I joined. The main follow-up workflow handles 80 to 110 users every day."
+			},
+			"school42": {
+				"company": "École 42 Angoulême",
+				"role": "RNCP Level 7 — Data / Web / AI",
+				"date": "2024 - 2028",
+				"description": "Common core completed, now at Transcender rank (level 12). I went from low level, with a shell in C and an IRC server in C++, to real-time web (ft_transcendence), mobile (Music Room) and machine learning coded from scratch (linear regression, Q-learning). Awarded Great Tutor for helping other students, I also ran a series of talks on AI there. Goal: the RNCP level 7 Data / Web / AI degree, alongside the apprenticeship."
+			},
+			"moncab": {
+				"company": "Moncab"
+			},
+			"school42_volunteer": {
+				"role": "Volunteering & tutoring",
+				"date": "Alongside the curriculum",
+				"description": "Tutoring during the Piscine (the admission bootcamp), coding introductions during the Piscine Discovery, six open days, student fairs and proctoring four exam sessions."
 			}
 		},
 		"certifications": {
@@ -37,99 +65,57 @@
 				"name": "Claude Code in Action",
 				"date": "May 2026",
 				"skills": ["Anthropic Claude", "Sub-Agents", "Skills", "Hooks"]
-			}
-		},
-		"values": {
-			"title": "My Values",
-			"autonomy": {
-				"title": "Autonomy & Rigor",
-				"description": "I structure my work methodically while maintaining the freedom to innovate."
 			},
-			"pragmatism": {
-				"title": "Pragmatism",
-				"description": "I seek balance between quality and performance, anticipating risks without getting stuck."
-			},
-			"curiosity": {
-				"title": "Curiosity",
-				"description": "I love exploring new domains, technologies, tackling fresh challenges."
-			},
-			"collaboration": {
-				"title": "Collaboration",
-				"description": "I believe in the power of teamwork and the importance of effective communication."
-			}
-		},
-		"skills": {
-			"title": "What I Love Doing",
-			"web": {
-				"title": "Web Development",
-				"description": "Building interactive and performant applications."
-			},
-			"mobile": {
-				"title": "Mobile Development",
-				"description": "Creating seamless mobile experiences."
-			},
-			"data": {
-				"title": "Data",
-				"description": "Analyzing and extracting insights from data."
-			},
-			"design": {
-				"title": "Design & UX",
-				"description": "Thinking user-first and creating intuitive interfaces."
-			},
-			"ia": {
-				"title": "AI",
-				"description": "Creating, modeling, improving AI models."
+			"ai_skills_badge": {
+				"name": "AI Skills Badge",
+				"date": "Jun. 2026",
+				"skills": ["Microsoft", "Vivatech", "Copilot", "Prompt Engineering", "Context Engineering"]
 			}
 		},
 		"hobbies": {
-			"title": "Beyond Code",
-			"climbing": "Sport",
+			"title": "Off screen",
+			"climbing": "Climbing & sport",
 			"travel": "Travel",
 			"music": "Music",
 			"games": "Video games"
 		},
-		"cta": {
-			"title": "What I'm Looking For",
-			"description": "An internship or opportunity where I can tackle {{highlight1}}, contribute to {{highlight2}}, grow both technically and personally.",
-			"highlight1": "concrete challenges",
-			"highlight2": "meaningful projects"
+		"languages": {
+			"title": "Languages",
+			"fr": {
+				"name": "French",
+				"level": "native"
+			},
+			"en": {
+				"name": "English",
+				"level": "conversational"
+			},
+			"es": {
+				"name": "Spanish",
+				"level": "very basic exchanges"
+			},
+			"ja": {
+				"name": "Japanese",
+				"level": "first basics"
+			}
 		}
 	},
 	"home": {
-		"title": "Home",
-		"welcome": "Curious by nature, rigorous by training",
-		"work": "I think product before I write code",
-		"identity": "42 Student · Builder",
-		"studying_domain": "Fullstack Developer · Web / Mobile / AI",
-		"cta": "Learn more",
-		"cv": "Download CV"
+		"cta": "See my work",
+		"cv": "Download CV",
+		"kicker": "Fullstack developer · École 42 Angoulême · apprentice at Moncab",
+		"lead": "I build web products and automations, and I teach others to code with AI without losing their own skills.",
+		"contact": "Get in touch"
 	},
 	"projects": {
 		"title": "Projects",
-		"process": {
-			"title": "How I approach a project",
-			"step1_label": "Problem",
-			"step1_desc": "Identify a real pain point worth solving",
-			"step2_label": "Think",
-			"step2_desc": "Architecture, UX flow, features, pricing model",
-			"step3_label": "Build",
-			"step3_desc": "Ship an MVP fast with the right stack",
-			"step4_label": "Iterate",
-			"step4_desc": "Test, get feedback, improve"
-		},
-		"personal": "Product-Oriented",
-		"personal_subtitle": "Built from scratch, thought as real products with UX, business model, MVP mindset.",
-		"school": "Technical Challenges",
-		"school_subtitle": "42 School projects: low-level programming, system design, protocol implementation.",
+		"personal": "Side projects",
+		"personal_subtitle": "Tools built for myself and for other students.",
+		"school": "42 projects",
+		"school_subtitle": "Low level, networking, system design: 42's project-based learning.",
 		"setupkit": {
 			"title": "SetupKit",
-			"description": "Educational SaaS that helps developers and teams take back control over their AI coding tools by generating complete configuration architectures (CLAUDE.md, .cursorrules, AGENTS.md, commands, skills) tailored to their stack and workflows.",
-			"status": "MVP"
-		},
-		"nali": {
-			"title": "Nali",
-			"description": "Existing project management tools are overengineered for small dev teams. I built a lighter alternative with multi-org management, Kanban + sprints, real-time messaging, AES-256 encrypted docs, GitHub integration, WebRTC video calls, Stripe billing with 4 plans.",
-			"status": "Beta"
+			"description": "Config generator for AI coding tools (CLAUDE.md, .cursorrules, AGENTS.md, commands, skills), tailored to a team's stack and habits. Beta now paused: it mostly taught me SEO and how to launch a product.",
+			"status": "Paused"
 		},
 		"minishell": {
 			"title": "Minishell",
@@ -147,14 +133,6 @@
 			"title": "Music_Room",
 			"description": "Mobile music sharing app in React Native and Node.js. Collaborative playlists, events, voting, personalized profiles."
 		},
-		"matcha": {
-			"title": "Matcha",
-			"description": "Matcha is a social dating application. It allows users to create profiles, browse other profiles, send messages, and find matches based on shared interests. The application incorporates features such as geolocation, user preferences, and a real-time notification system. The project implements a full-stack architecture with a backend API, a database for user management, and an interactive frontend for an engaging user experience."
-		},
-		"tokenizer": {
-			"title": "Tokenizer",
-			"description": "Digital asset creation on the blockchain using Solidity. Smart contract, deployment, web3 interaction."
-		},
 		"learn2slither": {
 			"title": "Learn2Slither",
 			"description": "A snake that learns to survive and feed autonomously using Q-Learning. Local vision, Q-table, exploration/exploitation, trained from scratch with no ML library."
@@ -163,33 +141,99 @@
 			"title": "Linear_Regression",
 			"description": "Car price prediction program using linear regression with gradient descent algorithm, implemented from scratch in Python."
 		},
-		"multilayer_perceptron": {
-			"title": "Multilayer_Perceptron",
-			"description": "Artificial neural networks through the implementation of a multilayer perceptron from scratch in Python."
+		"open42": {
+			"title": "Open42",
+			"status": "In progress",
+			"description": "My teaching-oriented AI harness for 42 students, being rebuilt on an open-source fork of OpenCode. I am turning it into a \"teacher harness\" that carries all my learning logic, with mentor agents (tutor, architect, reviewer, AI coach) that guide without handing out the answer."
+		},
+		"hypertube": {
+			"title": "ft_hypertube",
+			"description": "BitTorrent client written from scratch in TypeScript (tracker, handshake, piece exchange, SHA-1 verification) for video streaming. In progress."
 		}
 	},
+	"hackathons": {
+		"title": "Hackathons",
+		"Mira": {
+			"title": "Mira",
+			"description": "Consent-first AI agent that helps victims of non-consensual intimate imagery (NCII, sexual deepfakes) get content removed under EU law (DSA Article 16), without ever having to view the material, hunt down the host or write legal text. Four-stage pipeline: Mandate, Locate, Analyze, Notify. Built with Next.js, TypeScript, Supabase, FastAPI, Playwright and Gemini 2.5 Computer Use. RAISE Hackathon 2026, team of five.",
+			"role": "Repository owner and main contributor (~46 commits) in a team of five. I defined the API contracts, built the Computer Use harness and coordinated five parallel Claude sessions through a shared team CLAUDE.md."
+		},
+		"Cellule_rouge": {
+			"title": "Cellule Rouge",
+			"description": "One-day consulting mission for Cellule Rouge, a start-up designing textile solutions for people with implanted ports. As a pair: SEO/GEO and PageSpeed audit, four-phase roadmap, and an n8n monitoring pipeline (RSS, PubMed) with Gemini-assisted writing and human review before publishing. Neoloji x 42 Angoulême challenge.",
+			"role": "I delivered all the technical work: SEO/GEO and PageSpeed audits (84 mobile, 99 desktop), roadmap, n8n monitoring pipeline and a review back-office built into the site."
+		},
+		"see_more": "See more",
+		"see_less": "See less",
+		"track_label": "Track:",
+		"role_label": "My role",
+		"github_aria": "See {{name}} on GitHub",
+		"linkedin_aria": "See the LinkedIn post about {{name}}"
+	},
 	"stack": {
-		"title": "Stacks",
-		"web": "WEB",
-		"backend": "BACKEND",
-		"mobile": "MOBILE",
-		"algorithm": "LANGUAGES",
-		"data": "DATABASE & ORM",
-		"ai": "AI & LLM",
-		"ai_engineering": "AI ENGINEERING",
-		"dev_environment": "DEV ENVIRONMENT"
+		"title": "Stack",
+		"web": "web & mobile",
+		"backend": "back-end & data",
+		"ai": "ai & automation",
+		"lead": "What I actually use, not everything I've touched once.",
+		"low_level": "low level & tooling",
+		"legend_daily": "daily use",
+		"legend_used": "used in projects"
 	},
 	"contact": {
 		"title": "Contact",
-		"contact_me": "Contact Me",
-		"email_address": "Your Email Address",
+		"contact_me": "Get in touch",
+		"email_address": "Your email address",
 		"subject": "Subject",
-		"text": "Text",
+		"text": "Your message",
 		"send": "Send",
 		"success": "Message sent successfully!",
 		"error": "Something went wrong. Please try again.",
 		"mail": {
 			"reponse": "Hello,\n\nThank you for taking the time to contact me.\nI have received your message and will get back to you as soon as possible with a complete response.\n\nIf you have any other questions in the meantime, feel free to send them my way.\n\nHave a great day,\n\nIlan Nowak--Glandier"
+		},
+		"pitch": "A project, a question about AI? Drop me a line."
+	},
+	"talks": {
+		"title": "Talks",
+		"lead": "A series of four talks at 42 Angoulême in June 2026, co-hosted, in a lecture hall of about 45 seats. The common thread: learning with AI without losing your skills.",
+		"items": {
+			"debate": {
+				"title": "Open debate on AI",
+				"description": "An open discussion with students: what AI changes in the way we learn, its limits, and where to draw the line."
+			},
+			"learn_with_ai": {
+				"title": "Learning with AI",
+				"description": "Concrete methods to use AI as a tutor rather than an answer machine: the CRAFT method, the 4D framework, stable versus adaptive context."
+			},
+			"code_with_ai": {
+				"title": "Learning to code with AI",
+				"description": "What separates a developer's vibe coding from a non-developer's, and how to stay in control of your code. Worked example: my teaching-oriented CLAUDE.md."
+			},
+			"full_setup": {
+				"title": "My setup, end to end",
+				"description": "Claude Code configuration, MCP, harness, agents, n8n automations and CI/CD: the setup I use every day, explained piece by piece."
+			}
 		}
+	},
+	"carousel": {
+		"show_image": "Show image {{n}}"
+	},
+	"help": {
+		"title": "Need help with AI?",
+		"lead": "I offer a 30-minute call to help you use AI better, or learn with it without losing your own skills.",
+		"topics": {
+			"use_ai": {
+				"title": "Using AI in your work",
+				"description": "Choosing and setting up your tools (Claude Code, agents, n8n automations), framing your prompts and context, knowing when AI saves time and when it costs you some."
+			},
+			"learn_with_ai": {
+				"title": "Mastering learning with AI",
+				"description": "Making it a tutor rather than a crutch: methods to actually progress, understand what the AI produces and stay in control of what you learn."
+			}
+		},
+		"cta_meta": "30-min call · video",
+		"cta_text": "Tell me where you are and what's blocking you, and we'll work out where to start together.",
+		"cta_button": "Book a slot"
 	}
 }

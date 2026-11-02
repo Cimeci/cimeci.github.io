@@ -9,7 +9,7 @@
 	justify-content: center;
 	background: var(--bg-card);
 	border: 1px solid var(--border);
-	border-radius: 12px;
+	border-radius: var(--radius);
 	color: var(--text-secondary);
 	cursor: pointer;
 	opacity: 0;
@@ -30,4 +30,11 @@
 	color: var(--accent);
 	border-color: var(--accent);
 	transform: translateY(-2px);
+}
+
+/* On small screens it covered form buttons and card content; the logo already scrolls to top */
+@media (max-width: 767px) {
+	.scroll-to-top {
+		display: none;
+	}
 }

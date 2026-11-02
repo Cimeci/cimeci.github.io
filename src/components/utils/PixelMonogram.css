@@ -1,0 +1,61 @@
+.pixel-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--cols), 1fr);
+	gap: 4px;
+	width: 100%;
+}
+
+/* Each cell: outline = empty, ::before = accent flash, ::after = final colour */
+.pixel {
+	position: relative;
+	aspect-ratio: 1;
+	box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.pixel::before,
+.pixel::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+}
+
+.pixel::before {
+	background: var(--accent);
+	animation: pixel-flash var(--cell-ms) ease-out var(--d);
+}
+
+.pixel::after {
+	animation: pixel-settle calc(var(--cell-ms) * 0.6) ease-out calc(var(--d) + var(--cell-ms) * 0.4) forwards;
+}
+
+.pixel-ink::after { background: var(--cell-done); }
+.pixel-accent::after { background: var(--accent); }
+.pixel-empty::after { background: var(--cell-empty); }
+
+@keyframes pixel-flash {
+	0% { opacity: 0; }
+	30% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes pixel-settle {
+	to { opacity: 1; }
+}
+
+@media (hover: hover) {
+	.pixel:hover::before {
+		opacity: 1;
+		transition: opacity var(--duration-fast) ease-out;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.pixel::before,
+	.pixel::after {
+		animation: none;
+	}
+	.pixel::after {
+		opacity: 1;
+	}
+}

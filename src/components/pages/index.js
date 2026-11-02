@@ -1,6 +1,9 @@
 export * from "./Home"
 export * from "./About"
+export * from "./AiHelp"
+export * from "./Background"
 export * from "./Contact"
+export * from "./Hackathons"
 export * from "./Projects"
 export * from "./Stacks"
-
+export * from "./Talks"

@@ -1,5 +1,21 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Env
 .env
-build
-dist
-package-lock.json
+.env.*
+
+# Logs
+*.log
+
+# Personal notes
+pagesave
+.vercel
