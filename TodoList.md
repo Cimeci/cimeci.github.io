@@ -2,7 +2,7 @@
 
 ## HOSTING
 
-[ ]: cv.html / cv.pdf still link to cimeci.github.io (fix when regenerating the CV)
+[X]: cv.html / cv.pdf link to cimeci.github.io and github.com/Cimeci
 
 ## CONTENT (to check with Ilan)
 
@@ -25,7 +25,7 @@
 
 ## DONE
 
-[X]: Deployed on Vercel (project "portfolio", account cimeci): https://portfolio-ecru-nine-a0g2u7xwsx.vercel.app — redeploy with `vercel --prod`
+[X]: Deployed on GitHub Pages: https://cimeci.github.io — redeploy with `npm run deploy`
 [X]: Canonical, og:url, og:image, twitter:image, JSON-LD and form `_next` point to the Vercel URL
 
 [X]: public/ 27 MB -> 1.9 MB (WebP visuals, SetupKit video 3.6 MB -> 405 KB, unused assets removed)

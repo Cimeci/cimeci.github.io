@@ -7,9 +7,7 @@ import Carousel from '../utils/Carousel';
 import './Hackathons.css';
 import { SiLinkedin } from 'react-icons/si';
 
-// GitHub profile is hidden while the account is flagged: links would 404 for visitors.
-// Set back to 'https://github.com/Cimeci2/' once it is public again.
-const GITHUB = null;
+const GITHUB = 'https://github.com/Cimeci/';
 
 const HACKATHONS = [
 	{

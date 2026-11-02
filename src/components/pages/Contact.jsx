@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { SiLinkedin } from 'react-icons/si';
+import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { SendHorizonal, Check, X } from 'lucide-react';
 import { ScrollReveal } from '../utils/ScrollReveal';
 import { SectionHeader } from '../utils/SectionHeader';
 import './Contact.css';
 
 const SOCIALS = [
-	// GitHub hidden while the account is flagged: { icon: SiGithub, href: 'https://github.com/Cimeci2', label: 'GitHub' },
+	{ icon: SiGithub, href: 'https://github.com/Cimeci', label: 'GitHub' },
 	{ icon: SiLinkedin, href: 'https://linkedin.com/in/ilan-nowak-glandier', label: 'LinkedIn' },
 ];
 
@@ -128,7 +128,7 @@ export const Contact = () => {
 							</div>
 						)}
 
-						<input type="hidden" name="_next" value="https://portfolio-ecru-nine-a0g2u7xwsx.vercel.app" />
+						<input type="hidden" name="_next" value="https://cimeci.github.io/" />
 						<textarea name="_autoresponse" style={{ display: 'none' }} defaultValue={t('contact.mail.reponse')} />
 					</form>
 				</ScrollReveal>

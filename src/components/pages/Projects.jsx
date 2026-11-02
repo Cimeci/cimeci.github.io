@@ -8,9 +8,7 @@ import './Projects.css';
    DATA
 ======================= */
 
-// GitHub profile is hidden while the account is flagged: links would 404 for visitors.
-// Set back to 'https://github.com/Cimeci2/' once it is public again.
-const GITHUB = null;
+const GITHUB = 'https://github.com/Cimeci/';
 
 const PERSONAL_PROJECTS = [
 	{
@@ -51,7 +49,7 @@ const SCHOOL_PROJECTS = [
 	{
 		key: 'music_room',
 		img: '/projects_visuals/Music-room_visual.webp',
-		link: 'Music_room',
+		link: '',
 		tags: ['React Native', 'Node.js', 'Prisma'],
 	},
 	{
