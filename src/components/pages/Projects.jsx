@@ -43,13 +43,13 @@ const SCHOOL_PROJECTS = [
 	{
 		key: 'transcendence',
 		img: '/projects_visuals/Transcendence_visual.webp',
-		link: '',
+		link: 'ft_transcendence',
 		tags: ['WebSockets', 'Auth', 'Full-Stack'],
 	},
 	{
 		key: 'music_room',
 		img: '/projects_visuals/Music-room_visual.webp',
-		link: '',
+		link: 'https://github.com/TFHD/Music-room',
 		tags: ['React Native', 'Node.js', 'Prisma'],
 	},
 	{
@@ -61,7 +61,7 @@ const SCHOOL_PROJECTS = [
 	{
 		key: 'learn2slither',
 		img: '/projects_visuals/learn2slither_visual.webp',
-		link: '',
+		link: 'Learn2Slither',
 		tags: ['Python', 'Q-Learning', 'Reinforcement Learning'],
 	},
 	{
@@ -151,7 +151,7 @@ function SchoolCard({ project, index }) {
 	const hasLink = Boolean(GITHUB && project.link);
 	const Wrapper = hasLink ? 'a' : 'article';
 	const linkProps = hasLink
-		? { href: `${GITHUB}${project.link}`, target: '_blank', rel: 'noopener noreferrer' }
+		? { href: project.link.startsWith('http') ? project.link : `${GITHUB}${project.link}`, target: '_blank', rel: 'noopener noreferrer' }
 		: {};
 
 	return (
