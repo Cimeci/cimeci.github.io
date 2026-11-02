@@ -66,7 +66,7 @@ const SCHOOL_PROJECTS = [
 	},
 	{
 		key: 'hypertube',
-		link: '',
+		link: 'ft_hypertube',
 		tags: ['TypeScript', 'TCP', 'Streaming'],
 	},
 ];
